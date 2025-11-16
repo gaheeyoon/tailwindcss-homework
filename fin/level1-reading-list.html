@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 독서 목록 - 초급 과제</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap");
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-amber-50">
+    <!-- 헤더 -->
+    <div class="bg-teal-700 p-8 text-center">
+      <h1 class="text-white text-4xl mb-2">📚 2024 독서 목록</h1>
+      <p class="text-teal-100 text-lg">올해 읽은 책들을 기록합니다</p>
+    </div>
+
+    <!-- 통계 영역 -->
+    <div class="p-8">
+      <div class="bg-white p-8 rounded-2xl shadow-lg max-w-3xl mx-auto mb-8">
+        <h2 class="text-2xl text-slate-800 text-center mb-6">
+          📊 나의 독서 통계
+        </h2>
+
+        <div class="text-center mb-6">
+          <div class="text-6xl text-teal-600 mb-2">23권</div>
+          <p class="text-slate-600 text-lg">올해 읽은 책</p>
+        </div>
+
+        <div class="border-t border-slate-200 pt-6">
+          <p class="text-slate-700 text-center leading-relaxed">
+            목표는 30권이었는데 아직 7권 남았네요! 연말까지 열심히 읽어서 목표를
+            달성하고 싶어요.
+          </p>
+        </div>
+      </div>
+
+      <!-- 독서 목표 -->
+      <div class="max-w-3xl mx-auto mb-8">
+        <div
+          class="bg-white p-6 rounded-xl shadow-md border-l-4 border-teal-500"
+        >
+          <h3 class="text-xl mb-3 text-slate-800">🎯 올해의 독서 목표</h3>
+          <p class="text-slate-600 mb-4">다양한 분야의 책 30권 읽기</p>
+
+          <div class="bg-slate-100 h-6 rounded-full">
+            <div class="bg-teal-500 h-6 rounded-full" style="width: 77%"></div>
+          </div>
+          <p class="text-slate-500 text-sm mt-2 text-right">77% 달성</p>
+        </div>
+      </div>
+
+      <!-- 카테고리별 책 -->
+      <div class="max-w-3xl mx-auto">
+        <!-- 소설 섹션 -->
+        <div class="mb-8">
+          <h2 class="text-2xl text-slate-800 mb-4">📖 소설</h2>
+
+          <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+            <div class="mb-3">
+              <h3 class="text-xl text-slate-800 mb-1">82년생 김지영</h3>
+              <p class="text-slate-500 text-sm">조남주 · 민음사</p>
+            </div>
+            <p class="text-slate-600 mb-3">현대 한국 여성의 삶을 담은 소설</p>
+            <div class="text-amber-400">⭐⭐⭐⭐⭐</div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+            <div class="mb-3">
+              <h3 class="text-xl text-slate-800 mb-1">미드나잇 라이브러리</h3>
+              <p class="text-slate-500 text-sm">매트 헤이그 · 인플루엔셜</p>
+            </div>
+            <p class="text-slate-600 mb-3">
+              무한한 선택의 순간을 그린 판타지 소설
+            </p>
+            <div class="text-amber-400">⭐⭐⭐⭐⭐</div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+            <div class="mb-3">
+              <h3 class="text-xl text-slate-800 mb-1">이처럼 사소한 것들</h3>
+              <p class="text-slate-500 text-sm">클레어 키건 · 다산책방</p>
+            </div>
+            <p class="text-slate-600 mb-3">따뜻하고 섬세한 단편 소설집</p>
+            <div class="text-amber-400">⭐⭐⭐⭐</div>
+          </div>
+        </div>
+
+        <!-- 자기계발 섹션 -->
+        <div class="mb-8">
+          <h2 class="text-2xl text-slate-800 mb-4">💪 자기계발</h2>
+
+          <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+            <div class="mb-3">
+              <h3 class="text-xl text-slate-800 mb-1">아침 루틴의 힘</h3>
+              <p class="text-slate-500 text-sm">할 엘로드 · 한빛비즈</p>
+            </div>
+            <p class="text-slate-600 mb-3">성공적인 하루를 만드는 아침 습관</p>
+            <div class="text-amber-400">⭐⭐⭐⭐</div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+            <div class="mb-3">
+              <h3 class="text-xl text-slate-800 mb-1">아주 작은 습관의 힘</h3>
+              <p class="text-slate-500 text-sm">제임스 클리어 · 비즈니스북스</p>
+            </div>
+            <p class="text-slate-600 mb-3">습관을 통해 인생을 바꾸는 법</p>
+            <div class="text-amber-400">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+
+        <!-- 에세이 섹션 -->
+        <div class="mb-8">
+          <h2 class="text-2xl text-slate-800 mb-4">✍️ 에세이</h2>
+
+          <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+            <div class="mb-3">
+              <h3 class="text-xl text-slate-800 mb-1">달러구트 꿈 백화점</h3>
+              <p class="text-slate-500 text-sm">이미예 · 팩토리나인</p>
+            </div>
+            <p class="text-slate-600 mb-3">
+              꿈을 사고파는 신비한 백화점 이야기
+            </p>
+            <div class="text-amber-400">⭐⭐⭐⭐⭐</div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+            <div class="mb-3">
+              <h3 class="text-xl text-slate-800 mb-1">나는 나로 살기로 했다</h3>
+              <p class="text-slate-500 text-sm">김수현 · 마음의숲</p>
+            </div>
+            <p class="text-slate-600 mb-3">
+              타인의 시선에서 벗어나 나답게 사는 법
+            </p>
+            <div class="text-amber-400">⭐⭐⭐⭐</div>
+          </div>
+        </div>
+
+        <!-- 인문/역사 섹션 -->
+        <div class="mb-8">
+          <h2 class="text-2xl text-slate-800 mb-4">🌍 인문·역사</h2>
+
+          <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+            <div class="mb-3">
+              <h3 class="text-xl text-slate-800 mb-1">사피엔스</h3>
+              <p class="text-slate-500 text-sm">유발 하라리 · 김영사</p>
+            </div>
+            <p class="text-slate-600 mb-3">인류의 역사를 통찰하는 명저</p>
+            <div class="text-amber-400">⭐⭐⭐⭐⭐</div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-md mb-4">
+            <div class="mb-3">
+              <h3 class="text-xl text-slate-800 mb-1">총, 균, 쇠</h3>
+              <p class="text-slate-500 text-sm">재레드 다이아몬드 · 문학사상</p>
+            </div>
+            <p class="text-slate-600 mb-3">인류 문명의 발전 과정을 분석한 책</p>
+            <div class="text-amber-400">⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 다음에 읽을 책 -->
+      <div class="max-w-3xl mx-auto mt-12">
+        <h2 class="text-2xl text-slate-800 mb-6 text-center">
+          📝 다음에 읽을 책
+        </h2>
+
+        <div class="bg-teal-50 p-6 rounded-xl border-2 border-teal-200 mb-4">
+          <h3 class="text-xl text-slate-800 mb-2">🔖 코스모스</h3>
+          <p class="text-slate-600">칼 세이건 · 사이언스북스</p>
+        </div>
+
+        <div class="bg-teal-50 p-6 rounded-xl border-2 border-teal-200 mb-4">
+          <h3 class="text-xl text-slate-800 mb-2">🔖 1984</h3>
+          <p class="text-slate-600">조지 오웰 · 민음사</p>
+        </div>
+
+        <div class="bg-teal-50 p-6 rounded-xl border-2 border-teal-200">
+          <h3 class="text-xl text-slate-800 mb-2">🔖 데미안</h3>
+          <p class="text-slate-600">헤르만 헤세 · 민음사</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div class="bg-slate-800 p-6 text-center text-slate-300 mt-12">
+      <p class="mb-2">
+        만든 사람:
+        <span class="text-white font-medium">[이름을 입력하세요]</span>
+      </p>
+      <p class="text-slate-400 text-sm">2025 · 가히의 TailwindCSS 초급 과제</p>
+    </div>
+  </body>
+</html>

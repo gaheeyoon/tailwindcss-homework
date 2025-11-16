@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Diary - 중상급 과제</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap");
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50">
+    <!-- 네비게이션 -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-10">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <span class="text-3xl">✈️</span>
+            <span class="text-2xl font-bold text-slate-800">Travel Diary</span>
+          </div>
+          <div class="flex items-center space-x-8">
+            <a href="#" class="text-slate-800 font-medium hover:text-blue-600"
+              >갤러리</a
+            >
+            <a href="#" class="text-slate-500 hover:text-blue-600">여행지도</a>
+            <a href="#" class="text-slate-500 hover:text-blue-600">일정</a>
+            <button
+              class="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+            >
+              + 새 여행
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <div class="bg-blue-600 text-white py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <h1 class="text-5xl font-bold mb-4">2024 나의 여행 기록</h1>
+        <p class="text-xl text-blue-100">12개국, 28개 도시를 다녀왔어요 🌍</p>
+      </div>
+    </div>
+
+    <!-- 필터 섹션 -->
+    <div class="bg-white border-b border-slate-200 py-6">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center justify-between">
+          <div class="flex space-x-3">
+            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm">
+              전체
+            </button>
+            <button
+              class="px-4 py-2 bg-slate-100 text-slate-600 rounded-lg text-sm hover:bg-slate-200"
+            >
+              아시아
+            </button>
+            <button
+              class="px-4 py-2 bg-slate-100 text-slate-600 rounded-lg text-sm hover:bg-slate-200"
+            >
+              유럽
+            </button>
+            <button
+              class="px-4 py-2 bg-slate-100 text-slate-600 rounded-lg text-sm hover:bg-slate-200"
+            >
+              미주
+            </button>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="text-slate-500 text-sm">정렬:</span>
+            <select
+              class="px-4 py-2 border border-slate-300 rounded-lg text-sm"
+            >
+              <option>최신순</option>
+              <option>오래된순</option>
+              <option>인기순</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div class="max-w-7xl mx-auto px-6 py-12">
+      <!-- 통계 카드 -->
+      <div class="grid grid-cols-4 gap-6 mb-12">
+        <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+          <div class="text-3xl mb-3">🌏</div>
+          <div class="text-3xl font-bold text-slate-800 mb-1">12</div>
+          <div class="text-slate-500 text-sm">방문한 국가</div>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+          <div class="text-3xl mb-3">🏙️</div>
+          <div class="text-3xl font-bold text-slate-800 mb-1">28</div>
+          <div class="text-slate-500 text-sm">방문한 도시</div>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+          <div class="text-3xl mb-3">📸</div>
+          <div class="text-3xl font-bold text-slate-800 mb-1">342</div>
+          <div class="text-slate-500 text-sm">찍은 사진</div>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm p-6 border border-slate-200">
+          <div class="text-3xl mb-3">✈️</div>
+          <div class="text-3xl font-bold text-slate-800 mb-1">15</div>
+          <div class="text-slate-500 text-sm">탑승한 항공편</div>
+        </div>
+      </div>
+
+      <!-- 여행 갤러리 -->
+      <h2 class="text-3xl font-bold text-slate-800 mb-8">여행 갤러리</h2>
+
+      <!-- Grid 레이아웃 -->
+      <div class="grid grid-cols-3 gap-6 mb-12">
+        <!-- 여행 카드 1 - 큰 카드 -->
+        <div class="col-span-2 row-span-2 group cursor-pointer">
+          <div class="relative bg-slate-200 rounded-2xl overflow-hidden h-full">
+            <div class="absolute inset-0 bg-slate-300"></div>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+              <div class="flex items-center space-x-2 mb-3">
+                <span
+                  class="px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-sm"
+                  >일본</span
+                >
+                <span
+                  class="px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-sm"
+                  >7박 8일</span
+                >
+              </div>
+              <h3 class="text-3xl font-bold mb-2">도쿄 벚꽃 여행</h3>
+              <p class="text-white text-opacity-90">
+                2024년 4월 · 도쿄, 교토, 오사카
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 여행 카드 2 -->
+        <div class="group cursor-pointer">
+          <div class="relative bg-slate-200 rounded-2xl overflow-hidden h-64">
+            <div class="absolute inset-0 bg-blue-300"></div>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <span
+                class="px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-sm mb-3 inline-block"
+                >프랑스</span
+              >
+              <h3 class="text-xl font-bold mb-1">파리의 봄</h3>
+              <p class="text-sm text-white text-opacity-90">2024년 5월</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 여행 카드 3 -->
+        <div class="group cursor-pointer">
+          <div class="relative bg-slate-200 rounded-2xl overflow-hidden h-64">
+            <div class="absolute inset-0 bg-orange-300"></div>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <span
+                class="px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-sm mb-3 inline-block"
+                >이탈리아</span
+              >
+              <h3 class="text-xl font-bold mb-1">로마 휴일</h3>
+              <p class="text-sm text-white text-opacity-90">2024년 6월</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 여행 카드 4 -->
+        <div class="group cursor-pointer">
+          <div class="relative bg-slate-200 rounded-2xl overflow-hidden h-64">
+            <div class="absolute inset-0 bg-emerald-300"></div>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <span
+                class="px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-sm mb-3 inline-block"
+                >태국</span
+              >
+              <h3 class="text-xl font-bold mb-1">방콕 여름</h3>
+              <p class="text-sm text-white text-opacity-90">2024년 7월</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 여행 카드 5 -->
+        <div class="group cursor-pointer">
+          <div class="relative bg-slate-200 rounded-2xl overflow-hidden h-64">
+            <div class="absolute inset-0 bg-purple-300"></div>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <span
+                class="px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-sm mb-3 inline-block"
+                >스페인</span
+              >
+              <h3 class="text-xl font-bold mb-1">바르셀로나</h3>
+              <p class="text-sm text-white text-opacity-90">2024년 8월</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 여행 카드 6 -->
+        <div class="group cursor-pointer">
+          <div class="relative bg-slate-200 rounded-2xl overflow-hidden h-64">
+            <div class="absolute inset-0 bg-rose-300"></div>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"
+            ></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <span
+                class="px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-sm mb-3 inline-block"
+                >베트남</span
+              >
+              <h3 class="text-xl font-bold mb-1">다낭 휴양</h3>
+              <p class="text-sm text-white text-opacity-90">2024년 9월</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 월별 타임라인 -->
+      <h2 class="text-3xl font-bold text-slate-800 mb-8">월별 여행 기록</h2>
+
+      <div class="space-y-4">
+        <!-- 타임라인 아이템 1 -->
+        <div class="flex items-start space-x-6 group">
+          <div class="flex-shrink-0 w-32 text-right">
+            <span class="text-lg font-semibold text-slate-800">2024년 4월</span>
+          </div>
+          <div class="flex-shrink-0 relative">
+            <div
+              class="w-4 h-4 bg-blue-600 rounded-full border-4 border-white ring-4 ring-blue-100"
+            ></div>
+            <div
+              class="absolute top-4 left-1/2 -ml-px w-px h-20 bg-slate-200"
+            ></div>
+          </div>
+          <div class="flex-1 pb-8">
+            <div
+              class="bg-white rounded-xl shadow-sm p-6 border border-slate-200 group-hover:shadow-md transition-all"
+            >
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-xl font-bold text-slate-800">도쿄 벚꽃 여행</h4>
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
+                  >일본</span
+                >
+              </div>
+              <p class="text-slate-600 mb-4">
+                우에노 공원의 벚꽃이 만개한 시기에 맞춰 떠난 일본 여행. 도쿄,
+                교토, 오사카를 돌며 일본의 봄을 만끽했습니다.
+              </p>
+              <div class="flex items-center space-x-4 text-sm text-slate-500">
+                <span>📅 7박 8일</span>
+                <span>💰 예산: 200만원</span>
+                <span>⭐ 만족도: 5/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 타임라인 아이템 2 -->
+        <div class="flex items-start space-x-6 group">
+          <div class="flex-shrink-0 w-32 text-right">
+            <span class="text-lg font-semibold text-slate-800">2024년 5월</span>
+          </div>
+          <div class="flex-shrink-0 relative">
+            <div
+              class="w-4 h-4 bg-blue-600 rounded-full border-4 border-white ring-4 ring-blue-100"
+            ></div>
+            <div
+              class="absolute top-4 left-1/2 -ml-px w-px h-20 bg-slate-200"
+            ></div>
+          </div>
+          <div class="flex-1 pb-8">
+            <div
+              class="bg-white rounded-xl shadow-sm p-6 border border-slate-200 group-hover:shadow-md transition-all"
+            >
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-xl font-bold text-slate-800">파리의 봄</h4>
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm"
+                  >프랑스</span
+                >
+              </div>
+              <p class="text-slate-600 mb-4">
+                에펠탑, 루브르 박물관, 몽마르트 언덕까지. 로맨틱한 파리의 모든
+                것을 경험한 여행이었습니다.
+              </p>
+              <div class="flex items-center space-x-4 text-sm text-slate-500">
+                <span>📅 5박 6일</span>
+                <span>💰 예산: 300만원</span>
+                <span>⭐ 만족도: 5/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 타임라인 아이템 3 -->
+        <div class="flex items-start space-x-6 group">
+          <div class="flex-shrink-0 w-32 text-right">
+            <span class="text-lg font-semibold text-slate-800">2024년 6월</span>
+          </div>
+          <div class="flex-shrink-0 relative">
+            <div
+              class="w-4 h-4 bg-blue-600 rounded-full border-4 border-white ring-4 ring-blue-100"
+            ></div>
+          </div>
+          <div class="flex-1">
+            <div
+              class="bg-white rounded-xl shadow-sm p-6 border border-slate-200 group-hover:shadow-md transition-all"
+            >
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="text-xl font-bold text-slate-800">로마 휴일</h4>
+                <span
+                  class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm"
+                  >이탈리아</span
+                >
+              </div>
+              <p class="text-slate-600 mb-4">
+                콜로세움, 바티칸, 트레비 분수... 역사와 예술이 살아숨쉬는
+                로마에서의 특별한 시간.
+              </p>
+              <div class="flex items-center space-x-4 text-sm text-slate-500">
+                <span>📅 4박 5일</span>
+                <span>💰 예산: 250만원</span>
+                <span>⭐ 만족도: 4.5/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-slate-800 mt-20 py-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-start justify-between">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <span class="text-3xl">✈️</span>
+              <span class="text-2xl font-bold text-white">Travel Diary</span>
+            </div>
+            <p class="text-slate-400">세상의 모든 순간을 기록하세요</p>
+          </div>
+          <div class="text-right">
+            <p class="text-slate-400 mb-2">
+              만든 사람:
+              <span class="text-white font-medium">[이름을 입력하세요]</span>
+            </p>
+            <p class="text-slate-500 text-sm">2025 · 가히의 TailwindCSS 과제</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

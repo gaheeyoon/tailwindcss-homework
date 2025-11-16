@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Diary - 중상급 과제</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap");
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 네비게이션 -->
+    <nav>
+      <div>
+        <div>
+          <div>
+            <span>✈️</span>
+            <span>Travel Diary</span>
+          </div>
+          <div>
+            <a href="#">갤러리</a>
+            <a href="#">여행지도</a>
+            <a href="#">일정</a>
+            <button>+ 새 여행</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <div>
+      <div>
+        <h1>2024 나의 여행 기록</h1>
+        <p>12개국, 28개 도시를 다녀왔어요 🌍</p>
+      </div>
+    </div>
+
+    <!-- 필터 섹션 -->
+    <div>
+      <div>
+        <div>
+          <div>
+            <button>전체</button>
+            <button>아시아</button>
+            <button>유럽</button>
+            <button>미주</button>
+          </div>
+          <div>
+            <span>정렬:</span>
+            <select>
+              <option>최신순</option>
+              <option>오래된순</option>
+              <option>인기순</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div>
+      <!-- 통계 카드 -->
+      <div>
+        <div>
+          <div>🌏</div>
+          <div>12</div>
+          <div>방문한 국가</div>
+        </div>
+        <div>
+          <div>🏙️</div>
+          <div>28</div>
+          <div>방문한 도시</div>
+        </div>
+        <div>
+          <div>📸</div>
+          <div>342</div>
+          <div>찍은 사진</div>
+        </div>
+        <div>
+          <div>✈️</div>
+          <div>15</div>
+          <div>탑승한 항공편</div>
+        </div>
+      </div>
+
+      <!-- 여행 갤러리 -->
+      <h2>여행 갤러리</h2>
+
+      <!-- Grid 레이아웃 -->
+      <div>
+        <!-- 여행 카드 1 - 큰 카드 -->
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+            <div>
+              <div>
+                <span>일본</span>
+                <span>7박 8일</span>
+              </div>
+              <h3>도쿄 벚꽃 여행</h3>
+              <p>2024년 4월 · 도쿄, 교토, 오사카</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 여행 카드 2 -->
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+            <div>
+              <span>프랑스</span>
+              <h3>파리의 봄</h3>
+              <p>2024년 5월</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 여행 카드 3 -->
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+            <div>
+              <span>이탈리아</span>
+              <h3>로마 휴일</h3>
+              <p>2024년 6월</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 여행 카드 4 -->
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+            <div>
+              <span>태국</span>
+              <h3>방콕 여름</h3>
+              <p>2024년 7월</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 여행 카드 5 -->
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+            <div>
+              <span>스페인</span>
+              <h3>바르셀로나</h3>
+              <p>2024년 8월</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 여행 카드 6 -->
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+            <div>
+              <span>베트남</span>
+              <h3>다낭 휴양</h3>
+              <p>2024년 9월</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 월별 타임라인 -->
+      <h2>월별 여행 기록</h2>
+
+      <div>
+        <!-- 타임라인 아이템 1 -->
+        <div>
+          <div>
+            <span>2024년 4월</span>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div>
+              <div>
+                <h4>도쿄 벚꽃 여행</h4>
+                <span>일본</span>
+              </div>
+              <p>
+                우에노 공원의 벚꽃이 만개한 시기에 맞춰 떠난 일본 여행. 도쿄,
+                교토, 오사카를 돌며 일본의 봄을 만끽했습니다.
+              </p>
+              <div>
+                <span>📅 7박 8일</span>
+                <span>💰 예산: 200만원</span>
+                <span>⭐ 만족도: 5/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 타임라인 아이템 2 -->
+        <div>
+          <div>
+            <span>2024년 5월</span>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <div>
+              <div>
+                <h4>파리의 봄</h4>
+                <span>프랑스</span>
+              </div>
+              <p>
+                에펠탑, 루브르 박물관, 몽마르트 언덕까지. 로맨틱한 파리의 모든
+                것을 경험한 여행이었습니다.
+              </p>
+              <div>
+                <span>📅 5박 6일</span>
+                <span>💰 예산: 300만원</span>
+                <span>⭐ 만족도: 5/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 타임라인 아이템 3 -->
+        <div>
+          <div>
+            <span>2024년 6월</span>
+          </div>
+          <div>
+            <div></div>
+          </div>
+          <div>
+            <div>
+              <div>
+                <h4>로마 휴일</h4>
+                <span>이탈리아</span>
+              </div>
+              <p>
+                콜로세움, 바티칸, 트레비 분수... 역사와 예술이 살아숨쉬는
+                로마에서의 특별한 시간.
+              </p>
+              <div>
+                <span>📅 4박 5일</span>
+                <span>💰 예산: 250만원</span>
+                <span>⭐ 만족도: 4.5/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer>
+      <div>
+        <div>
+          <div>
+            <div>
+              <span>✈️</span>
+              <span>Travel Diary</span>
+            </div>
+            <p>세상의 모든 순간을 기록하세요</p>
+          </div>
+          <div>
+            <p>
+              만든 사람:
+              <span>[이름을 입력하세요]</span>
+            </p>
+            <p>2025 · 가히의 TailwindCSS 과제</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

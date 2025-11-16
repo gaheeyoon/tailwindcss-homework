@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Dashboard - 상급 과제</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap");
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-100">
+    <!-- 사이드바 -->
+    <aside
+      class="fixed left-0 top-0 h-full w-64 bg-slate-900 text-white p-6 hidden lg:block"
+    >
+      <div class="flex items-center space-x-3 mb-10">
+        <div
+          class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center"
+        >
+          <span class="text-2xl">💪</span>
+        </div>
+        <span class="text-xl font-bold">FitLife</span>
+      </div>
+
+      <nav class="space-y-2">
+        <a
+          href="#"
+          class="flex items-center space-x-3 px-4 py-3 bg-emerald-500 rounded-lg"
+        >
+          <span>📊</span>
+          <span>대시보드</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-3 px-4 py-3 hover:bg-slate-800 rounded-lg transition"
+        >
+          <span>🏃</span>
+          <span>운동 기록</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-3 px-4 py-3 hover:bg-slate-800 rounded-lg transition"
+        >
+          <span>🍎</span>
+          <span>식단 관리</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-3 px-4 py-3 hover:bg-slate-800 rounded-lg transition"
+        >
+          <span>📈</span>
+          <span>목표 설정</span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center space-x-3 px-4 py-3 hover:bg-slate-800 rounded-lg transition"
+        >
+          <span>⚙️</span>
+          <span>설정</span>
+        </a>
+      </nav>
+
+      <div class="absolute bottom-6 left-6 right-6">
+        <div class="bg-slate-800 rounded-lg p-4">
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="w-10 h-10 bg-slate-600 rounded-full"></div>
+            <div>
+              <div class="font-medium">김건강</div>
+              <div class="text-xs text-slate-400">프리미엄 회원</div>
+            </div>
+          </div>
+          <button
+            class="w-full text-sm text-slate-300 hover:text-white transition"
+          >
+            로그아웃
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="lg:ml-64">
+      <!-- 헤더 -->
+      <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+        <div class="px-4 sm:px-6 lg:px-8 py-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="text-2xl font-bold text-slate-800">대시보드</h1>
+              <p class="text-slate-500 text-sm mt-1">
+                오늘도 멋진 하루를 시작하세요! 🔥
+              </p>
+            </div>
+            <div class="flex items-center space-x-4">
+              <button class="relative p-2 text-slate-400 hover:text-slate-600">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                  />
+                </svg>
+                <span
+                  class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"
+                ></span>
+              </button>
+              <div class="w-10 h-10 bg-slate-300 rounded-full lg:hidden"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 컨텐츠 영역 -->
+      <div class="px-4 sm:px-6 lg:px-8 py-8">
+        <!-- 오늘의 목표 카드 -->
+        <div
+          class="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl p-6 sm:p-8 text-white mb-8"
+        >
+          <div
+            class="flex flex-col sm:flex-row items-start sm:items-center justify-between"
+          >
+            <div class="mb-4 sm:mb-0">
+              <h2 class="text-2xl sm:text-3xl font-bold mb-2">
+                오늘의 운동 목표
+              </h2>
+              <p class="text-emerald-100">2024년 11월 17일 월요일</p>
+            </div>
+            <button
+              class="px-6 py-3 bg-white text-emerald-600 rounded-lg font-medium hover:bg-emerald-50 transition"
+            >
+              운동 시작하기
+            </button>
+          </div>
+
+          <!-- 프로그레스 바 -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm">칼로리 소모</span>
+                <span class="text-sm font-medium">450 / 600 kcal</span>
+              </div>
+              <div
+                class="h-2 bg-white bg-opacity-30 rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-white rounded-full"
+                  style="width: 75%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm">운동 시간</span>
+                <span class="text-sm font-medium">35 / 60 분</span>
+              </div>
+              <div
+                class="h-2 bg-white bg-opacity-30 rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-white rounded-full"
+                  style="width: 58%"
+                ></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm">걸음 수</span>
+                <span class="text-sm font-medium">7,234 / 10,000 걸음</span>
+              </div>
+              <div
+                class="h-2 bg-white bg-opacity-30 rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-white rounded-full"
+                  style="width: 72%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 통계 카드 그리드 -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8"
+        >
+          <div
+            class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center"
+              >
+                <span class="text-2xl">🔥</span>
+              </div>
+              <span class="text-green-500 text-sm font-medium">+12%</span>
+            </div>
+            <div class="text-3xl font-bold text-slate-800 mb-1">2,847</div>
+            <div class="text-slate-500 text-sm">오늘 소모 칼로리</div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center"
+              >
+                <span class="text-2xl">💪</span>
+              </div>
+              <span class="text-green-500 text-sm font-medium">+8%</span>
+            </div>
+            <div class="text-3xl font-bold text-slate-800 mb-1">45분</div>
+            <div class="text-slate-500 text-sm">오늘 운동 시간</div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center"
+              >
+                <span class="text-2xl">📊</span>
+              </div>
+              <span class="text-green-500 text-sm font-medium">+5%</span>
+            </div>
+            <div class="text-3xl font-bold text-slate-800 mb-1">68kg</div>
+            <div class="text-slate-500 text-sm">현재 체중</div>
+          </div>
+
+          <div
+            class="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center"
+              >
+                <span class="text-2xl">⭐</span>
+              </div>
+              <span class="text-green-500 text-sm font-medium">연속</span>
+            </div>
+            <div class="text-3xl font-bold text-slate-800 mb-1">7일</div>
+            <div class="text-slate-500 text-sm">운동 연속 일수</div>
+          </div>
+        </div>
+
+        <!-- 메인 그리드 레이아웃 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <!-- 주간 운동 기록 (2칸 차지) -->
+          <div
+            class="lg:col-span-2 bg-white rounded-xl p-6 border border-slate-200"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-xl font-bold text-slate-800">주간 운동 기록</h3>
+              <select
+                class="px-3 py-2 border border-slate-300 rounded-lg text-sm"
+              >
+                <option>이번 주</option>
+                <option>지난 주</option>
+                <option>이번 달</option>
+              </select>
+            </div>
+
+            <!-- 간단한 막대 차트 -->
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <span class="w-12 text-sm text-slate-600">월</span>
+                <div
+                  class="flex-1 bg-slate-100 rounded-full h-8 overflow-hidden"
+                >
+                  <div
+                    class="bg-emerald-500 h-full rounded-full flex items-center justify-end pr-3"
+                    style="width: 85%"
+                  >
+                    <span class="text-white text-xs font-medium">60분</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <span class="w-12 text-sm text-slate-600">화</span>
+                <div
+                  class="flex-1 bg-slate-100 rounded-full h-8 overflow-hidden"
+                >
+                  <div
+                    class="bg-emerald-500 h-full rounded-full flex items-center justify-end pr-3"
+                    style="width: 70%"
+                  >
+                    <span class="text-white text-xs font-medium">45분</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <span class="w-12 text-sm text-slate-600">수</span>
+                <div
+                  class="flex-1 bg-slate-100 rounded-full h-8 overflow-hidden"
+                >
+                  <div
+                    class="bg-emerald-500 h-full rounded-full flex items-center justify-end pr-3"
+                    style="width: 90%"
+                  >
+                    <span class="text-white text-xs font-medium">75분</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <span class="w-12 text-sm text-slate-600">목</span>
+                <div
+                  class="flex-1 bg-slate-100 rounded-full h-8 overflow-hidden"
+                >
+                  <div
+                    class="bg-emerald-500 h-full rounded-full flex items-center justify-end pr-3"
+                    style="width: 65%"
+                  >
+                    <span class="text-white text-xs font-medium">40분</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <span class="w-12 text-sm text-slate-600">금</span>
+                <div
+                  class="flex-1 bg-slate-100 rounded-full h-8 overflow-hidden"
+                >
+                  <div
+                    class="bg-emerald-500 h-full rounded-full flex items-center justify-end pr-3"
+                    style="width: 80%"
+                  >
+                    <span class="text-white text-xs font-medium">55분</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <span class="w-12 text-sm text-slate-600">토</span>
+                <div
+                  class="flex-1 bg-slate-100 rounded-full h-8 overflow-hidden"
+                >
+                  <div
+                    class="bg-slate-300 h-full rounded-full flex items-center justify-end pr-3"
+                    style="width: 40%"
+                  >
+                    <span class="text-slate-600 text-xs font-medium">계획</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <span class="w-12 text-sm text-slate-600">일</span>
+                <div
+                  class="flex-1 bg-slate-100 rounded-full h-8 overflow-hidden"
+                >
+                  <div
+                    class="bg-slate-300 h-full rounded-full flex items-center justify-end pr-3"
+                    style="width: 50%"
+                  >
+                    <span class="text-slate-600 text-xs font-medium">계획</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 오늘의 운동 목록 -->
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h3 class="text-xl font-bold text-slate-800 mb-6">오늘의 운동</h3>
+
+            <div class="space-y-4">
+              <div
+                class="flex items-center space-x-4 p-3 bg-emerald-50 rounded-lg border border-emerald-200"
+              >
+                <div
+                  class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <span class="text-white font-bold">✓</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-medium text-slate-800">팔굽혀펴기</div>
+                  <div class="text-sm text-slate-500">30회 × 3세트</div>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center space-x-4 p-3 bg-emerald-50 rounded-lg border border-emerald-200"
+              >
+                <div
+                  class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <span class="text-white font-bold">✓</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-medium text-slate-800">스쿼트</div>
+                  <div class="text-sm text-slate-500">40회 × 3세트</div>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center space-x-4 p-3 bg-slate-50 rounded-lg border border-slate-200"
+              >
+                <div
+                  class="w-10 h-10 bg-slate-300 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <span class="text-slate-600 font-bold">3</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-medium text-slate-800">플랭크</div>
+                  <div class="text-sm text-slate-500">1분 × 3세트</div>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center space-x-4 p-3 bg-slate-50 rounded-lg border border-slate-200"
+              >
+                <div
+                  class="w-10 h-10 bg-slate-300 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <span class="text-slate-600 font-bold">4</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-medium text-slate-800">런지</div>
+                  <div class="text-sm text-slate-500">20회 × 3세트</div>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center space-x-4 p-3 bg-slate-50 rounded-lg border border-slate-200"
+              >
+                <div
+                  class="w-10 h-10 bg-slate-300 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <span class="text-slate-600 font-bold">5</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-medium text-slate-800">버피 테스트</div>
+                  <div class="text-sm text-slate-500">15회 × 3세트</div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="w-full mt-4 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition"
+            >
+              + 운동 추가
+            </button>
+          </div>
+        </div>
+
+        <!-- 하단 그리드 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- 최근 활동 -->
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h3 class="text-xl font-bold text-slate-800 mb-6">최근 활동</h3>
+
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <span>🏃</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-medium text-slate-800">러닝 5km 완료</div>
+                  <div class="text-sm text-slate-500">2시간 전 · 280 kcal</div>
+                </div>
+                <div class="text-emerald-500 font-medium text-sm">+20</div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <span>💪</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-medium text-slate-800">근력 운동 완료</div>
+                  <div class="text-sm text-slate-500">어제 · 350 kcal</div>
+                </div>
+                <div class="text-emerald-500 font-medium text-sm">+25</div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <span>🧘</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-medium text-slate-800">요가 30분 완료</div>
+                  <div class="text-sm text-slate-500">2일 전 · 150 kcal</div>
+                </div>
+                <div class="text-emerald-500 font-medium text-sm">+15</div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0"
+                >
+                  <span>🚴</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-medium text-slate-800">사이클 10km 완료</div>
+                  <div class="text-sm text-slate-500">3일 전 · 400 kcal</div>
+                </div>
+                <div class="text-emerald-500 font-medium text-sm">+30</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 이번 달 달성 목표 -->
+          <div class="bg-white rounded-xl p-6 border border-slate-200">
+            <h3 class="text-xl font-bold text-slate-800 mb-6">이번 달 목표</h3>
+
+            <div class="space-y-6">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🏃</span>
+                    <span class="font-medium text-slate-800">러닝 100km</span>
+                  </div>
+                  <span class="text-sm text-slate-500">73 / 100 km</span>
+                </div>
+                <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-blue-500 rounded-full"
+                    style="width: 73%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center space-x-2">
+                    <span class="text-2xl">💪</span>
+                    <span class="font-medium text-slate-800"
+                      >근력 운동 20회</span
+                    >
+                  </div>
+                  <span class="text-sm text-slate-500">15 / 20 회</span>
+                </div>
+                <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-purple-500 rounded-full"
+                    style="width: 75%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🔥</span>
+                    <span class="font-medium text-slate-800"
+                      >50,000 kcal 소모</span
+                    >
+                  </div>
+                  <span class="text-sm text-slate-500"
+                    >38,500 / 50,000 kcal</span
+                  >
+                </div>
+                <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-orange-500 rounded-full"
+                    style="width: 77%"
+                  ></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center space-x-2">
+                    <span class="text-2xl">⭐</span>
+                    <span class="font-medium text-slate-800"
+                      >연속 운동 30일</span
+                    >
+                  </div>
+                  <span class="text-sm text-slate-500">17 / 30 일</span>
+                </div>
+                <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-emerald-500 rounded-full"
+                    style="width: 57%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

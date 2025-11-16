@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bella Cucina - 중급 과제</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 네비게이션 바 -->
+    <nav>
+      <div>
+        <div>
+          <div>
+            <div>🍝</div>
+            <h1>Bella Cucina</h1>
+          </div>
+          <div>
+            <a href="#">메뉴</a>
+            <a href="#">예약</a>
+            <a href="#">위치</a>
+            <a href="#">연락처</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <div>
+      <h2>정통 이탈리안 레스토랑</h2>
+      <p>신선한 재료로 만드는 진정한 이탈리아의 맛</p>
+      <div>
+        <button>지금 예약하기</button>
+        <button>메뉴 보기</button>
+      </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div>
+      <!-- 영업 정보 -->
+      <div>
+        <div>
+          <div>
+            <div>
+              <span>🕐</span>
+            </div>
+            <div>
+              <h3>영업시간</h3>
+              <p>런치 11:30-15:00</p>
+              <p>디너 17:30-22:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <div>
+              <span>📍</span>
+            </div>
+            <div>
+              <h3>위치</h3>
+              <p>서울 강남구 테헤란로</p>
+              <p>456번길 12</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <div>
+              <span>☎️</span>
+            </div>
+            <div>
+              <h3>예약문의</h3>
+              <p>02-1234-5678</p>
+              <p>bella@email.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 추천 메뉴 섹션 -->
+      <h3>🍴 오늘의 추천 메뉴</h3>
+
+      <!-- 메뉴 아이템들 -->
+      <div>
+        <!-- 메뉴 1 -->
+        <div>
+          <div>
+            <div></div>
+            <div>
+              <h4>마르게리타 피자</h4>
+              <p>신선한 토마토, 모짜렐라 치즈, 바질의 완벽한 조화</p>
+              <div>
+                <span>베스트</span>
+                <span>채식</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>18,000원</p>
+            <button>주문</button>
+          </div>
+        </div>
+
+        <!-- 메뉴 2 -->
+        <div>
+          <div>
+            <div></div>
+            <div>
+              <h4>까르보나라</h4>
+              <p>크림 소스와 베이컨의 고소한 파스타</p>
+              <div>
+                <span>인기</span>
+                <span>시그니처</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>16,000원</p>
+            <button>주문</button>
+          </div>
+        </div>
+
+        <!-- 메뉴 3 -->
+        <div>
+          <div>
+            <div></div>
+            <div>
+              <h4>리조또 알 펀기</h4>
+              <p>신선한 버섯과 파마산 치즈의 크리미한 리조또</p>
+              <div>
+                <span>셰프 추천</span>
+                <span>채식</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>19,000원</p>
+            <button>주문</button>
+          </div>
+        </div>
+
+        <!-- 메뉴 4 -->
+        <div>
+          <div>
+            <div></div>
+            <div>
+              <h4>오소부코</h4>
+              <p>천천히 조린 송아지 정강이 스튜</p>
+              <div>
+                <span>메인 요리</span>
+                <span>특별 메뉴</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>32,000원</p>
+            <button>주문</button>
+          </div>
+        </div>
+
+        <!-- 메뉴 5 -->
+        <div>
+          <div>
+            <div></div>
+            <div>
+              <h4>페스토 파스타</h4>
+              <p>바질 페스토 소스의 신선한 파스타</p>
+              <div>
+                <span>건강식</span>
+                <span>채식</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>17,000원</p>
+            <button>주문</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 코스 메뉴 -->
+      <div>
+        <h3>🍷 프리미엄 코스 메뉴</h3>
+
+        <div>
+          <!-- 코스 A -->
+          <div>
+            <div>
+              <h4>런치 코스</h4>
+              <p>35,000원</p>
+              <p>1인 기준</p>
+            </div>
+            <div>
+              <div>
+                <span>✓</span>
+                <p>애피타이저 (브루스케타)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>샐러드 (시저 샐러드)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>메인 (파스타 or 피자 선택)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>디저트 (티라미수)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>음료 (커피 or 주스)</p>
+              </div>
+            </div>
+            <button>예약하기</button>
+          </div>
+
+          <!-- 코스 B -->
+          <div>
+            <div>
+              <span>BEST</span>
+              <h4>디너 코스</h4>
+              <p>55,000원</p>
+              <p>1인 기준</p>
+            </div>
+            <div>
+              <div>
+                <span>✓</span>
+                <p>애피타이저 (까르파치오)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>수프 (미네스트로네)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>샐러드 (루꼴라 샐러드)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>메인 (스테이크 or 해산물 리조또)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>디저트 (판나코타)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>음료 (와인 1잔 포함)</p>
+              </div>
+            </div>
+            <button>예약하기</button>
+          </div>
+
+          <!-- 코스 C -->
+          <div>
+            <div>
+              <h4>스페셜 코스</h4>
+              <p>85,000원</p>
+              <p>1인 기준</p>
+            </div>
+            <div>
+              <div>
+                <span>✓</span>
+                <p>아뮤즈부쉬 (셰프 특선)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>애피타이저 (랍스터 샐러드)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>수프 (트러플 크림 수프)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>파스타 (셰프 특선 파스타)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>메인 (프라임 등심 스테이크)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>디저트 (디저트 플래터)</p>
+              </div>
+              <div>
+                <span>✓</span>
+                <p>음료 (프리미엄 와인 페어링)</p>
+              </div>
+            </div>
+            <button>예약하기</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 고객 후기 -->
+      <div>
+        <h3>💬 고객 후기</h3>
+
+        <div>
+          <div>
+            <div>
+              <div>
+                <div></div>
+                <div>
+                  <p>김민수</p>
+                  <p>2024.11.10</p>
+                </div>
+              </div>
+              <div>⭐⭐⭐⭐⭐</div>
+            </div>
+            <p>
+              정말 맛있었어요! 특히 까르보나라가 일품이었습니다. 분위기도 좋고
+              직원분들도 친절하셨어요.
+            </p>
+          </div>
+
+          <div>
+            <div>
+              <div>
+                <div></div>
+                <div>
+                  <p>이지은</p>
+                  <p>2024.11.08</p>
+                </div>
+              </div>
+              <div>⭐⭐⭐⭐⭐</div>
+            </div>
+            <p>
+              디너 코스를 먹었는데 처음부터 끝까지 완벽했습니다. 특별한 날에 꼭
+              다시 방문하고 싶어요!
+            </p>
+          </div>
+
+          <div>
+            <div>
+              <div>
+                <div></div>
+                <div>
+                  <p>박준혁</p>
+                  <p>2024.11.05</p>
+                </div>
+              </div>
+              <div>⭐⭐⭐⭐</div>
+            </div>
+            <p>
+              피자가 정말 맛있어요. 이탈리아에서 먹었던 것과 비슷한
+              맛이었습니다. 재방문 의사 100%!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer>
+      <div>
+        <div>
+          <div>
+            <p>🍝 Bella Cucina</p>
+            <p>진정한 이탈리아의 맛을 경험하세요</p>
+          </div>
+          <div>
+            <p>만든 사람: <span>[이름을 입력하세요]</span></p>
+            <p>2025 · 가히의 TailwindCSS 과제</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

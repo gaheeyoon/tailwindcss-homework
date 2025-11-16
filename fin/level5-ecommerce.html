@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechStore - 최상급 과제</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap");
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+      .scroll-smooth {
+        scroll-behavior: smooth;
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-slide-up {
+        animation: slideUp 0.5s ease-out;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 scroll-smooth">
+    <!-- Top Bar -->
+    <div class="bg-slate-900 text-white py-2">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between text-sm"
+        >
+          <div class="flex items-center space-x-4 mb-2 sm:mb-0">
+            <span>🚚 무료배송</span>
+            <span class="hidden sm:inline">|</span>
+            <span>📞 1588-1234</span>
+          </div>
+          <div class="flex items-center space-x-4">
+            <a href="#" class="hover:text-emerald-400 transition">로그인</a>
+            <span>|</span>
+            <a href="#" class="hover:text-emerald-400 transition">회원가입</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <div class="flex items-center space-x-2">
+            <div
+              class="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center"
+            >
+              <span class="text-white font-bold text-xl">T</span>
+            </div>
+            <span class="text-2xl font-bold text-slate-800">TechStore</span>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#"
+              class="text-slate-600 hover:text-emerald-600 font-medium transition"
+              >신제품</a
+            >
+            <a
+              href="#"
+              class="text-slate-600 hover:text-emerald-600 font-medium transition"
+              >베스트</a
+            >
+            <a
+              href="#"
+              class="text-slate-600 hover:text-emerald-600 font-medium transition"
+              >특가</a
+            >
+            <a
+              href="#"
+              class="text-slate-600 hover:text-emerald-600 font-medium transition"
+              >이벤트</a
+            >
+          </div>
+
+          <!-- Right Icons -->
+          <div class="flex items-center space-x-4">
+            <button class="text-slate-600 hover:text-emerald-600 transition">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
+            <button class="text-slate-600 hover:text-emerald-600 transition">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                />
+              </svg>
+            </button>
+            <button
+              class="relative text-slate-600 hover:text-emerald-600 transition"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              <span
+                class="absolute -top-1 -right-1 w-5 h-5 bg-emerald-600 text-white text-xs rounded-full flex items-center justify-center"
+                >3</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div class="animate-slide-up">
+            <div
+              class="inline-block px-4 py-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-sm mb-4"
+            >
+              🎉 신제품 출시
+            </div>
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
+            >
+              혁신적인<br />
+              무선 이어폰
+            </h1>
+            <p class="text-xl text-emerald-100 mb-8">
+              프리미엄 사운드를 경험하세요
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button
+                class="px-8 py-4 bg-white text-emerald-600 rounded-lg font-bold text-lg hover:bg-emerald-50 transition shadow-lg"
+              >
+                지금 구매하기
+              </button>
+              <button
+                class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-bold text-lg hover:bg-white hover:text-emerald-600 transition"
+              >
+                자세히 보기
+              </button>
+            </div>
+          </div>
+          <div class="flex justify-center lg:justify-end">
+            <div
+              class="w-80 h-80 bg-white bg-opacity-10 backdrop-blur-sm rounded-3xl"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="bg-white border-b border-slate-200 sticky top-16 z-40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex overflow-x-auto space-x-2 py-4 scrollbar-hide">
+          <button
+            class="px-6 py-2 bg-emerald-600 text-white rounded-full whitespace-nowrap font-medium"
+          >
+            전체
+          </button>
+          <button
+            class="px-6 py-2 bg-slate-100 text-slate-600 rounded-full whitespace-nowrap font-medium hover:bg-slate-200 transition"
+          >
+            스마트폰
+          </button>
+          <button
+            class="px-6 py-2 bg-slate-100 text-slate-600 rounded-full whitespace-nowrap font-medium hover:bg-slate-200 transition"
+          >
+            노트북
+          </button>
+          <button
+            class="px-6 py-2 bg-slate-100 text-slate-600 rounded-full whitespace-nowrap font-medium hover:bg-slate-200 transition"
+          >
+            태블릿
+          </button>
+          <button
+            class="px-6 py-2 bg-slate-100 text-slate-600 rounded-full whitespace-nowrap font-medium hover:bg-slate-200 transition"
+          >
+            웨어러블
+          </button>
+          <button
+            class="px-6 py-2 bg-slate-100 text-slate-600 rounded-full whitespace-nowrap font-medium hover:bg-slate-200 transition"
+          >
+            오디오
+          </button>
+          <button
+            class="px-6 py-2 bg-slate-100 text-slate-600 rounded-full whitespace-nowrap font-medium hover:bg-slate-200 transition"
+          >
+            액세서리
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Special Offers Banner -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div
+          class="relative bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white overflow-hidden group cursor-pointer"
+        >
+          <div
+            class="absolute top-0 right-0 w-40 h-40 bg-white opacity-10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500"
+          ></div>
+          <div class="relative z-10">
+            <span
+              class="inline-block px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-sm mb-3"
+              >한정 특가</span
+            >
+            <h3 class="text-3xl font-bold mb-2">스마트워치</h3>
+            <p class="text-blue-100 mb-4">최대 30% 할인</p>
+            <button
+              class="px-6 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition"
+            >
+              보러가기 →
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="relative bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-8 text-white overflow-hidden group cursor-pointer"
+        >
+          <div
+            class="absolute top-0 right-0 w-40 h-40 bg-white opacity-10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-500"
+          ></div>
+          <div class="relative z-10">
+            <span
+              class="inline-block px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-sm mb-3"
+              >신규 출시</span
+            >
+            <h3 class="text-3xl font-bold mb-2">게이밍 노트북</h3>
+            <p class="text-purple-100 mb-4">사은품 증정</p>
+            <button
+              class="px-6 py-2 bg-white text-purple-600 rounded-lg font-medium hover:bg-purple-50 transition"
+            >
+              보러가기 →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter & Sort -->
+      <div
+        class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4"
+      >
+        <div>
+          <h2 class="text-3xl font-bold text-slate-800 mb-2">인기 상품</h2>
+          <p class="text-slate-600">지금 가장 많이 판매되는 제품들</p>
+        </div>
+        <div class="flex items-center space-x-4">
+          <select
+            class="px-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          >
+            <option>인기순</option>
+            <option>최신순</option>
+            <option>낮은 가격순</option>
+            <option>높은 가격순</option>
+            <option>할인율순</option>
+          </select>
+          <button
+            class="p-2 border border-slate-300 rounded-lg hover:bg-slate-50 transition"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <button
+            class="p-2 border border-slate-300 rounded-lg hover:bg-slate-50 transition"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <!-- Product Card 1 -->
+        <div
+          class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+        >
+          <div class="relative aspect-square bg-slate-100 overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-emerald-200 to-teal-300"
+            ></div>
+            <div class="absolute top-3 left-3">
+              <span
+                class="px-3 py-1 bg-red-500 text-white text-xs rounded-full font-medium"
+                >30% OFF</span
+              >
+            </div>
+            <div class="absolute top-3 right-3 flex flex-col space-y-2">
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button
+              class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-emerald-600 text-white rounded-lg font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-emerald-700"
+            >
+              장바구니 담기
+            </button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center space-x-1 mb-2">
+              <span class="text-yellow-400">⭐</span>
+              <span class="text-sm font-medium text-slate-700">4.8</span>
+              <span class="text-sm text-slate-400">(234)</span>
+            </div>
+            <h3 class="font-semibold text-slate-800 mb-2 line-clamp-2">
+              프리미엄 무선 이어폰 Pro Max
+            </h3>
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="text-2xl font-bold text-emerald-600">139,000원</span>
+              <span class="text-sm text-slate-400 line-through">199,000원</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-500">무료배송</span>
+              <span
+                class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full font-medium"
+                >오늘 출발</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div
+          class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+        >
+          <div class="relative aspect-square bg-slate-100 overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-blue-200 to-indigo-300"
+            ></div>
+            <div class="absolute top-3 left-3">
+              <span
+                class="px-3 py-1 bg-blue-600 text-white text-xs rounded-full font-medium"
+                >BEST</span
+              >
+            </div>
+            <div class="absolute top-3 right-3 flex flex-col space-y-2">
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button
+              class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-emerald-600 text-white rounded-lg font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-emerald-700"
+            >
+              장바구니 담기
+            </button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center space-x-1 mb-2">
+              <span class="text-yellow-400">⭐</span>
+              <span class="text-sm font-medium text-slate-700">4.9</span>
+              <span class="text-sm text-slate-400">(567)</span>
+            </div>
+            <h3 class="font-semibold text-slate-800 mb-2 line-clamp-2">
+              울트라 슬림 노트북 15.6인치
+            </h3>
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="text-2xl font-bold text-emerald-600"
+                >1,299,000원</span
+              >
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-500">무료배송</span>
+              <span
+                class="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded-full font-medium"
+                >베스트</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div
+          class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+        >
+          <div class="relative aspect-square bg-slate-100 overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-purple-200 to-pink-300"
+            ></div>
+            <div class="absolute top-3 left-3">
+              <span
+                class="px-3 py-1 bg-purple-600 text-white text-xs rounded-full font-medium"
+                >NEW</span
+              >
+            </div>
+            <div class="absolute top-3 right-3 flex flex-col space-y-2">
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button
+              class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-emerald-600 text-white rounded-lg font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-emerald-700"
+            >
+              장바구니 담기
+            </button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center space-x-1 mb-2">
+              <span class="text-yellow-400">⭐</span>
+              <span class="text-sm font-medium text-slate-700">5.0</span>
+              <span class="text-sm text-slate-400">(89)</span>
+            </div>
+            <h3 class="font-semibold text-slate-800 mb-2 line-clamp-2">
+              스마트워치 Series 7 GPS + Cellular
+            </h3>
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="text-2xl font-bold text-emerald-600">549,000원</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-500">무료배송</span>
+              <span
+                class="px-2 py-1 bg-purple-50 text-purple-700 text-xs rounded-full font-medium"
+                >신상</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div
+          class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+        >
+          <div class="relative aspect-square bg-slate-100 overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-orange-200 to-red-300"
+            ></div>
+            <div class="absolute top-3 left-3">
+              <span
+                class="px-3 py-1 bg-red-500 text-white text-xs rounded-full font-medium"
+                >20% OFF</span
+              >
+            </div>
+            <div class="absolute top-3 right-3 flex flex-col space-y-2">
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button
+              class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-emerald-600 text-white rounded-lg font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-emerald-700"
+            >
+              장바구니 담기
+            </button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center space-x-1 mb-2">
+              <span class="text-yellow-400">⭐</span>
+              <span class="text-sm font-medium text-slate-700">4.7</span>
+              <span class="text-sm text-slate-400">(412)</span>
+            </div>
+            <h3 class="font-semibold text-slate-800 mb-2 line-clamp-2">
+              태블릿 12.9인치 Wi-Fi 256GB
+            </h3>
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="text-2xl font-bold text-emerald-600">799,000원</span>
+              <span class="text-sm text-slate-400 line-through">999,000원</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-500">무료배송</span>
+              <span
+                class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full font-medium"
+                >오늘 출발</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 5 -->
+        <div
+          class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+        >
+          <div class="relative aspect-square bg-slate-100 overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-teal-200 to-cyan-300"
+            ></div>
+            <div class="absolute top-3 right-3 flex flex-col space-y-2">
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button
+              class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-emerald-600 text-white rounded-lg font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-emerald-700"
+            >
+              장바구니 담기
+            </button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center space-x-1 mb-2">
+              <span class="text-yellow-400">⭐</span>
+              <span class="text-sm font-medium text-slate-700">4.6</span>
+              <span class="text-sm text-slate-400">(198)</span>
+            </div>
+            <h3 class="font-semibold text-slate-800 mb-2 line-clamp-2">
+              블루투스 스피커 포터블 방수
+            </h3>
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="text-2xl font-bold text-emerald-600">89,000원</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-500">무료배송</span>
+              <span
+                class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full font-medium"
+                >오늘 출발</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 6 -->
+        <div
+          class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+        >
+          <div class="relative aspect-square bg-slate-100 overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-rose-200 to-pink-300"
+            ></div>
+            <div class="absolute top-3 left-3">
+              <span
+                class="px-3 py-1 bg-rose-500 text-white text-xs rounded-full font-medium"
+                >15% OFF</span
+              >
+            </div>
+            <div class="absolute top-3 right-3 flex flex-col space-y-2">
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button
+              class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-emerald-600 text-white rounded-lg font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-emerald-700"
+            >
+              장바구니 담기
+            </button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center space-x-1 mb-2">
+              <span class="text-yellow-400">⭐</span>
+              <span class="text-sm font-medium text-slate-700">4.8</span>
+              <span class="text-sm text-slate-400">(345)</span>
+            </div>
+            <h3 class="font-semibold text-slate-800 mb-2 line-clamp-2">
+              무선 충전기 15W 고속충전
+            </h3>
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="text-2xl font-bold text-emerald-600">42,500원</span>
+              <span class="text-sm text-slate-400 line-through">50,000원</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-500">무료배송</span>
+              <span
+                class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full font-medium"
+                >오늘 출발</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 7 -->
+        <div
+          class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+        >
+          <div class="relative aspect-square bg-slate-100 overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-amber-200 to-yellow-300"
+            ></div>
+            <div class="absolute top-3 right-3 flex flex-col space-y-2">
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button
+              class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-emerald-600 text-white rounded-lg font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-emerald-700"
+            >
+              장바구니 담기
+            </button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center space-x-1 mb-2">
+              <span class="text-yellow-400">⭐</span>
+              <span class="text-sm font-medium text-slate-700">4.5</span>
+              <span class="text-sm text-slate-400">(276)</span>
+            </div>
+            <h3 class="font-semibold text-slate-800 mb-2 line-clamp-2">
+              USB-C 멀티포트 허브 7in1
+            </h3>
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="text-2xl font-bold text-emerald-600">35,000원</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-500">무료배송</span>
+              <span
+                class="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full font-medium"
+                >오늘 출발</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 8 -->
+        <div
+          class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+        >
+          <div class="relative aspect-square bg-slate-100 overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-slate-300 to-slate-400"
+            ></div>
+            <div class="absolute top-3 left-3">
+              <span
+                class="px-3 py-1 bg-slate-700 text-white text-xs rounded-full font-medium"
+                >PREMIUM</span
+              >
+            </div>
+            <div class="absolute top-3 right-3 flex flex-col space-y-2">
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-emerald-600 hover:text-white transition opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button
+              class="absolute bottom-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-emerald-600 text-white rounded-lg font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-emerald-700"
+            >
+              장바구니 담기
+            </button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center space-x-1 mb-2">
+              <span class="text-yellow-400">⭐</span>
+              <span class="text-sm font-medium text-slate-700">4.9</span>
+              <span class="text-sm text-slate-400">(623)</span>
+            </div>
+            <h3 class="font-semibold text-slate-800 mb-2 line-clamp-2">
+              노이즈캔슬링 헤드폰 프리미엄
+            </h3>
+            <div class="flex items-center space-x-2 mb-3">
+              <span class="text-2xl font-bold text-emerald-600">379,000원</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-500">무료배송</span>
+              <span
+                class="px-2 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium"
+                >프리미엄</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Load More Button -->
+      <div class="text-center">
+        <button
+          class="px-8 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg font-medium transition"
+        >
+          더 많은 상품 보기
+        </button>
+      </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="bg-slate-800 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center mb-8">
+          <h3 class="text-3xl font-bold text-white mb-3">뉴스레터 구독</h3>
+          <p class="text-slate-300">
+            최신 제품 소식과 특별 할인 정보를 받아보세요
+          </p>
+        </div>
+        <div class="max-w-xl mx-auto">
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              placeholder="이메일 주소를 입력하세요"
+              class="flex-1 px-6 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            />
+            <button
+              class="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition whitespace-nowrap"
+            >
+              구독하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <div
+                class="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center"
+              >
+                <span class="text-white font-bold text-xl">T</span>
+              </div>
+              <span class="text-2xl font-bold text-white">TechStore</span>
+            </div>
+            <p class="text-sm mb-4">프리미엄 테크 제품을 만나보세요</p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"
+              >
+                <span>📘</span>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"
+              >
+                <span>📷</span>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"
+              >
+                <span>🐦</span>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-4">쇼핑 정보</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition"
+                  >배송 안내</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition"
+                  >교환 및 반품</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition"
+                  >결제 방법</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition"
+                  >적립금 제도</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-4">고객 서비스</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition"
+                  >공지사항</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition"
+                  >자주 묻는 질문</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition"
+                  >1:1 문의</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition"
+                  >매장 안내</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold mb-4">고객센터</h4>
+            <p class="text-2xl font-bold text-white mb-2">1588-1234</p>
+            <p class="text-sm mb-3">
+              평일 09:00 - 18:00<br />주말 및 공휴일 휴무
+            </p>
+            <button
+              class="px-4 py-2 bg-slate-800 hover:bg-emerald-600 text-white rounded-lg text-sm transition"
+            >
+              카카오톡 상담
+            </button>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-800 pt-8">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between text-sm"
+          >
+            <p>© 2024 TechStore. All rights reserved.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+              <a href="#" class="hover:text-emerald-400 transition">이용약관</a>
+              <a href="#" class="hover:text-emerald-400 transition"
+                >개인정보처리방침</a
+              >
+              <a href="#" class="hover:text-emerald-400 transition"
+                >사업자정보</a
+              >
+            </div>
+          </div>
+          <p class="text-center text-slate-500 text-xs mt-4">
+            만든 사람:
+            <span class="text-slate-300 mr-20">[이름을 입력하세요]</span>2025 ·
+            가히의 TailwindCSS 과제
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button
+      class="fixed bottom-8 right-8 w-14 h-14 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full shadow-lg flex items-center justify-center transition transform hover:scale-110"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        />
+      </svg>
+    </button>
+  </body>
+</html>

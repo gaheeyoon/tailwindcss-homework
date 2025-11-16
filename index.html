@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가히의 TailwindCSS 과제 모음</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap");
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50">
+    <!-- 헤더 -->
+    <header
+      class="bg-white border-b border-slate-200 sticky top-0 z-10 shadow-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="text-center">
+          <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 mb-2">
+            가히의 TailwindCSS 과제 모음
+          </h1>
+          <p class="text-slate-600">레벨별 예제로 배우는 TailwindCSS</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex flex-wrap justify-center gap-3">
+          <a
+            href="#level1"
+            class="px-5 py-2 bg-slate-100 text-slate-600 rounded-lg font-medium hover:bg-slate-200 transition"
+          >
+            Level 1
+          </a>
+          <a
+            href="#level2"
+            class="px-5 py-2 bg-slate-100 text-slate-600 rounded-lg font-medium hover:bg-slate-200 transition"
+          >
+            Level 2
+          </a>
+          <a
+            href="#level3"
+            class="px-5 py-2 bg-slate-100 text-slate-600 rounded-lg font-medium hover:bg-slate-200 transition"
+          >
+            Level 3
+          </a>
+          <a
+            href="#level4"
+            class="px-5 py-2 bg-slate-100 text-slate-600 rounded-lg font-medium hover:bg-slate-200 transition"
+          >
+            Level 4
+          </a>
+          <a
+            href="#level5"
+            class="px-5 py-2 bg-slate-100 text-slate-600 rounded-lg font-medium hover:bg-slate-200 transition"
+          >
+            Level 5
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Level 1 섹션 -->
+      <section class="mb-16" id="level1">
+        <div class="flex items-center mb-8">
+          <div class="flex-1 h-px bg-slate-200"></div>
+          <h2 class="px-6 text-2xl sm:text-3xl font-bold text-slate-800">
+            Level 1 - 초급
+          </h2>
+          <div class="flex-1 h-px bg-slate-200"></div>
+        </div>
+        <p class="text-slate-600 text-center mb-8">
+          기본 색상, 패딩, 마진, 정렬 등 기초 개념
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- 예제 1 -->
+          <a href="fin/level1-my-pet.html" class="group">
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="aspect-video bg-gradient-to-br from-emerald-100 to-teal-200 flex items-center justify-center"
+              >
+                <div class="text-6xl">🐶</div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
+                    >Level 1</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm"
+                    >반응형 ❌</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition"
+                >
+                  나의 반려동물
+                </h3>
+                <p class="text-slate-600 text-sm mb-4">
+                  기본 색상, 패딩, 마진, 정렬, 둥근 모서리, 그림자 등 기초
+                  스타일 연습
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >배경색</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >패딩/마진</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >rounded</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >shadow</span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- 예제 2 -->
+          <a href="fin/level1-my-hobby.html" class="group">
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="aspect-video bg-gradient-to-br from-indigo-100 to-purple-200 flex items-center justify-center"
+              >
+                <div class="text-6xl">🎨</div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
+                    >Level 1</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm"
+                    >반응형 ❌</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition"
+                >
+                  나의 취미
+                </h3>
+                <p class="text-slate-600 text-sm mb-4">
+                  취미 활동을 소개하는 페이지로 기본 레이아웃과 스타일링 연습
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >border-l</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >leading</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >이모지</span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- 예제 3 -->
+          <a href="level1-reading-list.html" class="group">
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="aspect-video bg-gradient-to-br from-amber-100 to-orange-200 flex items-center justify-center"
+              >
+                <div class="text-6xl">📚</div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
+                    >Level 1</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm"
+                    >반응형 ❌</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition"
+                >
+                  독서 목록
+                </h3>
+                <p class="text-slate-600 text-sm mb-4">
+                  읽은 책을 기록하는 페이지로 리스트 패턴과 프로그레스 바 연습
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >리스트</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >progress</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >카테고리</span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Level 2 섹션 -->
+      <section class="mb-16" id="level2">
+        <div class="flex items-center mb-8">
+          <div class="flex-1 h-px bg-slate-200"></div>
+          <h2 class="px-6 text-2xl sm:text-3xl font-bold text-slate-800">
+            Level 2 - 중급
+          </h2>
+          <div class="flex-1 h-px bg-slate-200"></div>
+        </div>
+        <p class="text-slate-600 text-center mb-8">
+          Flexbox 기초, space 시스템, hover 효과
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- 예제 1 -->
+          <a href="fin/level2-cafe-menu.html" class="group">
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="aspect-video bg-gradient-to-br from-amber-100 to-yellow-200 flex items-center justify-center"
+              >
+                <div class="text-6xl">☕</div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span
+                    class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                    >Level 2</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm"
+                    >반응형 ❌</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition"
+                >
+                  카페 메뉴
+                </h3>
+                <p class="text-slate-600 text-sm mb-4">
+                  Flexbox로 만드는 카페 메뉴 페이지, 좌우 정렬과 간격 조절 연습
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >flex</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >space-x</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >hover</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >badge</span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- 예제 2 -->
+          <a href="fin/level2-restaurant.html" class="group">
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="aspect-video bg-gradient-to-br from-rose-100 to-pink-200 flex items-center justify-center"
+              >
+                <div class="text-6xl">🍝</div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span
+                    class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                    >Level 2</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm"
+                    >반응형 ❌</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition"
+                >
+                  레스토랑 예약
+                </h3>
+                <p class="text-slate-600 text-sm mb-4">
+                  이탈리안 레스토랑 페이지로 복잡한 Flexbox 레이아웃 연습
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >flex-1</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >justify-between</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >코스메뉴</span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Level 3 섹션 -->
+      <section class="mb-16" id="level3">
+        <div class="flex items-center mb-8">
+          <div class="flex-1 h-px bg-slate-200"></div>
+          <h2 class="px-6 text-2xl sm:text-3xl font-bold text-slate-800">
+            Level 3 - 중상급
+          </h2>
+          <div class="flex-1 h-px bg-slate-200"></div>
+        </div>
+        <p class="text-slate-600 text-center mb-8">
+          Grid 레이아웃, Grid Span, Group Hover, Transition
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- 예제 1 -->
+          <a href="fin/level3-travel-diary.html" class="group">
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="aspect-video bg-gradient-to-br from-sky-100 to-blue-200 flex items-center justify-center"
+              >
+                <div class="text-6xl">✈️</div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span
+                    class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                    >Level 3</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm"
+                    >반응형 ❌</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition"
+                >
+                  여행 다이어리
+                </h3>
+                <p class="text-slate-600 text-sm mb-4">
+                  Grid로 만드는 여행 갤러리와 타임라인, 비대칭 레이아웃 연습
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >grid</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >col-span</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >group-hover</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >타임라인</span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- 예제 2 -->
+          <a href="fin/level3-real-estate.html" class="group">
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="aspect-video bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center"
+              >
+                <div class="text-6xl">🏠</div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span
+                    class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                    >Level 3</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm"
+                    >반응형 ❌</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition"
+                >
+                  부동산 매물
+                </h3>
+                <p class="text-slate-600 text-sm mb-4">
+                  부동산 갤러리로 배우는 복잡한 Grid 레이아웃과 오버레이 효과
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >grid-cols-3</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >backdrop-blur</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >sticky</span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Level 4 섹션 -->
+      <section class="mb-16" id="level4">
+        <div class="flex items-center mb-8">
+          <div class="flex-1 h-px bg-slate-200"></div>
+          <h2 class="px-6 text-2xl sm:text-3xl font-bold text-slate-800">
+            Level 4 - 상급
+          </h2>
+          <div class="flex-1 h-px bg-slate-200"></div>
+        </div>
+        <p class="text-slate-600 text-center mb-8">
+          복합 레이아웃, 반응형 디자인 (sm:, lg:), 사이드바
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- 예제 1 -->
+          <a href="fin/level4-fitness-dashboard.html" class="group">
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="aspect-video bg-gradient-to-br from-emerald-100 to-teal-200 flex items-center justify-center"
+              >
+                <div class="text-6xl">💪</div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span
+                    class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium"
+                    >Level 4</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm"
+                    >반응형 ✅</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition"
+                >
+                  피트니스 대시보드
+                </h3>
+                <p class="text-slate-600 text-sm mb-4">
+                  사이드바와 반응형 레이아웃을 배우는 운동 관리 대시보드
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >sidebar</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >sm:lg:</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >gradient</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >dashboard</span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Level 5 섹션 -->
+      <section class="mb-16" id="level5">
+        <div class="flex items-center mb-8">
+          <div class="flex-1 h-px bg-slate-200"></div>
+          <h2 class="px-6 text-2xl sm:text-3xl font-bold text-slate-800">
+            Level 5 - 최상급
+          </h2>
+          <div class="flex-1 h-px bg-slate-200"></div>
+        </div>
+        <p class="text-slate-600 text-center mb-8">
+          모든 고급 기법 종합, 커스텀 애니메이션, 상업용 수준 UI
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- 예제 1 -->
+          <a href="fin/level5-ecommerce.html" class="group">
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="aspect-video bg-gradient-to-br from-emerald-100 to-teal-200 flex items-center justify-center"
+              >
+                <div class="text-6xl">🛍️</div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium"
+                    >Level 5</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm"
+                    >반응형 ✅</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition"
+                >
+                  E-commerce 쇼핑몰
+                </h3>
+                <p class="text-slate-600 text-sm mb-4">
+                  실전 쇼핑몰 UI로 배우는 모든 TailwindCSS 고급 기법
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >@keyframes</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >transform</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >line-clamp</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >상업용</span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- 보너스: 음악 대시보드 -->
+          <a href="fin/level5-music-playlist-dashboard.html" class="group">
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div
+                class="aspect-video bg-gradient-to-br from-purple-100 to-pink-200 flex items-center justify-center"
+              >
+                <div class="text-6xl">🎵</div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium"
+                    >Bonus</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm"
+                    >반응형 ✅</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition"
+                >
+                  음악 플레이리스트
+                </h3>
+                <p class="text-slate-600 text-sm mb-4">
+                  음악 스트리밍 서비스 스타일의 인터랙티브 대시보드
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >glassmorphism</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >fixed player</span
+                  >
+                  <span
+                    class="px-2 py-1 bg-indigo-50 text-indigo-600 rounded text-xs"
+                    >music</span
+                  >
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="bg-slate-800 py-12 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="text-4xl mb-4">🎨</div>
+        <h3 class="text-2xl font-bold text-white mb-3">
+          TailwindCSS 완전 정복
+        </h3>
+        <p class="text-slate-400 mb-6">
+          기초부터 실전까지, 단계별로 배우는 TailwindCSS
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+          <div class="px-4 py-2 bg-slate-700 rounded-lg">
+            <div class="text-2xl font-bold text-white">13</div>
+            <div class="text-slate-400 text-sm">전체 예제</div>
+          </div>
+          <div class="px-4 py-2 bg-slate-700 rounded-lg">
+            <div class="text-2xl font-bold text-white">5</div>
+            <div class="text-slate-400 text-sm">난이도 레벨</div>
+          </div>
+          <div class="px-4 py-2 bg-slate-700 rounded-lg">
+            <div class="text-2xl font-bold text-white">100+</div>
+            <div class="text-slate-400 text-sm">학습 개념</div>
+          </div>
+        </div>
+        <p class="text-slate-500 text-sm">
+          2025 · 가히의 TailwindCSS 수업 자료
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

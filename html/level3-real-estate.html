@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Homes - 중상급 과제</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap");
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 네비게이션 -->
+    <nav>
+      <div>
+        <div>
+          <div>
+            <span>🏠</span>
+            <span>Urban Homes</span>
+          </div>
+          <div>
+            <a href="#">매물</a>
+            <a href="#">중개사</a>
+            <a href="#">시세조회</a>
+            <a href="#">계산기</a>
+            <button>매물등록</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 검색 바 -->
+    <div>
+      <div>
+        <h1>당신의 꿈의 집을 찾아보세요</h1>
+        <p>서울 전역 프리미엄 매물 정보</p>
+
+        <div>
+          <div>
+            <div>
+              <label>지역</label>
+              <select>
+                <option>전체</option>
+                <option>강남구</option>
+                <option>서초구</option>
+                <option>송파구</option>
+                <option>용산구</option>
+              </select>
+            </div>
+            <div>
+              <label>매물종류</label>
+              <select>
+                <option>전체</option>
+                <option>아파트</option>
+                <option>빌라</option>
+                <option>오피스텔</option>
+              </select>
+            </div>
+            <div>
+              <label>거래유형</label>
+              <select>
+                <option>전체</option>
+                <option>매매</option>
+                <option>전세</option>
+                <option>월세</option>
+              </select>
+            </div>
+            <div>
+              <label>&nbsp;</label>
+              <button>검색</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 필터 -->
+    <div>
+      <div>
+        <div>
+          <div>
+            <button>전체</button>
+            <button>아파트</button>
+            <button>빌라</button>
+            <button>오피스텔</button>
+          </div>
+          <div>
+            <span>정렬:</span>
+            <select>
+              <option>최신순</option>
+              <option>가격 낮은순</option>
+              <option>가격 높은순</option>
+              <option>면적 넓은순</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div>
+      <!-- 통계 카드 -->
+      <div>
+        <div>
+          <div>🏢</div>
+          <div>1,247</div>
+          <div>전체 매물</div>
+        </div>
+        <div>
+          <div>⭐</div>
+          <div>328</div>
+          <div>프리미엄 매물</div>
+        </div>
+        <div>
+          <div>🆕</div>
+          <div>52</div>
+          <div>오늘 올라온 매물</div>
+        </div>
+        <div>
+          <div>💰</div>
+          <div>15억</div>
+          <div>평균 시세</div>
+        </div>
+      </div>
+
+      <!-- 매물 갤러리 -->
+      <h2>추천 매물</h2>
+
+      <!-- Grid 레이아웃 -->
+      <div>
+        <!-- 매물 카드 1 - 큰 카드 -->
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+
+            <div>
+              <span>급매</span>
+              <span>신축</span>
+            </div>
+
+            <button>
+              <span>🤍</span>
+            </button>
+
+            <div>
+              <div>
+                <span>아파트</span>
+              </div>
+              <h3>강남 래미안 아파트</h3>
+              <p>서울 강남구 역삼동 · 84㎡ (25평)</p>
+              <div>
+                <div>18억 5천</div>
+                <button>상세보기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 매물 카드 2 -->
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+
+            <span>오피스텔</span>
+
+            <button>
+              <span>🤍</span>
+            </button>
+
+            <div>
+              <h3>서초 센트럴 오피스텔</h3>
+              <p>서초구 · 33㎡</p>
+              <div>전세 3억</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 매물 카드 3 -->
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+
+            <span>빌라</span>
+
+            <button>
+              <span>🤍</span>
+            </button>
+
+            <div>
+              <h3>성수동 신축 빌라</h3>
+              <p>성동구 · 66㎡</p>
+              <div>매매 9억</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 매물 카드 4 -->
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+
+            <div>
+              <span>아파트</span>
+            </div>
+
+            <button>
+              <span>🤍</span>
+            </button>
+
+            <div>
+              <h3>용산 아크로리버파크</h3>
+              <p>용산구 · 114㎡</p>
+              <div>25억</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 매물 카드 5 -->
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+
+            <span>아파트</span>
+
+            <button>
+              <span>🤍</span>
+            </button>
+
+            <div>
+              <h3>송파 헬리오시티</h3>
+              <p>송파구 · 84㎡</p>
+              <div>전세 8억</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 매물 카드 6 -->
+        <div>
+          <div>
+            <div></div>
+            <div></div>
+
+            <div>
+              <span>오피스텔</span>
+            </div>
+
+            <button>
+              <span>🤍</span>
+            </button>
+
+            <div>
+              <h3>마포 신축 오피스텔</h3>
+              <p>마포구 · 42㎡</p>
+              <div>월세 500/60</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 지역별 인기 매물 -->
+      <h2>지역별 인기 매물</h2>
+
+      <div>
+        <!-- 강남구 -->
+        <div>
+          <div>
+            <div></div>
+            <div>
+              <div>
+                <h3>강남구</h3>
+                <span>328건</span>
+              </div>
+              <p>서울의 중심, 강남구의 프리미엄 매물</p>
+              <div>
+                <div>
+                  <span>평균 매매가</span>
+                  <span>18억 3천만원</span>
+                </div>
+                <div>
+                  <span>평균 전세가</span>
+                  <span>9억 5천만원</span>
+                </div>
+                <div>
+                  <span>평균 면적</span>
+                  <span>84㎡ (25평)</span>
+                </div>
+              </div>
+              <button>매물 보기 →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 서초구 -->
+        <div>
+          <div>
+            <div></div>
+            <div>
+              <div>
+                <h3>서초구</h3>
+                <span>285건</span>
+              </div>
+              <p>교육과 주거의 명품 지역, 서초구</p>
+              <div>
+                <div>
+                  <span>평균 매매가</span>
+                  <span>17억 2천만원</span>
+                </div>
+                <div>
+                  <span>평균 전세가</span>
+                  <span>8억 8천만원</span>
+                </div>
+                <div>
+                  <span>평균 면적</span>
+                  <span>99㎡ (30평)</span>
+                </div>
+              </div>
+              <button>매물 보기 →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 송파구 -->
+        <div>
+          <div>
+            <div></div>
+            <div>
+              <div>
+                <h3>송파구</h3>
+                <span>267건</span>
+              </div>
+              <p>잠실 롯데월드 인근 프리미엄 단지</p>
+              <div>
+                <div>
+                  <span>평균 매매가</span>
+                  <span>15억 8천만원</span>
+                </div>
+                <div>
+                  <span>평균 전세가</span>
+                  <span>8억 2천만원</span>
+                </div>
+                <div>
+                  <span>평균 면적</span>
+                  <span>84㎡ (25평)</span>
+                </div>
+              </div>
+              <button>매물 보기 →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 용산구 -->
+        <div>
+          <div>
+            <div></div>
+            <div>
+              <div>
+                <h3>용산구</h3>
+                <span>198건</span>
+              </div>
+              <p>한강 조망이 살아있는 프리미엄 주거지</p>
+              <div>
+                <div>
+                  <span>평균 매매가</span>
+                  <span>22억 5천만원</span>
+                </div>
+                <div>
+                  <span>평균 전세가</span>
+                  <span>10억 원</span>
+                </div>
+                <div>
+                  <span>평균 면적</span>
+                  <span>114㎡ (34평)</span>
+                </div>
+              </div>
+              <button>매물 보기 →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer>
+      <div>
+        <div>
+          <div>
+            <div>
+              <span>🏠</span>
+              <span>Urban Homes</span>
+            </div>
+            <p>당신의 꿈의 집을 찾아드립니다</p>
+          </div>
+          <div>
+            <p>
+              만든 사람:
+              <span>[이름을 입력하세요]</span>
+            </p>
+            <p>2025 · 가히의 TailwindCSS 과제</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Dashboard - 상급 과제</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap");
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 사이드바 -->
+    <aside>
+      <div>
+        <div>
+          <span>💪</span>
+        </div>
+        <span>FitLife</span>
+      </div>
+
+      <nav>
+        <a href="#">
+          <span>📊</span>
+          <span>대시보드</span>
+        </a>
+        <a href="#">
+          <span>🏃</span>
+          <span>운동 기록</span>
+        </a>
+        <a href="#">
+          <span>🍎</span>
+          <span>식단 관리</span>
+        </a>
+        <a href="#">
+          <span>📈</span>
+          <span>목표 설정</span>
+        </a>
+        <a href="#">
+          <span>⚙️</span>
+          <span>설정</span>
+        </a>
+      </nav>
+
+      <div>
+        <div>
+          <div>
+            <div></div>
+            <div>
+              <div>김건강</div>
+              <div>프리미엄 회원</div>
+            </div>
+          </div>
+          <button>로그아웃</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 메인 컨텐츠 -->
+    <main>
+      <!-- 헤더 -->
+      <header>
+        <div>
+          <div>
+            <div>
+              <h1>대시보드</h1>
+              <p>오늘도 멋진 하루를 시작하세요! 🔥</p>
+            </div>
+            <div>
+              <button>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                  />
+                </svg>
+                <span></span>
+              </button>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 컨텐츠 영역 -->
+      <div>
+        <!-- 오늘의 목표 카드 -->
+        <div>
+          <div>
+            <div>
+              <h2>오늘의 운동 목표</h2>
+              <p>2024년 11월 17일 월요일</p>
+            </div>
+            <button>운동 시작하기</button>
+          </div>
+
+          <!-- 프로그레스 바 -->
+          <div>
+            <div>
+              <div>
+                <span>칼로리 소모</span>
+                <span>450 / 600 kcal</span>
+              </div>
+              <div>
+                <div style="width: 75%"></div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <span>운동 시간</span>
+                <span>35 / 60 분</span>
+              </div>
+              <div>
+                <div style="width: 58%"></div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <span>걸음 수</span>
+                <span>7,234 / 10,000 걸음</span>
+              </div>
+              <div>
+                <div style="width: 72%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 통계 카드 그리드 -->
+        <div>
+          <div>
+            <div>
+              <div>
+                <span>🔥</span>
+              </div>
+              <span>+12%</span>
+            </div>
+            <div>2,847</div>
+            <div>오늘 소모 칼로리</div>
+          </div>
+
+          <div>
+            <div>
+              <div>
+                <span>💪</span>
+              </div>
+              <span>+8%</span>
+            </div>
+            <div>45분</div>
+            <div>오늘 운동 시간</div>
+          </div>
+
+          <div>
+            <div>
+              <div>
+                <span>📊</span>
+              </div>
+              <span>+5%</span>
+            </div>
+            <div>68kg</div>
+            <div>현재 체중</div>
+          </div>
+
+          <div>
+            <div>
+              <div>
+                <span>⭐</span>
+              </div>
+              <span>연속</span>
+            </div>
+            <div>7일</div>
+            <div>운동 연속 일수</div>
+          </div>
+        </div>
+
+        <!-- 메인 그리드 레이아웃 -->
+        <div>
+          <!-- 주간 운동 기록 (2칸 차지) -->
+          <div>
+            <div>
+              <h3>주간 운동 기록</h3>
+              <select>
+                <option>이번 주</option>
+                <option>지난 주</option>
+                <option>이번 달</option>
+              </select>
+            </div>
+
+            <!-- 간단한 막대 차트 -->
+            <div>
+              <div>
+                <span>월</span>
+                <div>
+                  <div style="width: 85%">
+                    <span>60분</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span>화</span>
+                <div>
+                  <div style="width: 70%">
+                    <span>45분</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span>수</span>
+                <div>
+                  <div style="width: 90%">
+                    <span>75분</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span>목</span>
+                <div>
+                  <div style="width: 65%">
+                    <span>40분</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span>금</span>
+                <div>
+                  <div style="width: 80%">
+                    <span>55분</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span>토</span>
+                <div>
+                  <div style="width: 40%">
+                    <span>계획</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span>일</span>
+                <div>
+                  <div style="width: 50%">
+                    <span>계획</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 오늘의 운동 목록 -->
+          <div>
+            <h3>오늘의 운동</h3>
+
+            <div>
+              <div>
+                <div>
+                  <span>✓</span>
+                </div>
+                <div>
+                  <div>팔굽혀펴기</div>
+                  <div>30회 × 3세트</div>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <span>✓</span>
+                </div>
+                <div>
+                  <div>스쿼트</div>
+                  <div>40회 × 3세트</div>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <span>3</span>
+                </div>
+                <div>
+                  <div>플랭크</div>
+                  <div>1분 × 3세트</div>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <span>4</span>
+                </div>
+                <div>
+                  <div>런지</div>
+                  <div>20회 × 3세트</div>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <span>5</span>
+                </div>
+                <div>
+                  <div>버피 테스트</div>
+                  <div>15회 × 3세트</div>
+                </div>
+              </div>
+            </div>
+
+            <button>+ 운동 추가</button>
+          </div>
+        </div>
+
+        <!-- 하단 그리드 -->
+        <div>
+          <!-- 최근 활동 -->
+          <div>
+            <h3>최근 활동</h3>
+
+            <div>
+              <div>
+                <div>
+                  <span>🏃</span>
+                </div>
+                <div>
+                  <div>러닝 5km 완료</div>
+                  <div>2시간 전 · 280 kcal</div>
+                </div>
+                <div>+20</div>
+              </div>
+
+              <div>
+                <div>
+                  <span>💪</span>
+                </div>
+                <div>
+                  <div>근력 운동 완료</div>
+                  <div>어제 · 350 kcal</div>
+                </div>
+                <div>+25</div>
+              </div>
+
+              <div>
+                <div>
+                  <span>🧘</span>
+                </div>
+                <div>
+                  <div>요가 30분 완료</div>
+                  <div>2일 전 · 150 kcal</div>
+                </div>
+                <div>+15</div>
+              </div>
+
+              <div>
+                <div>
+                  <span>🚴</span>
+                </div>
+                <div>
+                  <div>사이클 10km 완료</div>
+                  <div>3일 전 · 400 kcal</div>
+                </div>
+                <div>+30</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 이번 달 달성 목표 -->
+          <div>
+            <h3>이번 달 목표</h3>
+
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <span>🏃</span>
+                    <span>러닝 100km</span>
+                  </div>
+                  <span>73 / 100 km</span>
+                </div>
+                <div>
+                  <div style="width: 73%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <div>
+                    <span>💪</span>
+                    <span>근력 운동 20회</span>
+                  </div>
+                  <span>15 / 20 회</span>
+                </div>
+                <div>
+                  <div style="width: 75%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <div>
+                    <span>🔥</span>
+                    <span>50,000 kcal 소모</span>
+                  </div>
+                  <span>38,500 / 50,000 kcal</span>
+                </div>
+                <div>
+                  <div style="width: 77%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <div>
+                    <span>⭐</span>
+                    <span>연속 운동 30일</span>
+                  </div>
+                  <span>17 / 30 일</span>
+                </div>
+                <div>
+                  <div style="width: 57%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
