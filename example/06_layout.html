@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Flex · Grid 레이아웃 실습</title>
+  </head>
+  <body class="bg-gray-50">
+    <!-- 헤더 -->
+    <header
+      class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-6 mb-8 text-center"
+    >
+      <h1 class="text-3xl font-bold">Tailwind CSS Flex · Grid 레이아웃 실습</h1>
+      <p class="mt-2">
+        왼쪽 박스를 수정하여 오른쪽 완성본과 동일하게 만들어보세요
+      </p>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- ========== FLEXBOX 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">
+          📐 Flexbox — 1차원 레이아웃
+        </h2>
+      </section>
+
+      <!-- Flexbox 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Flexbox 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Flexbox</strong>는 가로 또는 세로 한 방향으로 요소를
+            배치하는 레이아웃입니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">기본 설정:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">flex</code> →
+                  가로 배치
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">flex-col</code> →
+                  세로 배치
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">flex-wrap</code> →
+                  줄바꿈 허용
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">flex-nowrap</code>
+                  → 한 줄 유지
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">가로축 정렬 (justify):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >justify-start</code
+                  >
+                  → 왼쪽
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >justify-center</code
+                  >
+                  → 가운데
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">justify-end</code>
+                  → 오른쪽
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >justify-between</code
+                  >
+                  → 양 끝 + 사이 균등
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >justify-around</code
+                  >
+                  → 균등 간격
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">세로축 정렬 (items):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">items-start</code>
+                  → 위쪽
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >items-center</code
+                  >
+                  → 가운데
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">items-end</code> →
+                  아래쪽
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >items-stretch</code
+                  >
+                  → 높이 맞춤
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">간격 & 크기:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">gap-4</code> →
+                  요소 간격 1rem
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">flex-1</code> →
+                  남은 공간 채우기
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">flex-grow</code> →
+                  늘어나기
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >flex-shrink-0</code
+                  >
+                  → 줄어들지 않음
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 1: 가로 배치 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">실습 1: 가로 배치</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 세 개의 박스를 가로로 배치</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 1 -->
+            <div>
+              <div class="bg-blue-400 text-white p-4 mb-2">Box 1</div>
+              <div class="bg-blue-400 text-white p-4 mb-2">Box 2</div>
+              <div class="bg-blue-400 text-white p-4">Box 3</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="flex gap-2">
+              <div class="bg-blue-400 text-white p-4">Box 1</div>
+              <div class="bg-blue-400 text-white p-4">Box 2</div>
+              <div class="bg-blue-400 text-white p-4">Box 3</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 2: 세로 배치 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">실습 2: 세로 배치</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 세 개의 박스를 세로로 배치</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px]">
+            <!-- TO DO: 실습 2 -->
+            <div class="flex gap-2">
+              <div class="bg-green-400 text-white p-4">Item A</div>
+              <div class="bg-green-400 text-white p-4">Item B</div>
+              <div class="bg-green-400 text-white p-4">Item C</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px]">
+            <div class="flex flex-col gap-2">
+              <div class="bg-green-400 text-white p-4">Item A</div>
+              <div class="bg-green-400 text-white p-4">Item B</div>
+              <div class="bg-green-400 text-white p-4">Item C</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 3: 가운데 정렬 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 3: 가운데 정렬
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 박스를 가로/세로 모두 가운데 정렬</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px]">
+            <!-- TO DO: 실습 3 -->
+            <div class="flex h-40">
+              <div class="bg-purple-500 text-white px-6 py-3">중앙 정렬</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px]">
+            <div class="flex justify-center items-center h-40">
+              <div class="bg-purple-500 text-white px-6 py-3">중앙 정렬</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 4: 양 끝 정렬 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 4: 양 끝 정렬
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 두 버튼을 양 끝에 배치</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 4 -->
+            <div class="flex">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded">
+                이전
+              </button>
+              <button class="bg-blue-500 text-white px-4 py-2 rounded">
+                다음
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="flex justify-between">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded">
+                이전
+              </button>
+              <button class="bg-blue-500 text-white px-4 py-2 rounded">
+                다음
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 5: 오른쪽 정렬 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 5: 오른쪽 정렬
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 버튼들을 오른쪽 끝으로 정렬</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 5 -->
+            <div class="flex gap-2">
+              <button class="bg-gray-300 px-4 py-2 rounded">취소</button>
+              <button class="bg-blue-500 text-white px-4 py-2 rounded">
+                확인
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="flex justify-end gap-2">
+              <button class="bg-gray-300 px-4 py-2 rounded">취소</button>
+              <button class="bg-blue-500 text-white px-4 py-2 rounded">
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 6: flex-1 (남은 공간 채우기) -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 6: 남은 공간 채우기 (flex-1)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 가운데 박스가 남은 공간 모두 차지</li>
+              <li>• 양옆은 고정 크기</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 6 -->
+            <div class="flex gap-2">
+              <div class="bg-gray-300 p-4">Left</div>
+              <div class="bg-blue-400 text-white p-4">Center (flex-1)</div>
+              <div class="bg-gray-300 p-4">Right</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="flex gap-2">
+              <div class="bg-gray-300 p-4">Left</div>
+              <div class="bg-blue-400 text-white p-4 flex-1">
+                Center (flex-1)
+              </div>
+              <div class="bg-gray-300 p-4">Right</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 7: flex-wrap (줄바꿈) -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">실습 7: 줄바꿈</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 박스들이 넘치면 자동으로 다음 줄로</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px]">
+            <!-- TO DO: 실습 7 -->
+            <div class="flex gap-2">
+              <div class="bg-teal-400 text-white p-4 w-32">Box 1</div>
+              <div class="bg-teal-400 text-white p-4 w-32">Box 2</div>
+              <div class="bg-teal-400 text-white p-4 w-32">Box 3</div>
+              <div class="bg-teal-400 text-white p-4 w-32">Box 4</div>
+              <div class="bg-teal-400 text-white p-4 w-32">Box 5</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px]">
+            <div class="flex flex-wrap gap-2">
+              <div class="bg-teal-400 text-white p-4 w-32">Box 1</div>
+              <div class="bg-teal-400 text-white p-4 w-32">Box 2</div>
+              <div class="bg-teal-400 text-white p-4 w-32">Box 3</div>
+              <div class="bg-teal-400 text-white p-4 w-32">Box 4</div>
+              <div class="bg-teal-400 text-white p-4 w-32">Box 5</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flexbox 연습 과제 -->
+      <section class="mb-16 bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+        <h3 class="text-2xl font-bold mb-6 text-blue-700">
+          🎯 Flexbox 연습 과제
+        </h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 1: 네비게이션 바 만들기
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 로고는 왼쪽, 메뉴는 오른쪽</li>
+                <li>• 세로 가운데 정렬</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div class="bg-white border-2 border-gray-300 p-4 min-h-[100px]">
+              <div>
+                <div class="font-bold text-xl text-blue-600">LOGO</div>
+                <div>
+                  <button class="px-3 py-1">Home</button>
+                  <button class="px-3 py-1">About</button>
+                  <button class="px-3 py-1">Contact</button>
+                </div>
+              </div>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div class="bg-white border-2 border-gray-300 p-4 min-h-[100px]">
+              <div class="flex justify-between items-center">
+                <div class="font-bold text-xl text-blue-600">LOGO</div>
+                <div class="flex gap-2">
+                  <button class="px-3 py-1 hover:bg-gray-100 rounded">
+                    Home
+                  </button>
+                  <button class="px-3 py-1 hover:bg-gray-100 rounded">
+                    About
+                  </button>
+                  <button class="px-3 py-1 hover:bg-gray-100 rounded">
+                    Contact
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 2: 검색바 레이아웃
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 검색 입력창이 남은 공간 모두 차지</li>
+                <li>• 버튼은 고정 크기</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[100px]">
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="검색어를 입력하세요"
+                  class="border border-gray-300 rounded px-4 py-2"
+                />
+                <button class="bg-blue-500 text-white px-6 py-2 rounded">
+                  검색
+                </button>
+              </div>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[100px]">
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="검색어를 입력하세요"
+                  class="border border-gray-300 rounded px-4 py-2 flex-1"
+                />
+                <button
+                  class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600"
+                >
+                  검색
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 3 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 3: 태그 목록 (줄바꿈)
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 태그들이 넘치면 다음 줄로</li>
+                <li>• 태그 간격 0.5rem</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 3 시작 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[150px]">
+              <div class="flex">
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >#React</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >#Tailwind</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >#JavaScript</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >#CSS</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >#HTML</span
+                >
+              </div>
+            </div>
+            <!-- TO DO: 과제 3 끝 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[150px]">
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >#React</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >#Tailwind</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >#JavaScript</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >#CSS</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >#HTML</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== GRID 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-green-700">
+          🎯 Grid — 2차원 레이아웃
+        </h2>
+      </section>
+
+      <!-- Grid 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Grid 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Grid</strong>는 행(row)과 열(column)을 동시에 다루는 2차원
+            레이아웃입니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">기본 설정:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">grid</code> →
+                  Grid 선언
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">grid-cols-3</code>
+                  → 3개 열
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">grid-rows-2</code>
+                  → 2개 행
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">gap-4</code> →
+                  간격 1rem
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">열 병합 (col-span):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">col-span-2</code>
+                  → 2칸 차지
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">col-span-3</code>
+                  → 3칸 차지
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >col-span-full</code
+                  >
+                  → 전체 차지
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">행 병합 (row-span):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">row-span-2</code>
+                  → 2행 차지
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">row-span-3</code>
+                  → 3행 차지
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">정렬:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >place-items-center</code
+                  >
+                  → 아이템 중앙
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >place-content-center</code
+                  >
+                  → 전체 중앙
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >justify-items-start</code
+                  >
+                  → 가로 정렬
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">items-start</code>
+                  → 세로 정렬
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 8: 기본 그리드 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 8: 기본 그리드 (3열)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 3개 열로 구성된 그리드</li>
+              <li>• 간격 1rem</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px]">
+            <!-- TO DO: 실습 8 -->
+            <div>
+              <div class="bg-blue-300 p-4 mb-2 text-center">1</div>
+              <div class="bg-blue-300 p-4 mb-2 text-center">2</div>
+              <div class="bg-blue-300 p-4 mb-2 text-center">3</div>
+              <div class="bg-blue-300 p-4 mb-2 text-center">4</div>
+              <div class="bg-blue-300 p-4 mb-2 text-center">5</div>
+              <div class="bg-blue-300 p-4 text-center">6</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px]">
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-blue-300 p-4 text-center">1</div>
+              <div class="bg-blue-300 p-4 text-center">2</div>
+              <div class="bg-blue-300 p-4 text-center">3</div>
+              <div class="bg-blue-300 p-4 text-center">4</div>
+              <div class="bg-blue-300 p-4 text-center">5</div>
+              <div class="bg-blue-300 p-4 text-center">6</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 9: 2열 그리드 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 9: 2열 그리드
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 2개 열로 구성</li>
+              <li>• 간격 1.5rem</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px]">
+            <!-- TO DO: 실습 9 -->
+            <div>
+              <div class="bg-green-300 p-6 mb-2 text-center">Card 1</div>
+              <div class="bg-green-300 p-6 mb-2 text-center">Card 2</div>
+              <div class="bg-green-300 p-6 mb-2 text-center">Card 3</div>
+              <div class="bg-green-300 p-6 text-center">Card 4</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px]">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="bg-green-300 p-6 text-center">Card 1</div>
+              <div class="bg-green-300 p-6 text-center">Card 2</div>
+              <div class="bg-green-300 p-6 text-center">Card 3</div>
+              <div class="bg-green-300 p-6 text-center">Card 4</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 10: 4열 그리드 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 10: 4열 그리드
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 4개 열로 구성</li>
+              <li>• 간격 0.5rem</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px]">
+            <!-- TO DO: 실습 10 -->
+            <div>
+              <div class="bg-purple-300 p-3 mb-2 text-center text-sm">1</div>
+              <div class="bg-purple-300 p-3 mb-2 text-center text-sm">2</div>
+              <div class="bg-purple-300 p-3 mb-2 text-center text-sm">3</div>
+              <div class="bg-purple-300 p-3 mb-2 text-center text-sm">4</div>
+              <div class="bg-purple-300 p-3 mb-2 text-center text-sm">5</div>
+              <div class="bg-purple-300 p-3 mb-2 text-center text-sm">6</div>
+              <div class="bg-purple-300 p-3 mb-2 text-center text-sm">7</div>
+              <div class="bg-purple-300 p-3 text-center text-sm">8</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px]">
+            <div class="grid grid-cols-4 gap-2">
+              <div class="bg-purple-300 p-3 text-center text-sm">1</div>
+              <div class="bg-purple-300 p-3 text-center text-sm">2</div>
+              <div class="bg-purple-300 p-3 text-center text-sm">3</div>
+              <div class="bg-purple-300 p-3 text-center text-sm">4</div>
+              <div class="bg-purple-300 p-3 text-center text-sm">5</div>
+              <div class="bg-purple-300 p-3 text-center text-sm">6</div>
+              <div class="bg-purple-300 p-3 text-center text-sm">7</div>
+              <div class="bg-purple-300 p-3 text-center text-sm">8</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 11: 열 병합 (col-span) -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 11: 열 병합 (col-span-2)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 3열 그리드</li>
+              <li>• 첫 번째 박스가 2칸 차지</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px]">
+            <!-- TO DO: 실습 11 -->
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-orange-400 text-white p-6 text-center">
+                헤더 (2칸)
+              </div>
+              <div class="bg-orange-200 p-6 text-center">2</div>
+              <div class="bg-orange-200 p-6 text-center">3</div>
+              <div class="bg-orange-200 p-6 text-center">4</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px]">
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-orange-400 text-white p-6 text-center col-span-2">
+                헤더 (2칸)
+              </div>
+              <div class="bg-orange-200 p-6 text-center">2</div>
+              <div class="bg-orange-200 p-6 text-center">3</div>
+              <div class="bg-orange-200 p-6 text-center">4</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 12: 전체 열 병합 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 12: 전체 열 병합 (col-span-full)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 3열 그리드</li>
+              <li>• 헤더가 전체 너비 차지</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px]">
+            <!-- TO DO: 실습 12 -->
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-indigo-500 text-white p-4 text-center">
+                전체 헤더
+              </div>
+              <div class="bg-indigo-200 p-4 text-center">1</div>
+              <div class="bg-indigo-200 p-4 text-center">2</div>
+              <div class="bg-indigo-200 p-4 text-center">3</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px]">
+            <div class="grid grid-cols-3 gap-4">
+              <div
+                class="bg-indigo-500 text-white p-4 text-center col-span-full"
+              >
+                전체 헤더
+              </div>
+              <div class="bg-indigo-200 p-4 text-center">1</div>
+              <div class="bg-indigo-200 p-4 text-center">2</div>
+              <div class="bg-indigo-200 p-4 text-center">3</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 13: 행 병합 (row-span) -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 13: 행 병합 (row-span-2)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 3열 그리드</li>
+              <li>• 첫 번째 박스가 2행 차지</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px]">
+            <!-- TO DO: 실습 13 -->
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-teal-500 text-white p-6 text-center">
+                사이드바<br />(2행)
+              </div>
+              <div class="bg-teal-200 p-6 text-center">1</div>
+              <div class="bg-teal-200 p-6 text-center">2</div>
+              <div class="bg-teal-200 p-6 text-center">3</div>
+              <div class="bg-teal-200 p-6 text-center">4</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px]">
+            <div class="grid grid-cols-3 gap-4">
+              <div
+                class="bg-teal-500 text-white p-6 text-center row-span-2 flex items-center justify-center"
+              >
+                사이드바<br />(2행)
+              </div>
+              <div class="bg-teal-200 p-6 text-center">1</div>
+              <div class="bg-teal-200 p-6 text-center">2</div>
+              <div class="bg-teal-200 p-6 text-center">3</div>
+              <div class="bg-teal-200 p-6 text-center">4</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grid 연습 과제 -->
+      <section class="mb-16 bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+        <h3 class="text-2xl font-bold mb-6 text-blue-700">🎯 Grid 연습 과제</h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 1: 이미지 갤러리
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 4열 그리드</li>
+                <li>• 간격 0.5rem</li>
+                <li>• 각 박스 높이 6rem</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[250px]">
+              <div>
+                <div class="bg-gray-300 mb-2 h-24"></div>
+                <div class="bg-gray-300 mb-2 h-24"></div>
+                <div class="bg-gray-300 mb-2 h-24"></div>
+                <div class="bg-gray-300 mb-2 h-24"></div>
+                <div class="bg-gray-300 mb-2 h-24"></div>
+                <div class="bg-gray-300 mb-2 h-24"></div>
+                <div class="bg-gray-300 mb-2 h-24"></div>
+                <div class="bg-gray-300 h-24"></div>
+              </div>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[250px]">
+              <div class="grid grid-cols-4 gap-2">
+                <div class="bg-gray-300 h-24"></div>
+                <div class="bg-gray-300 h-24"></div>
+                <div class="bg-gray-300 h-24"></div>
+                <div class="bg-gray-300 h-24"></div>
+                <div class="bg-gray-300 h-24"></div>
+                <div class="bg-gray-300 h-24"></div>
+                <div class="bg-gray-300 h-24"></div>
+                <div class="bg-gray-300 h-24"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 2: 대시보드 레이아웃
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 3열 그리드</li>
+                <li>• 헤더는 전체 너비 차지</li>
+                <li>• 간격 1rem</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[300px]">
+              <div class="grid grid-cols-3 gap-4">
+                <div class="bg-blue-500 text-white p-4 text-center font-bold">
+                  대시보드 헤더
+                </div>
+                <div class="bg-blue-100 p-6 text-center">위젯 1</div>
+                <div class="bg-blue-100 p-6 text-center">위젯 2</div>
+                <div class="bg-blue-100 p-6 text-center">위젯 3</div>
+              </div>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[300px]">
+              <div class="grid grid-cols-3 gap-4">
+                <div
+                  class="bg-blue-500 text-white p-4 text-center font-bold col-span-full"
+                >
+                  대시보드 헤더
+                </div>
+                <div class="bg-blue-100 p-6 text-center">위젯 1</div>
+                <div class="bg-blue-100 p-6 text-center">위젯 2</div>
+                <div class="bg-blue-100 p-6 text-center">위젯 3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 3 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 3: 복잡한 레이아웃
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 3열 그리드</li>
+                <li>• 메인 콘텐츠가 2열 차지</li>
+                <li>• 사이드바가 2행 차지</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 3 시작 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[350px]">
+              <div class="grid grid-cols-3 gap-4">
+                <div class="bg-purple-500 text-white p-6 text-center">
+                  메인 콘텐츠
+                </div>
+                <div class="bg-purple-300 p-6 text-center">사이드바</div>
+                <div class="bg-purple-200 p-6 text-center">A</div>
+                <div class="bg-purple-200 p-6 text-center">B</div>
+              </div>
+            </div>
+            <!-- TO DO: 과제 3 끝 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[350px]">
+              <div class="grid grid-cols-3 gap-4">
+                <div
+                  class="bg-purple-500 text-white p-6 text-center col-span-2 flex items-center justify-center"
+                >
+                  메인 콘텐츠
+                </div>
+                <div
+                  class="bg-purple-300 p-6 text-center row-span-2 flex items-center justify-center"
+                >
+                  사이드바
+                </div>
+                <div class="bg-purple-200 p-6 text-center">A</div>
+                <div class="bg-purple-200 p-6 text-center">B</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 반응형 그리드 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-pink-700">📱 반응형 Grid</h2>
+      </section>
+
+      <!-- 반응형 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">
+          📖 반응형 Grid 이론
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>반응형 Grid</strong>는 화면 크기에 따라 열 개수를 자동으로
+            조정합니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">브레이크포인트:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">sm:</code> →
+                  640px 이상
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">md:</code> →
+                  768px 이상
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">lg:</code> →
+                  1024px 이상
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">xl:</code> →
+                  1280px 이상
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">사용 예시:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >grid-cols-1 md:grid-cols-3</code
+                  >
+                </li>
+                <li>• 모바일: 1열, 태블릿 이상: 3열</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 14: 반응형 그리드 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 14: 반응형 그리드
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 모바일: 1열</li>
+              <li>• 태블릿(md): 2열</li>
+              <li>• 데스크톱(lg): 3열</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            <p class="text-sm text-gray-600 mt-1">화면 크기를 조절해보세요!</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px]">
+            <!-- TO DO: 실습 14 -->
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-rose-300 p-6 text-center">1</div>
+              <div class="bg-rose-300 p-6 text-center">2</div>
+              <div class="bg-rose-300 p-6 text-center">3</div>
+              <div class="bg-rose-300 p-6 text-center">4</div>
+              <div class="bg-rose-300 p-6 text-center">5</div>
+              <div class="bg-rose-300 p-6 text-center">6</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="bg-rose-300 p-6 text-center">1</div>
+              <div class="bg-rose-300 p-6 text-center">2</div>
+              <div class="bg-rose-300 p-6 text-center">3</div>
+              <div class="bg-rose-300 p-6 text-center">4</div>
+              <div class="bg-rose-300 p-6 text-center">5</div>
+              <div class="bg-rose-300 p-6 text-center">6</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

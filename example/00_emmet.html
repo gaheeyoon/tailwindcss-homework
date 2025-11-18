@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1. 기본 태그 생성 -->
+    <div></div>
+    <p></p>
+    <a href=""></a>
+    <img src="" alt="" />
+    <span></span>
+    <section></section>
+    <footer></footer>
+    <nav></nav>
+    <article></article>
+
+    <!-- 주석 작성-->
+    블록 지정 후 -> Ctrl(command) + /
+
+    <!-- 2. 자식 관계 : > -->
+    <!-- ul>li -->
+    <ul>
+      <li></li>
+    </ul>
+
+    <div>
+      <span><span></span></span>
+    </div>
+
+    <header>
+      <h1></h1>
+    </header>
+
+    <main>
+      <section></section>
+    </main>
+
+    <div>
+      <p></p>
+    </div>
+
+    <section>
+      <ul></ul>
+    </section>
+
+    <nav><a href=""></a></nav>
+
+    <!-- 3. 형제 관계 : + -->
+    <!-- h1+p -->
+    <h1></h1>
+    <p></p>
+
+    <h2></h2>
+    <p></p>
+
+    <div></div>
+    <span></span>
+
+    <img src="" alt="" />
+    <p></p>
+
+    <button></button><small></small>
+
+    <h3></h3>
+    <ul></ul>
+
+    <div>
+      <h2></h2>
+    </div>
+    <p></p>
+
+    <!-- 4. 반복 : * -->
+    <!-- li*3 -->
+    <li></li>
+    <li></li>
+    <li></li>
+
+    <div></div>
+    <div></div>
+
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <section></section>
+    <section></section>
+
+    <!-- 5. 클래스, 아이디 : . # -->
+    <!-- div.card -->
+    <div class="card"></div>
+
+    <!-- header#main -->
+    <header id="main"></header>
+
+    <div class="container"></div>
+
+    <p id="intro"></p>
+
+    <section class="content-box"></section>
+
+    <footer id="site-footer"></footer>
+
+    <img src="" alt="" class="thumbnail" />
+
+    <!-- 6. 텍스트 내용 : {} -->
+    <p>Hello World</p>
+
+    <button>Click me</button>
+
+    <h3>Welcome</h3>
+
+    <p>lorem</p>
+
+    <a href="">Read more</a>
+
+    <h1>Hello</h1>
+
+    <!-- 종합 예제 -->
+    <div class="card">
+      <h2>Title</h2>
+      <p>Description</p>
+      <button>Buy</button>
+    </div>
+
+    <!-- 1 -->
+    <!-- div.item>p{Text}+button{OK} -->
+    <div class="item">
+      <p>Text</p>
+      <button>OK</button>
+    </div>
+
+    <!-- 2 -->
+    <!-- section.box>h3{Header}+p{Body} -->
+    <section class="box">
+      <h3>Header</h3>
+      <p>Body</p>
+    </section>
+
+    <!-- 3 -->
+    <!-- article>h2{News}+p{Detail}+a{More} -->
+    <article>
+      <h2>News</h2>
+      <p>Detail</p>
+      <a href="">More</a>
+    </article>
+
+    <!-- 4 -->
+    <!-- nav>ul>li{One}+li{Two} -->
+    <nav>
+      <ul>
+        <li>One</li>
+        <li>Two</li>
+      </ul>
+    </nav>
+
+    <!-- 5 -->
+    <!-- div.card>img+p{Description} -->
+    <div class="card">
+      <img src="" alt="" />
+      <p>Description</p>
+    </div>
+
+    <!-- 7. 번호 증가 : $-->
+    <!-- li{Menu $}*3 -->
+    <li>Menu 1</li>
+    <li>Menu 2</li>
+    <li>Menu 3</li>
+
+    Item 1 Item 2 Item 3 Item 4
+
+    <button>Btn 1</button><button>Btn 2</button><button>Btn 3</button>
+
+    <h3>Title 1</h3>
+    <h3>Title 2</h3>
+
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <p>Paragraph 4</p>
+    <p>Paragraph 5</p>
+
+    Step 1 Step 2 Step 3
+
+    <!-- li{Item $$}*15 -->
+    <li>Item 01</li>
+    <li>Item 02</li>
+    <li>Item 03</li>
+    <li>Item 04</li>
+    <li>Item 05</li>
+    <li>Item 06</li>
+    <li>Item 07</li>
+    <li>Item 08</li>
+    <li>Item 09</li>
+    <li>Item 10</li>
+    <li>Item 11</li>
+    <li>Item 12</li>
+    <li>Item 13</li>
+    <li>Item 14</li>
+    <li>Item 15</li>
+
+    <div>01</div>
+    <div>02</div>
+    <div>03</div>
+
+    <button>001</button><button>002</button><button>003</button>
+
+    <li>Menu 01</li>
+    <li>Menu 02</li>
+    <li>Menu 03</li>
+    <li>Menu 04</li>
+
+    <article>Card 001</article>
+    <article>Card 002</article>
+    <article>Card 003</article>
+
+    <span>photo-001</span><span>photo-002</span><span>photo-003</span>
+
+    <!-- 8. 그룹 괄호 : () -->
+    <!-- ul>(li>span{Item $})*3 -->
+    <ul>
+      <li><span>Item 1</span></li>
+      <li><span>Item 2</span></li>
+      <li><span>Item 3</span></li>
+    </ul>
+
+    <!-- ul>li>span{Item $}*3 -->
+    <ul>
+      <li><span>Item 1</span><span>Item 2</span><span>Item 3</span></li>
+    </ul>
+
+    <!-- 1 -->
+    <div class="card">
+      <h3>Card 1</h3>
+      <p>Content 1</p>
+    </div>
+    <div class="card">
+      <h3>Card 2</h3>
+      <p>Content 2</p>
+    </div>
+    <div class="card">
+      <h3>Card 3</h3>
+      <p>Content 3</p>
+    </div>
+
+    <!-- 2 -->
+    <li><a href="">Link 1</a></li>
+    <li><a href="">Link 2</a></li>
+    <li><a href="">Link 3</a></li>
+    <li><a href="">Link 4</a></li>
+
+    <!-- 3 -->
+    <article>
+      <h2>Title 1</h2>
+      <p>Body 1</p>
+    </article>
+    <article>
+      <h2>Title 2</h2>
+      <p>Body 2</p>
+    </article>
+
+    <!-- 4 -->
+    <section>
+      <img src="" alt="" />
+      <p>Pic 01</p>
+    </section>
+    <section>
+      <img src="" alt="" />
+      <p>Pic 02</p>
+    </section>
+    <section>
+      <img src="" alt="" />
+      <p>Pic 03</p>
+    </section>
+
+    <!-- 5 -->
+    <div class="box"><span>Text</span></div>
+    <div class="box"><span>Text</span></div>
+    <div class="box"><span>Text</span></div>
+
+    <!-- 9. 속성 지정 : [] -->
+    <!-- a[hef="http://example.com" target="_blank"]{Go} -->
+
+    <a href="" hef="http://example.com" target="_blank">Go</a>
+
+    <img src="./image.jpg" alt="photo" />
+
+    <a href="#" title="link"></a>
+
+    <button type="submit"></button>
+
+    <input type="text" placeholder="Name" />
+
+    <video src="" controls="controls" width="320"></video>
+
+    <!-- 10. Lorem Ipsum : lorem -->
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At asperiores
+    dicta ullam fuga? Perspiciatis nulla, sequi tempore facilis rem iure nobis
+    neque debitis eum? Consequuntur ut excepturi illum alias quo. Lorem ipsum
+    dolor sit amet consectetur adipisicing elit. Suscipit, modi? Lorem, ipsum
+    dolor. Lorem ipsum dolor sit amet.
+
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ea.
+
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, facere ut
+      culpa quas exercitationem sunt.
+    </div>
+
+    <li>Lorem ipsum dolor sit.</li>
+    <li>Ducimus officiis libero nemo!</li>
+    <li>Numquam aliquam voluptatem ut.</li>
+
+    <section>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum sed
+      aliquam deserunt laborum itaque quasi eos iusto vitae iste autem!
+    </section>
+
+    <!-- 종합 예제 -->
+    <!-- 1. -->
+    <div class="profile">
+      <img src="" alt="" />
+      <h3>User 1</h3>
+      <p>Bio 1</p>
+    </div>
+
+    <!-- 2. -->
+    <article>
+      <h2>Post 1</h2>
+      <p>Detail 1</p>
+    </article>
+    <article>
+      <h2>Post 2</h2>
+      <p>Detail 2</p>
+    </article>
+    <article>
+      <h2>Post 3</h2>
+      <p>Detail 3</p>
+    </article>
+
+    <!-- 3. -->
+    <div class="item">
+      <span>Item 1</span>
+      <p>Description 1</p>
+    </div>
+    <div class="item">
+      <span>Item 2</span>
+      <p>Description 2</p>
+    </div>
+    <div class="item">
+      <span>Item 3</span>
+      <p>Description 3</p>
+    </div>
+    <div class="item">
+      <span>Item 4</span>
+      <p>Description 4</p>
+    </div>
+
+    <!-- 4. -->
+    <li class="link-item"><a href="#">Link 1</a></li>
+    <li class="link-item"><a href="#">Link 2</a></li>
+    <li class="link-item"><a href="#">Link 3</a></li>
+    <li class="link-item"><a href="#">Link 4</a></li>
+    <li class="link-item"><a href="#">Link 5</a></li>
+
+    <li class="link-item"><a href="./test_1.html">Link 1</a></li>
+    <li class="link-item"><a href="./test_2.html">Link 2</a></li>
+    <li class="link-item"><a href="./test_3.html">Link 3</a></li>
+    <li class="link-item"><a href="./test_4.html">Link 4</a></li>
+    <li class="link-item"><a href="./test_5.html">Link 5</a></li>
+
+    <!-- 5. -->
+    <section class="card">
+      <img src="image1.jpg" alt="" />
+      <h4>Title 1</h4>
+      <p>Lorem ipsum...</p>
+    </section>
+    <section class="card">
+      <img src="image2.jpg" alt="" />
+      <h4>Title 2</h4>
+      <p>Lorem ipsum...</p>
+    </section>
+
+    <ul>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+      <li class="card">Test</li>
+    </ul>
+  </body>
+</html>

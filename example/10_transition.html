@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Transition 실습</title>
+  </head>
+  <body class="bg-gray-50">
+    <!-- 헤더 -->
+    <header
+      class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 mb-8 text-center"
+    >
+      <h1 class="text-3xl font-bold">Tailwind CSS Transition 실습</h1>
+      <p class="mt-2">
+        부드러운 애니메이션으로 인터랙션을 업그레이드하세요! ✨
+      </p>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <!-- ========== Transition 기본 개념 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-green-700">
+          ⚡ Transition 기본 개념
+        </h2>
+      </section>
+
+      <!-- Transition 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">
+          📖 Transition 이론
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Transition</strong>은 상태 변화를 부드럽게 만들어주는 CSS
+            속성입니다.
+          </p>
+          <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+            <p class="font-bold text-yellow-800">❌ Transition 없으면:</p>
+            <p class="text-sm text-yellow-700">
+              색상/크기가 "뚝" 하고 바뀜 (딱딱한 느낌)
+            </p>
+          </div>
+          <div class="bg-green-50 border-l-4 border-green-400 p-4">
+            <p class="font-bold text-green-800">✅ Transition 있으면:</p>
+            <p class="text-sm text-green-700">
+              색상/크기가 부드럽게 변화 (자연스러운 느낌)
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded mt-4"
+          >
+            <div>
+              <p class="font-bold mb-2">Transition 속성:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">transition</code>
+                  → 전체 전환
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >transition-colors</code
+                  >
+                  → 색상만
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >transition-transform</code
+                  >
+                  → 변형만
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >transition-opacity</code
+                  >
+                  → 투명도만
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Duration (속도):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >duration-150</code
+                  >
+                  → 150ms (빠름)
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >duration-300</code
+                  >
+                  → 300ms (적당)
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >duration-500</code
+                  >
+                  → 500ms (느림)
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Easing (곡선):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">ease-linear</code>
+                  → 일정
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">ease-in</code> →
+                  시작 느림
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">ease-out</code> →
+                  끝 느림
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">ease-in-out</code>
+                  → 자연스러움
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Delay (지연):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">delay-75</code> →
+                  75ms 후 시작
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">delay-150</code> →
+                  150ms 후 시작
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">delay-300</code> →
+                  300ms 후 시작
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 비교 예시: Transition 유무 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          🔍 비교: Transition 유무
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-red-100 border-l-4 border-red-500 p-4">
+            <p class="font-bold text-gray-700">❌ Transition 없음</p>
+            <p class="text-sm text-gray-600">딱딱하고 뚝뚝 끊김</p>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ Transition 있음</p>
+            <p class="text-sm text-gray-600">부드럽고 자연스러움</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg"
+            >
+              Transition 없음
+            </button>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors duration-300"
+            >
+              Transition 있음
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== transition-colors 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-pink-700">
+          🎨 transition-colors — 색상 전환
+        </h2>
+      </section>
+
+      <!-- 실습 1: 배경색 전환 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 1: 배경색 부드럽게 전환
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover 시 배경색 변경</li>
+              <li>• transition-colors 추가</li>
+              <li>• 마우스를 올려보세요!</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 1 -->
+            <button
+              class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg"
+            >
+              Hover Me
+            </button>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <button
+              class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition-colors"
+            >
+              Hover Me
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 2: 텍스트 색상 전환 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 2: 텍스트 색상 전환
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover 시 텍스트 색상 변경</li>
+              <li>• transition-colors 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 2 -->
+            <p class="text-gray-700 hover:text-blue-600 text-xl cursor-pointer">
+              마우스를 올려보세요
+            </p>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <p
+              class="text-gray-700 hover:text-blue-600 text-xl cursor-pointer transition-colors"
+            >
+              마우스를 올려보세요
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== transition-transform 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-purple-700">
+          🔄 transition-transform — 변형 전환
+        </h2>
+      </section>
+
+      <!-- 실습 3: Scale 전환 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 3: 크기 변화 (Scale)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover 시 110% 확대</li>
+              <li>• transition-transform 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 3 -->
+            <div
+              class="w-24 h-24 bg-purple-400 rounded-lg hover:scale-110 cursor-pointer"
+            ></div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <div
+              class="w-24 h-24 bg-purple-400 rounded-lg hover:scale-110 transition-transform cursor-pointer"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 4: Translate 전환 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 4: 위치 이동 (Translate)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover 시 위로 4px 이동</li>
+              <li>• transition-transform 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 4 -->
+            <div
+              class="bg-white p-6 rounded-lg shadow hover:-translate-y-1 cursor-pointer"
+            >
+              <p class="font-bold text-lg">카드</p>
+              <p class="text-sm text-gray-600">위로 올라가요</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <div
+              class="bg-white p-6 rounded-lg shadow hover:-translate-y-1 transition-transform cursor-pointer"
+            >
+              <p class="font-bold text-lg">카드</p>
+              <p class="text-sm text-gray-600">위로 올라가요</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 5: Rotate 전환 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 5: 회전 (Rotate)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover 시 12도 회전</li>
+              <li>• transition-transform 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 5 -->
+            <div
+              class="w-24 h-24 bg-gradient-to-br from-pink-400 to-purple-500 rounded-lg hover:rotate-12 cursor-pointer flex items-center justify-center text-white font-bold"
+            >
+              Hover
+            </div>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <div
+              class="w-24 h-24 bg-gradient-to-br from-pink-400 to-purple-500 rounded-lg hover:rotate-12 transition-transform cursor-pointer flex items-center justify-center text-white font-bold"
+            >
+              Hover
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== transition-opacity 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-amber-700">
+          👻 transition-opacity — 투명도 전환
+        </h2>
+      </section>
+
+      <!-- 실습 6: Opacity 전환 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 6: 투명도 변화
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover 시 opacity 50%</li>
+              <li>• transition-opacity 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 6 -->
+            <div
+              class="w-32 h-32 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg hover:opacity-50 cursor-pointer"
+            ></div>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <div
+              class="w-32 h-32 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg hover:opacity-50 transition-opacity cursor-pointer"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== transition-shadow 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-slate-50 to-gray-100 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-slate-700">
+          🌫️ transition-shadow — 그림자 전환
+        </h2>
+      </section>
+
+      <!-- 실습 7: Shadow 전환 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 7: 그림자 변화
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover 시 shadow-xl</li>
+              <li>• transition-shadow 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 7 -->
+            <div
+              class="bg-white p-6 rounded-lg shadow hover:shadow-xl cursor-pointer"
+            >
+              <p class="font-bold text-lg mb-2">상품 카드</p>
+              <p class="text-sm text-gray-600">그림자가 커져요</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <div
+              class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-shadow cursor-pointer"
+            >
+              <p class="font-bold text-lg mb-2">상품 카드</p>
+              <p class="text-sm text-gray-600">그림자가 커져요</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transition 속성 연습 과제 -->
+      <section class="mb-16 bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+        <h3 class="text-2xl font-bold mb-6 text-blue-700">
+          🎯 Transition 속성 연습 과제
+        </h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 1: 다중 색상 전환
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• hover: 배경 + 텍스트 색상 변경</li>
+                <li>• transition-colors 추가</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div
+              class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+            >
+              <button
+                class="bg-gray-200 hover:bg-blue-500 text-gray-700 hover:text-white px-6 py-3 rounded-lg font-medium"
+              >
+                색상 전환 버튼
+              </button>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div
+              class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+            >
+              <button
+                class="bg-gray-200 hover:bg-blue-500 text-gray-700 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              >
+                색상 전환 버튼
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 2: Scale + Rotate 조합
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• hover: 110% 확대 + 6도 회전</li>
+                <li>• transition-transform 추가</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div
+              class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+            >
+              <div
+                class="w-24 h-24 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl hover:scale-110 hover:rotate-6 cursor-pointer flex items-center justify-center text-white font-bold text-sm"
+              >
+                HOVER
+              </div>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div
+              class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+            >
+              <div
+                class="w-24 h-24 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl hover:scale-110 hover:rotate-6 transition-transform cursor-pointer flex items-center justify-center text-white font-bold text-sm"
+              >
+                HOVER
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 3 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 3: 카드 Hover 패키지
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• hover: 위로 이동 + 그림자 확대</li>
+                <li>• transition 여러 개 조합</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 3 시작 -->
+            <div
+              class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+            >
+              <div
+                class="bg-white p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-2xl cursor-pointer max-w-xs"
+              >
+                <div
+                  class="bg-gradient-to-br from-green-300 to-teal-400 h-32 rounded-lg mb-4"
+                ></div>
+                <h3 class="font-bold text-lg mb-2">상품명</h3>
+                <p class="text-sm text-gray-600 mb-3">상품 설명입니다.</p>
+                <p class="text-green-600 font-bold text-xl">₩29,000</p>
+              </div>
+            </div>
+            <!-- TO DO: 과제 3 끝 -->
+            <div
+              class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+            >
+              <div
+                class="bg-white p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-2xl transition-all cursor-pointer max-w-xs"
+              >
+                <div
+                  class="bg-gradient-to-br from-green-300 to-teal-400 h-32 rounded-lg mb-4"
+                ></div>
+                <h3 class="font-bold text-lg mb-2">상품명</h3>
+                <p class="text-sm text-gray-600 mb-3">상품 설명입니다.</p>
+                <p class="text-green-600 font-bold text-xl">₩29,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== DURATION 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">
+          ⏱️ Duration — 전환 속도
+        </h2>
+      </section>
+
+      <!-- Duration 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Duration 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Duration</strong>은 전환이 얼마나 오래 걸릴지 지정합니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">빠른 전환:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">duration-75</code>
+                  → 75ms
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >duration-100</code
+                  >
+                  → 100ms
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >duration-150</code
+                  >
+                  → 150ms
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">느린 전환:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >duration-500</code
+                  >
+                  → 500ms
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >duration-700</code
+                  >
+                  → 700ms
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >duration-1000</code
+                  >
+                  → 1000ms (1초)
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">추천:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >duration-200</code
+                  >
+                  → 버튼/링크
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >duration-300</code
+                  >
+                  → 카드/박스
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Tip:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 너무 빠르면 안 보임</li>
+                <li>• 너무 느리면 답답함</li>
+                <li>• 150~300ms가 적당</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 8: Duration 비교 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 8: Duration 비교
+        </h2>
+
+        <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-4">
+          <p class="font-bold text-gray-700">📝 실습 과제</p>
+          <p class="text-sm text-gray-600 mt-2">
+            각 버튼에 다른 duration을 적용하여 속도 차이를 느껴보세요!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex flex-col items-center justify-center gap-3"
+          >
+            <p class="text-sm font-medium text-gray-600">빠름 (150ms)</p>
+            <!-- TO DO: 실습 8-1 -->
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors duration-150"
+            >
+              Duration 150
+            </button>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex flex-col items-center justify-center gap-3"
+          >
+            <p class="text-sm font-medium text-gray-600">적당 (300ms)</p>
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors duration-300"
+            >
+              Duration 300
+            </button>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex flex-col items-center justify-center gap-3"
+          >
+            <p class="text-sm font-medium text-gray-600">느림 (700ms)</p>
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors duration-700"
+            >
+              Duration 700
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 9: Duration - Scale -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 9: Duration으로 속도 조절
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover: scale-110</li>
+              <li>• duration-500 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 9 -->
+            <div
+              class="w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl hover:scale-110 transition-transform cursor-pointer"
+            ></div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <div
+              class="w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl hover:scale-110 transition-transform duration-500 cursor-pointer"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== EASING 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-purple-700">
+          📈 Easing — 전환 곡선
+        </h2>
+      </section>
+
+      <!-- Easing 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Easing 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Easing</strong>은 전환이 어떤 속도 곡선으로 진행될지
+            결정합니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">Easing 종류:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">ease-linear</code>
+                  → 균일한 속도
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">ease-in</code> →
+                  느리게 시작
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">ease-out</code> →
+                  느리게 종료
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">ease-in-out</code>
+                  → 자연스러움
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Tip:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• <strong>ease-out</strong>: 카드, 모달 등장</li>
+                <li>• <strong>ease-in</strong>: 요소 사라짐</li>
+                <li>• <strong>ease-in-out</strong>: 일반적 사용</li>
+                <li>• <strong>linear</strong>: 로딩 스피너</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 10: Easing 비교 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 10: Easing 비교
+        </h2>
+
+        <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-4">
+          <p class="font-bold text-gray-700">📝 실습 과제</p>
+          <p class="text-sm text-gray-600 mt-2">
+            각 박스에 마우스를 올려 easing 차이를 느껴보세요!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div
+            class="bg-white border-2 border-gray-300 p-4 flex flex-col items-center justify-center gap-3 min-h-[180px]"
+          >
+            <p class="text-xs font-medium text-gray-600 text-center">
+              ease-linear<br />(균일)
+            </p>
+            <div
+              class="w-20 h-20 bg-blue-400 rounded-lg hover:scale-125 transition-transform duration-500 ease-linear cursor-pointer"
+            ></div>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-4 flex flex-col items-center justify-center gap-3 min-h-[180px]"
+          >
+            <p class="text-xs font-medium text-gray-600 text-center">
+              ease-in<br />(느리게 시작)
+            </p>
+            <div
+              class="w-20 h-20 bg-green-400 rounded-lg hover:scale-125 transition-transform duration-500 ease-in cursor-pointer"
+            ></div>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-4 flex flex-col items-center justify-center gap-3 min-h-[180px]"
+          >
+            <p class="text-xs font-medium text-gray-600 text-center">
+              ease-out<br />(느리게 종료)
+            </p>
+            <div
+              class="w-20 h-20 bg-purple-400 rounded-lg hover:scale-125 transition-transform duration-500 ease-out cursor-pointer"
+            ></div>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-4 flex flex-col items-center justify-center gap-3 min-h-[180px]"
+          >
+            <p class="text-xs font-medium text-gray-600 text-center">
+              ease-in-out<br />(자연스러움)
+            </p>
+            <div
+              class="w-20 h-20 bg-pink-400 rounded-lg hover:scale-125 transition-transform duration-500 ease-in-out cursor-pointer"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 11: Easing 적용 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 11: 카드에 Easing 적용
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover: 위로 이동 + shadow-xl</li>
+              <li>• ease-out 추가</li>
+              <li>• duration-300</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 11 -->
+            <div
+              class="bg-white p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer max-w-xs"
+            >
+              <div
+                class="bg-gradient-to-br from-yellow-300 to-orange-400 h-32 rounded-lg mb-4"
+              ></div>
+              <h3 class="font-bold text-lg mb-2">제품명</h3>
+              <p class="text-sm text-gray-600">부드러운 easing 효과</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+          >
+            <div
+              class="bg-white p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ease-out cursor-pointer max-w-xs"
+            >
+              <div
+                class="bg-gradient-to-br from-yellow-300 to-orange-400 h-32 rounded-lg mb-4"
+              ></div>
+              <h3 class="font-bold text-lg mb-2">제품명</h3>
+              <p class="text-sm text-gray-600">부드러운 easing 효과</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== DELAY 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-green-700">
+          ⏳ Delay — 전환 지연
+        </h2>
+      </section>
+
+      <!-- Delay 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Delay 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p><strong>Delay</strong>는 전환이 시작되기 전 대기 시간입니다.</p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">Delay 값:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">delay-75</code> →
+                  75ms 후
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">delay-100</code> →
+                  100ms 후
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">delay-150</code> →
+                  150ms 후
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">delay-300</code> →
+                  300ms 후
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Tip:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 순차적 애니메이션</li>
+                <li>• 툴팁/드롭다운 등장</li>
+                <li>• 리스트 항목 순서대로 나타남</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 12: Delay 적용 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 12: Delay로 지연 효과
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover: 텍스트 색상 변경</li>
+              <li>• delay-300 추가</li>
+              <li>• 0.3초 기다린 후 변경</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 12 -->
+            <p
+              class="text-gray-700 hover:text-blue-600 text-xl cursor-pointer transition-colors delay-300"
+            >
+              마우스를 올리고 잠시 기다리세요
+            </p>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <p
+              class="text-gray-700 hover:text-blue-600 text-xl cursor-pointer transition-colors delay-300 duration-300"
+            >
+              마우스를 올리고 잠시 기다리세요
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 13: 순차적 애니메이션 (Stagger) -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 13: 순차적 등장 효과
+        </h2>
+
+        <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-4">
+          <p class="font-bold text-gray-700">📝 실습 과제</p>
+          <p class="text-sm text-gray-600 mt-2">
+            각 카드에 다른 delay를 적용하여 순차적으로 나타나게 하세요!
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-gray-300 p-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- 카드 1 -->
+            <div
+              class="opacity-0 hover:opacity-100 transition-opacity duration-500 delay-0 bg-gradient-to-br from-blue-100 to-blue-200 p-6 rounded-xl cursor-pointer"
+            >
+              <div class="text-4xl mb-2">🚀</div>
+              <h3 class="font-bold text-lg mb-2">빠름</h3>
+              <p class="text-sm text-gray-700">delay-0 (즉시)</p>
+            </div>
+
+            <!-- 카드 2 -->
+            <div
+              class="opacity-0 hover:opacity-100 transition-opacity duration-500 delay-150 bg-gradient-to-br from-purple-100 to-purple-200 p-6 rounded-xl cursor-pointer"
+            >
+              <div class="text-4xl mb-2">⚡</div>
+              <h3 class="font-bold text-lg mb-2">보통</h3>
+              <p class="text-sm text-gray-700">delay-150 (0.15초 후)</p>
+            </div>
+
+            <!-- 카드 3 -->
+            <div
+              class="opacity-0 hover:opacity-100 transition-opacity duration-500 delay-300 bg-gradient-to-br from-pink-100 to-pink-200 p-6 rounded-xl cursor-pointer"
+            >
+              <div class="text-4xl mb-2">🎯</div>
+              <h3 class="font-bold text-lg mb-2">느림</h3>
+              <p class="text-sm text-gray-700">delay-300 (0.3초 후)</p>
+            </div>
+          </div>
+          <p class="text-center text-sm text-gray-600 mt-4">
+            💡 페이지 새로고침 후 전체 컨테이너에 마우스를 올려보세요!
+          </p>
+        </div>
+      </section>
+
+      <!-- ========== 자주 사용하는 패턴 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-orange-700">
+          💼 자주 사용하는 Transition 패턴
+        </h2>
+      </section>
+
+      <!-- 자주 사용하는 패턴 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">
+          📖 자주 사용하는 패턴
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">transition-all:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 모든 속성을 한 번에 전환</li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >transition-all duration-300</code
+                  >
+                </li>
+                <li>• 가장 많이 사용됨</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Group Hover (고급):</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 부모 hover 시 자식도 전환</li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >group-hover:scale-110</code
+                  >
+                </li>
+                <li>• 카드 내부 요소 제어</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">버튼 패턴:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• hover: 색상 + scale-105</li>
+                <li>• active: scale-95</li>
+                <li>• transition-all duration-200</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">카드 패턴:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• hover: -translate-y + shadow</li>
+                <li>• transition-all duration-300</li>
+                <li>• ease-out</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 14: transition-all -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 14: transition-all
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover: 배경 + scale + shadow 모두 변경</li>
+              <li>• transition-all 사용 (개별 지정 불필요!)</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 14 -->
+            <div
+              class="bg-white p-6 rounded-xl shadow hover:bg-gray-50 hover:scale-105 hover:shadow-2xl cursor-pointer"
+            >
+              <h3 class="font-bold text-lg mb-2">transition-all 없음</h3>
+              <p class="text-sm text-gray-600">
+                여러 속성이 한꺼번에 변하지만 딱딱함
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <div
+              class="bg-white p-6 rounded-xl shadow hover:bg-gray-50 hover:scale-105 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+            >
+              <h3 class="font-bold text-lg mb-2">transition-all 있음</h3>
+              <p class="text-sm text-gray-600">여러 속성이 부드럽게 전환!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 15: Group Hover + Transition -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 15: Group Hover + Transition (고급)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 카드에 group 클래스</li>
+              <li>• 이미지: group-hover:scale-110 + transition</li>
+              <li>• 제목: group-hover:text-blue-600 + transition</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 15 -->
+            <div class="bg-white p-4 rounded-xl shadow max-w-xs cursor-pointer">
+              <div class="overflow-hidden rounded-lg mb-3">
+                <div
+                  class="bg-gradient-to-br from-cyan-300 to-blue-400 aspect-video"
+                ></div>
+              </div>
+              <h3 class="font-bold text-lg mb-2">상품 제목</h3>
+              <p class="text-sm text-gray-600 mb-3">멋진 상품입니다</p>
+              <p class="text-blue-600 font-bold text-xl">₩49,000</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px] flex items-center justify-center"
+          >
+            <div
+              class="group bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300 max-w-xs cursor-pointer"
+            >
+              <div class="overflow-hidden rounded-lg mb-3">
+                <div
+                  class="bg-gradient-to-br from-cyan-300 to-blue-400 aspect-video group-hover:scale-110 transition-transform duration-300"
+                ></div>
+              </div>
+              <h3
+                class="font-bold text-lg mb-2 group-hover:text-blue-600 transition-colors duration-300"
+              >
+                상품 제목
+              </h3>
+              <p class="text-sm text-gray-600 mb-3">멋진 상품입니다</p>
+              <p class="text-blue-600 font-bold text-xl">₩49,000</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 종합 연습 과제 -->
+      <section class="mb-16 bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+        <h3 class="text-2xl font-bold mb-6 text-blue-700">🎯 종합 연습 과제</h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 1: 완벽한 버튼
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• hover: 진한 색 + scale-105</li>
+                <li>• active: scale-95</li>
+                <li>• transition-all + duration-200 + ease-in-out</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div
+              class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+            >
+              <button
+                class="bg-purple-500 hover:bg-purple-600 hover:scale-105 active:scale-95 text-white px-8 py-3 rounded-lg font-medium"
+              >
+                클릭하세요
+              </button>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div
+              class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+            >
+              <button
+                class="bg-purple-500 hover:bg-purple-600 hover:scale-105 active:scale-95 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 ease-in-out"
+              >
+                클릭하세요
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 2: 순차적 리스트
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 각 항목에 다른 delay (0, 75, 150)</li>
+                <li>• hover: 배경색 변경</li>
+                <li>• transition-colors + duration-300</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[250px]">
+              <div class="space-y-2">
+                <div
+                  class="p-4 bg-gray-50 hover:bg-blue-100 rounded-lg cursor-pointer delay-0"
+                >
+                  <p class="font-medium">항목 1 (즉시)</p>
+                </div>
+                <div
+                  class="p-4 bg-gray-50 hover:bg-blue-100 rounded-lg cursor-pointer delay-75"
+                >
+                  <p class="font-medium">항목 2 (75ms 후)</p>
+                </div>
+                <div
+                  class="p-4 bg-gray-50 hover:bg-blue-100 rounded-lg cursor-pointer delay-150"
+                >
+                  <p class="font-medium">항목 3 (150ms 후)</p>
+                </div>
+              </div>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[250px]">
+              <div class="space-y-2">
+                <div
+                  class="p-4 bg-gray-50 hover:bg-blue-100 rounded-lg cursor-pointer transition-colors duration-300 delay-0"
+                >
+                  <p class="font-medium">항목 1 (즉시)</p>
+                </div>
+                <div
+                  class="p-4 bg-gray-50 hover:bg-blue-100 rounded-lg cursor-pointer transition-colors duration-300 delay-75"
+                >
+                  <p class="font-medium">항목 2 (75ms 후)</p>
+                </div>
+                <div
+                  class="p-4 bg-gray-50 hover:bg-blue-100 rounded-lg cursor-pointer transition-colors duration-300 delay-150"
+                >
+                  <p class="font-medium">항목 3 (150ms 후)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 종합 실습 1 ========== -->
+      <section
+        class="mb-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-8 rounded-lg border-4 border-indigo-200"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-indigo-800 text-center">
+          🎯 종합 실습 1: 프리미엄 상품 카드
+        </h2>
+        <p class="text-center text-gray-700 mb-8">
+          모든 transition 기술을 활용한 완성도 높은 카드!
+        </p>
+
+        <div class="mb-6 bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">📋 요구사항</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>
+              • <strong>카드:</strong> group, hover 시 -translate-y-2 +
+              shadow-2xl, transition-all duration-300 ease-out
+            </li>
+            <li>
+              • <strong>이미지 영역:</strong> overflow hidden, 이미지
+              group-hover:scale-110 + rotate-2, transition-transform
+              duration-500
+            </li>
+            <li>
+              • <strong>배지:</strong> 절대 위치(좌상단), hover 시 scale-110,
+              transition-transform duration-200
+            </li>
+            <li>
+              • <strong>제목:</strong> group-hover:text-blue-600,
+              transition-colors duration-300
+            </li>
+            <li>
+              • <strong>버튼:</strong> hover:bg-blue-600 + scale-105,
+              active:scale-95, transition-all duration-200
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TO DO: 종합 실습 1 시작 -->
+          <div
+            class="min-h-[500px] bg-gray-100 border-2 border-gray-300 p-6 flex justify-center items-center"
+          >
+            <div class="bg-white rounded-xl shadow p-5 max-w-sm cursor-pointer">
+              <div class="relative overflow-hidden rounded-lg mb-4">
+                <div
+                  class="bg-gradient-to-br from-pink-300 via-purple-400 to-indigo-500 aspect-video"
+                ></div>
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full"
+                >
+                  NEW
+                </span>
+              </div>
+              <h3 class="font-bold text-xl mb-2">프리미엄 제품</h3>
+              <p class="text-sm text-gray-600 mb-4">
+                최고급 품질의 놀라운 제품입니다
+              </p>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-2xl font-bold text-blue-600">₩129,000</span>
+                <span class="text-sm text-gray-500 line-through">₩199,000</span>
+              </div>
+              <button
+                class="w-full bg-blue-500 text-white py-3 rounded-lg font-medium"
+              >
+                장바구니 담기
+              </button>
+            </div>
+          </div>
+          <!-- TO DO: 종합 실습 1 끝 -->
+
+          <div
+            class="min-h-[500px] bg-gray-100 border-2 border-gray-300 p-6 flex justify-center items-center"
+          >
+            <div
+              class="group bg-white rounded-xl shadow hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ease-out p-5 max-w-sm cursor-pointer"
+            >
+              <div class="relative overflow-hidden rounded-lg mb-4">
+                <div
+                  class="bg-gradient-to-br from-pink-300 via-purple-400 to-indigo-500 aspect-video group-hover:scale-110 group-hover:rotate-2 transition-transform duration-500"
+                ></div>
+                <span
+                  class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full hover:scale-110 transition-transform duration-200"
+                >
+                  NEW
+                </span>
+              </div>
+              <h3
+                class="font-bold text-xl mb-2 group-hover:text-blue-600 transition-colors duration-300"
+              >
+                프리미엄 제품
+              </h3>
+              <p class="text-sm text-gray-600 mb-4">
+                최고급 품질의 놀라운 제품입니다
+              </p>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-2xl font-bold text-blue-600">₩129,000</span>
+                <span class="text-sm text-gray-500 line-through">₩199,000</span>
+              </div>
+              <button
+                class="w-full bg-blue-500 hover:bg-blue-600 hover:scale-105 active:scale-95 text-white py-3 rounded-lg font-medium transition-all duration-200"
+              >
+                장바구니 담기
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 종합 실습 2 ========== -->
+      <section
+        class="mb-16 bg-gradient-to-br from-cyan-50 via-teal-50 to-green-50 p-8 rounded-lg border-4 border-cyan-200"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-cyan-800 text-center">
+          🎯 종합 실습 2: 인터랙티브 네비게이션
+        </h2>
+        <p class="text-center text-gray-700 mb-8">
+          순차적 delay를 활용한 메뉴!
+        </p>
+
+        <div class="mb-6 bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">📋 요구사항</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>
+              • <strong>메뉴 항목:</strong> 각각 다른 delay (0, 75, 150, 225)
+            </li>
+            <li>
+              • <strong>Hover:</strong> 배경 gray-100 + 위로 1px 이동 +
+              scale-105
+            </li>
+            <li>
+              • <strong>Transition:</strong> transition-all duration-300
+              ease-out
+            </li>
+            <li>
+              • <strong>아이콘:</strong> group-hover 시 rotate-12,
+              transition-transform duration-200
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TO DO: 종합 실습 2 시작 -->
+          <div class="min-h-[400px] bg-white border-2 border-gray-300 p-6">
+            <nav class="grid grid-cols-2 gap-4">
+              <a
+                href="#"
+                class="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 delay-0"
+              >
+                <span class="text-2xl">🏠</span>
+                <div>
+                  <p class="font-bold">홈</p>
+                  <p class="text-xs text-gray-600">메인 페이지</p>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 delay-75"
+              >
+                <span class="text-2xl">👤</span>
+                <div>
+                  <p class="font-bold">프로필</p>
+                  <p class="text-xs text-gray-600">내 정보</p>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 delay-150"
+              >
+                <span class="text-2xl">⚙️</span>
+                <div>
+                  <p class="font-bold">설정</p>
+                  <p class="text-xs text-gray-600">환경설정</p>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 delay-[225ms]"
+              >
+                <span class="text-2xl">📧</span>
+                <div>
+                  <p class="font-bold">메시지</p>
+                  <p class="text-xs text-gray-600">받은 메시지</p>
+                </div>
+              </a>
+            </nav>
+          </div>
+          <!-- TO DO: 종합 실습 2 끝 -->
+
+          <div class="min-h-[400px] bg-white border-2 border-gray-300 p-6">
+            <nav class="grid grid-cols-2 gap-4">
+              <a
+                href="#"
+                class="group flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 hover:bg-gray-100 hover:-translate-y-0.5 hover:scale-105 transition-all duration-300 ease-out delay-0"
+              >
+                <span
+                  class="text-2xl group-hover:rotate-12 transition-transform duration-200"
+                  >🏠</span
+                >
+                <div>
+                  <p class="font-bold">홈</p>
+                  <p class="text-xs text-gray-600">메인 페이지</p>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="group flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 hover:bg-gray-100 hover:-translate-y-0.5 hover:scale-105 transition-all duration-300 ease-out delay-75"
+              >
+                <span
+                  class="text-2xl group-hover:rotate-12 transition-transform duration-200"
+                  >👤</span
+                >
+                <div>
+                  <p class="font-bold">프로필</p>
+                  <p class="text-xs text-gray-600">내 정보</p>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="group flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 hover:bg-gray-100 hover:-translate-y-0.5 hover:scale-105 transition-all duration-300 ease-out delay-150"
+              >
+                <span
+                  class="text-2xl group-hover:rotate-12 transition-transform duration-200"
+                  >⚙️</span
+                >
+                <div>
+                  <p class="font-bold">설정</p>
+                  <p class="text-xs text-gray-600">환경설정</p>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="group flex items-center gap-3 p-4 rounded-xl border-2 border-gray-200 hover:bg-gray-100 hover:-translate-y-0.5 hover:scale-105 transition-all duration-300 ease-out delay-[225ms]"
+              >
+                <span
+                  class="text-2xl group-hover:rotate-12 transition-transform duration-200"
+                  >📧</span
+                >
+                <div>
+                  <p class="font-bold">메시지</p>
+                  <p class="text-xs text-gray-600">받은 메시지</p>
+                </div>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

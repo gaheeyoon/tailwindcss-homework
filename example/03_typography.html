@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tailwind Starter</title>
+  </head>
+  <body class="p-10">
+    <!-- 1. font-size : https://tailwindcss.com/docs/font-size -->
+    <h1 class="text-3xl font-bold">1. 폰트 사이즈 (font-size)</h1>
+
+    <p class="text-sm">The quick brown fox ...</p>
+    <p class="text-base">The quick brown fox ...</p>
+    <p class="text-lg">The quick brown fox ...</p>
+    <p class="text-xl">The quick brown fox ...</p>
+    <p class="text-2xl">The quick brown fox ...</p>
+
+    <!-- 사용자 정의 값으로 폰트 크기 지정하기 : text-[원하는 값] -->
+    <p class="text-[38px]">The quick brown fox ...</p>
+    <p class="text-[2rem]">The quick brown fox ...</p>
+
+    <!-- 실습 -->
+    <p class="text-lg">안녕하세요</p>
+    <p class="text-2xl">안녕하세요</p>
+    <p class="text-[30px]">안녕하세요</p>
+
+    <hr class="my-10" />
+
+    <!-- 2. font-weight : https://tailwindcss.com/docs/font-weight -->
+    <h1 class="text-3xl font-bold">2. 폰트 굵기 (font-weight)</h1>
+
+    <p class="font-light ...">The quick brown fox ...</p>
+    <p class="font-normal ...">The quick brown fox ...</p>
+    <p class="font-medium ...">The quick brown fox ...</p>
+    <p class="font-semibold ...">The quick brown fox ...</p>
+    <p class="font-bold ...">The quick brown fox ...</p>
+
+    <p class="font-[300] ...">The quick brown fox ...</p>
+    <p class="font-[700] ...">The quick brown fox ...</p>
+    <p class="font-[900] ...">The quick brown fox ...</p>
+
+    <!-- 실습 -->
+    <p class="font-normal">Hello</p>
+    <p class="font-semibold">Hello</p>
+    <p class="text-[20px] font-bold">Hello</p>
+
+    <hr class="my-10" />
+
+    <!-- 3. letter-spacing : https://tailwindcss.com/docs/letter-spacing -->
+    <h1 class="text-3xl font-bold">3. 자간 (letter-spacing)</h1>
+
+    <p class="tracking-tight ...">The quick brown fox ...</p>
+    <p class="tracking-normal ...">The quick brown fox ...</p>
+    <p class="tracking-wide ...">The quick brown fox ...</p>
+
+    <p class="tracking-[10px] ...">The quick brown fox ...</p>
+    <p class="tracking-[0.5em] ...">The quick brown fox ...</p>
+
+    <!-- 실습 -->
+    <p class="tracking-tight">HELLO</p>
+    <p class="tracking-widest">HELLO</p>
+    <p class="tracking-widest text-[20px]">HELLO</p>
+
+    <hr class="my-10" />
+
+    <!-- 4. line-height : https://tailwindcss.com/docs/line-height -->
+    <h1 class="text-3xl font-bold">4. 줄간격 (line-height)</h1>
+
+    <p class="text-base/6 my-5 ...">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquid
+      illum est non eaque facilis quasi eveniet, vitae odit perspiciatis rerum
+      veritatis et quaerat, expedita quisquam. Eius nostrum nulla a.
+    </p>
+    <p class="text-base/7 my-5 ...">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquid
+      illum est non eaque facilis quasi eveniet, vitae odit perspiciatis rerum
+      veritatis et quaerat, expedita quisquam. Eius nostrum nulla a.
+    </p>
+    <p class="text-base/8 my-5 ...">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquid
+      illum est non eaque facilis quasi eveniet, vitae odit perspiciatis rerum
+      veritatis et quaerat, expedita quisquam. Eius nostrum nulla a.
+    </p>
+
+    <p class="text-sm leading-6">So I started to walk into the water...</p>
+    <p class="text-sm leading-7">So I started to walk into the water...</p>
+    <p class="text-sm leading-8">So I started to walk into the water...</p>
+
+    <p class="text-sm leading-[1.5]">So I started to walk into the water...</p>
+    <p class="text-sm leading-[5.5]">So I started to walk into the water...</p>
+
+    <p class="leading-none">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequatur,
+      velit natus praesentium repellendus repellat fuga nostrum eos sed id est
+      nemo odit iusto sapiente nihil ut. Cupiditate, accusantium mollitia.
+    </p>
+    <p class="leading-loose">
+      Labore architecto maiores minima suscipit placeat aut aperiam, commodi
+      ratione illum deserunt ab quod mollitia obcaecati! Incidunt, aperiam
+      laboriosam repellat sed tenetur, assumenda ipsam nemo perferendis corporis
+      aliquid excepturi aspernatur.
+    </p>
+    <p class="leading-[2rem]">
+      Dolorem temporibus ex maxime. Sit vero voluptatum obcaecati asperiores
+      ullam, magnam itaque velit dolor neque aut quidem dignissimos quisquam
+      dolores provident quia ducimus cumque placeat quod, consequatur
+      consectetur nostrum hic!
+    </p>
+
+    <hr class="my-10" />
+
+    <!-- 5. text-align : https://tailwindcss.com/docs/text-align -->
+    <h1 class="text-3xl font-bold">5. 정렬 (text-align)</h1>
+
+    <p class="bg-amber-300 m-5 text-left">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae enim
+      animi accusantium maxime, blanditiis beatae. Veniam, ratione. Dolorum quam
+      nesciunt dignissimos magni quasi corrupti, animi quo esse explicabo!
+      Animi, doloribus.
+    </p>
+
+    <p class="bg-amber-300 m-5 text-center">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae enim
+      animi accusantium maxime, blanditiis beatae. Veniam, ratione. Dolorum quam
+      nesciunt dignissimos magni quasi corrupti, animi quo esse explicabo!
+      Animi, doloribus.
+    </p>
+
+    <p class="bg-amber-300 m-5 text-right">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae enim
+      animi accusantium maxime, blanditiis beatae. Veniam, ratione. Dolorum quam
+      nesciunt dignissimos magni quasi corrupti, animi quo esse explicabo!
+      Animi, doloribus.
+    </p>
+
+    <hr class="my-10" />
+
+    <!-- 6. color : https://tailwindcss.com/docs/text-align -->
+    <h1 class="text-3xl font-bold">6. 텍스트 색상 (text-color)</h1>
+
+    <p class="text-blue-100">Lorem ipsum dolor sit amet.</p>
+    <p class="text-blue-200">Dignissimos consequuntur est illum sint?</p>
+    <p class="text-blue-300">
+      Aliquam ducimus recusandae tenetur necessitatibus?
+    </p>
+    <p class="text-blue-400">Eos, dolorum quod. Error, sint!</p>
+    <p class="text-blue-500">Similique sed molestiae a maxime.</p>
+    <p class="text-blue-600">
+      Veniam repellendus praesentium asperiores perferendis.
+    </p>
+    <p class="text-blue-700">Facilis totam dicta dignissimos harum.</p>
+    <p class="text-blue-800">Illum perferendis officia eius omnis!</p>
+    <p class="text-blue-900">Dicta quaerat reiciendis impedit officiis?</p>
+
+    <p class="text-blue-900/50">Dicta quaerat reiciendis impedit officiis?</p>
+    <p class="text-blue-900/25">Dicta quaerat reiciendis impedit officiis?</p>
+
+    <p class="text-[#ef364b]">Dicta quaerat reiciendis impedit officiis?</p>
+    <p class="text-[rgb(38,97,6)]">
+      Dicta quaerat reiciendis impedit officiis?
+    </p>
+    <p class="text-[rgba(38,97,6,0.5)]">
+      Dicta quaerat reiciendis impedit officiis?
+    </p>
+
+    <!-- 실습 -->
+    <span class="text-gray-600">안내</span>
+    <span class="text-blue-600 font-semibold">링크</span>
+    <span class="text-[#ff0000] text-[20px]">경고</span>
+    <span class="text-[rgba(255,0,0,0.5)]">주의</span>
+
+    <hr class="my-10" />
+
+    <!-- 7. line-clamp  : https://tailwindcss.com/docs/line-clamp -->
+    <h1 class="text-3xl font-bold">7. 말줄임 처리 (line-clamp )</h1>
+
+    <article>
+      <time>Mar 10, 2020</time>
+      <h2>Boost your conversion rate</h2>
+      <p class="line-clamp-[4]">
+        Nulla dolor velit adipisicing duis excepteur esse in duis nostrud
+        occaecat mollit incididunt deserunt sunt. Ut ut sunt laborum ex occaecat
+        eu tempor labore enim adipisicing minim ad. Est in quis eu dolore
+        occaecat excepteur fugiat dolore nisi aliqua fugiat enim ut cillum.
+        Labore enim duis nostrud eu. Est ut eiusmod consequat irure quis
+        deserunt ex. Enim laboris dolor magna pariatur. Dolor et ad sint
+        voluptate sunt elit mollit officia ad enim sit consectetur enim.Nulla
+        dolor velit adipisicing duis excepteur esse in duis nostrud occaecat
+        mollit incididunt deserunt sunt. Ut ut sunt laborum ex occaecat eu
+        tempor labore enim adipisicing minim ad. Est in quis eu dolore occaecat
+        excepteur fugiat dolore nisi aliqua fugiat enim ut cillum. Labore enim
+        duis nostrud eu. Est ut eiusmod consequat irure quis deserunt ex. Enim
+        laboris dolor magna pariatur. Dolor et ad sint voluptate sunt elit
+        mollit officia ad enim sit consectetur enim.
+      </p>
+      <div>
+        <img src="/img/lindsay.jpg" />
+        Lindsay Walton
+      </div>
+    </article>
+  </body>
+</html>

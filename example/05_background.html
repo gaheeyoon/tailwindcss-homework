@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Background · Border · Radius 실습</title>
+  </head>
+  <body class="bg-gray-50">
+    <!-- 헤더 -->
+    <header
+      class="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6 mb-8 text-center"
+    >
+      <h1 class="text-3xl font-bold">
+        Tailwind CSS Background · Border · Radius 실습
+      </h1>
+      <p class="mt-2">
+        왼쪽 박스를 수정하여 오른쪽 완성본과 동일하게 만들어보세요
+      </p>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- ========== BACKGROUND 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">
+          🎨 Background — 배경 설정
+        </h2>
+      </section>
+
+      <!-- Background 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">
+          📖 Background 이론
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Background</strong>는 요소의 배경색, 배경 이미지, 위치 등을
+            설정합니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">배경색 (background-color):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">bg-gray-100</code>
+                  → 회색 배경
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">bg-blue-500</code>
+                  → 파란 배경
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >bg-[#ffddaa]</code
+                  >
+                  → HEX 색상
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >bg-blue-500/50</code
+                  >
+                  → 투명도 50%
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">배경 이미지:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >bg-[url('/img.png')]</code
+                  >
+                  → 이미지
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >bg-gradient-to-r</code
+                  >
+                  → 그라데이션
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >from-blue-400</code
+                  >
+                  → 시작 색
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >to-purple-500</code
+                  >
+                  → 끝 색
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">배경 크기/위치:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">bg-cover</code> →
+                  전체 덮기
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">bg-contain</code>
+                  → 전체 보이기
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">bg-center</code> →
+                  가운데 정렬
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >bg-no-repeat</code
+                  >
+                  → 반복 안 함
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">그라데이션 방향:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >bg-gradient-to-r</code
+                  >
+                  → 좌→우
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >bg-gradient-to-b</code
+                  >
+                  → 위→아래
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >bg-gradient-to-br</code
+                  >
+                  → 대각선
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 1: 배경색 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 1: 배경색 적용
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 회색(gray-200) 배경색 적용</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="border-2 border-gray-300 p-6 min-h-[120px]">
+            <!-- TO DO: 실습 1 -->
+            <div class="p-4 h-20">
+              <p class="text-gray-700">회색 배경</p>
+            </div>
+          </div>
+
+          <div class="border-2 border-gray-300 p-6 min-h-[120px]">
+            <div class="bg-gray-200 p-4 h-20">
+              <p class="text-gray-700">회색 배경</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 2: HEX 색상 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 2: HEX 색상 배경
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• #ffddaa 색상의 배경 적용</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="border-2 border-gray-300 p-6 min-h-[120px]">
+            <!-- TO DO: 실습 2 -->
+            <div class="p-4 h-20">
+              <p class="text-gray-700">HEX 배경</p>
+            </div>
+          </div>
+
+          <div class="border-2 border-gray-300 p-6 min-h-[120px]">
+            <div class="bg-[#ffddaa] p-4 h-20">
+              <p class="text-gray-700">HEX 배경</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 3: 투명도 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 3: 투명도가 있는 배경
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 파란색(blue-500) 배경에 투명도 40% 적용</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gradient-to-r from-purple-200 to-pink-200 border-2 border-gray-300 p-6 min-h-[120px]"
+          >
+            <!-- TO DO: 실습 3 -->
+            <div class="p-4 h-20">
+              <p class="text-gray-700 font-medium">투명 파랑 배경</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gradient-to-r from-purple-200 to-pink-200 border-2 border-gray-300 p-6 min-h-[120px]"
+          >
+            <div class="bg-blue-500/40 p-4 h-20">
+              <p class="text-gray-700 font-medium">투명 파랑 배경</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 4: 좌우 그라데이션 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 4: 좌우 그라데이션
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 파란색(blue-400)에서 보라색(purple-500)으로</li>
+              <li>• 왼쪽에서 오른쪽 방향</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="border-2 border-gray-300 p-6 min-h-[120px]">
+            <!-- TO DO: 실습 4 -->
+            <div class="p-4 h-20"></div>
+          </div>
+
+          <div class="border-2 border-gray-300 p-6 min-h-[120px]">
+            <div
+              class="bg-gradient-to-r from-blue-400 to-purple-500 p-4 h-20"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 5: 위아래 그라데이션 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 5: 위아래 그라데이션
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 주황색(orange-400)에서 분홍색(pink-500)으로</li>
+              <li>• 위에서 아래 방향</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 5 -->
+            <div class="h-32"></div>
+          </div>
+
+          <div class="border-2 border-gray-300 p-6 min-h-[150px]">
+            <div
+              class="bg-gradient-to-b from-orange-400 to-pink-500 h-32"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Background 연습 과제 -->
+      <section class="mb-16 bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+        <h3 class="text-2xl font-bold mb-6 text-blue-700">
+          🎯 Background 연습 과제
+        </h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 1: 경고 배너 만들기
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 빨간색(red-100) 배경</li>
+                <li>• padding 1rem, 높이 5rem</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div class="border-2 border-gray-300 p-6 min-h-[150px]">
+              <div class="p-4">
+                <p class="text-red-700 font-medium">
+                  ⚠️ 경고: 중요한 공지사항입니다
+                </p>
+              </div>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div class="border-2 border-gray-300 p-6 min-h-[150px]">
+              <div class="bg-red-100 p-4 h-20">
+                <p class="text-red-700 font-medium">
+                  ⚠️ 경고: 중요한 공지사항입니다
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 2: 대각선 그라데이션 카드
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 청록색(cyan-400)에서 파란색(blue-600)으로</li>
+                <li>• 왼쪽 위에서 오른쪽 아래 대각선</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div class="border-2 border-gray-300 p-6 min-h-[180px]">
+              <div class="p-6 rounded-lg h-32">
+                <p class="text-white font-bold text-lg">프리미엄 멤버십</p>
+                <p class="text-white text-sm mt-2">
+                  지금 가입하고 혜택을 받으세요
+                </p>
+              </div>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div class="border-2 border-gray-300 p-6 min-h-[180px]">
+              <div
+                class="bg-gradient-to-br from-cyan-400 to-blue-600 p-6 rounded-lg h-32"
+              >
+                <p class="text-white font-bold text-lg">프리미엄 멤버십</p>
+                <p class="text-white text-sm mt-2">
+                  지금 가입하고 혜택을 받으세요
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 3 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 3: 투명 오버레이 만들기
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 검은색(black) 배경에 투명도 50%</li>
+                <li>• 흰색 텍스트가 잘 보여야 함</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 3 시작 -->
+            <div class="bg-blue-200 border-2 border-gray-300 p-6 min-h-[150px]">
+              <div class="p-4 h-20 flex items-center justify-center">
+                <p class="text-white font-bold text-lg">이미지 위 텍스트</p>
+              </div>
+            </div>
+            <!-- TO DO: 과제 3 끝 -->
+            <div class="bg-blue-200 border-2 border-gray-300 p-6 min-h-[150px]">
+              <div
+                class="bg-black/50 p-4 h-20 flex items-center justify-center"
+              >
+                <p class="text-white font-bold text-lg">이미지 위 텍스트</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== BORDER 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-green-700">
+          🔲 Border — 테두리 설정
+        </h2>
+      </section>
+
+      <!-- Border 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Border 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Border</strong>는 요소의 테두리 두께, 색상, 스타일을
+            설정합니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">테두리 두께 (border-width):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">border</code> →
+                  1px 테두리
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">border-2</code> →
+                  2px 테두리
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">border-4</code> →
+                  4px 테두리
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >border-[3px]</code
+                  >
+                  → 3px 임의 값
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">방향별 테두리:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">border-t-2</code>
+                  → 위쪽만 2px
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">border-b-4</code>
+                  → 아래쪽만 4px
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">border-l</code> →
+                  왼쪽만 1px
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">border-r-2</code>
+                  → 오른쪽만 2px
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">테두리 색상 (border-color):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >border-gray-300</code
+                  >
+                  → 회색
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >border-blue-500</code
+                  >
+                  → 파란색
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >border-[#ff0000]</code
+                  >
+                  → HEX
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">테두리 스타일 (border-style):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >border-solid</code
+                  >
+                  → 실선
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >border-dashed</code
+                  >
+                  → 파선
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >border-dotted</code
+                  >
+                  → 점선
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >border-double</code
+                  >
+                  → 이중선
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 6: 테두리 두께 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 6: 테두리 두께
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 2px 검은색 테두리 적용</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 6 -->
+            <div class="bg-white p-4">
+              <p class="text-gray-700">테두리 박스</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="bg-white border-2 border-black p-4">
+              <p class="text-gray-700">테두리 박스</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 7: 위쪽 테두리만 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 7: 위쪽 테두리만
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 위쪽에만 4px 회색(gray-400) 테두리</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 7 -->
+            <div class="bg-white p-4">
+              <p class="text-gray-700">위쪽 테두리</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="bg-white border-t-4 border-gray-400 p-4">
+              <p class="text-gray-700">위쪽 테두리</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 8: 점선 테두리 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 8: 점선 테두리
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 3px 점선(dotted) 빨간색(red-500) 테두리</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 8 -->
+            <div class="bg-white p-4">
+              <p class="text-gray-700">점선 테두리</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="bg-white border-[3px] border-dotted border-red-500 p-4">
+              <p class="text-gray-700">점선 테두리</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 9: 파선 테두리 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 9: 파선 테두리
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 2px 파선(dashed) 회색(gray-500) 테두리</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 9 -->
+            <div class="bg-white p-4">
+              <p class="text-gray-700">파선 테두리</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="bg-white border-2 border-dashed border-gray-500 p-4">
+              <p class="text-gray-700">파선 테두리</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 10: 이중선 테두리 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 10: 이중선 테두리
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 4px 이중선(double) 파란색(blue-600) 테두리</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 10 -->
+            <div class="bg-white p-4">
+              <p class="text-gray-700">이중선 테두리</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="bg-white border-4 border-double border-blue-600 p-4">
+              <p class="text-gray-700">이중선 테두리</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Border 연습 과제 -->
+      <section class="mb-16 bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+        <h3 class="text-2xl font-bold mb-6 text-blue-700">
+          🎯 Border 연습 과제
+        </h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 1: 강조 카드 만들기
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 왼쪽에만 4px 파란색(blue-500) 테두리</li>
+                <li>• 나머지는 1px 회색(gray-200) 테두리</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+              <div class="bg-white p-4">
+                <p class="text-gray-700 font-medium">💡 중요한 정보</p>
+                <p class="text-gray-600 text-sm mt-2">
+                  이 내용을 꼭 확인하세요
+                </p>
+              </div>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+              <div
+                class="bg-white border border-gray-200 border-l-4 border-l-blue-500 p-4"
+              >
+                <p class="text-gray-700 font-medium">💡 중요한 정보</p>
+                <p class="text-gray-600 text-sm mt-2">
+                  이 내용을 꼭 확인하세요
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 2: 쿠폰 티켓 만들기
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 2px 파선(dashed) 주황색(orange-400) 테두리</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[180px]">
+              <div class="bg-orange-50 p-6">
+                <p class="text-orange-800 font-bold text-xl">50% 할인</p>
+                <p class="text-orange-600 text-sm mt-2">2024.12.31까지</p>
+              </div>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[180px]">
+              <div
+                class="bg-orange-50 border-2 border-dashed border-orange-400 p-6"
+              >
+                <p class="text-orange-800 font-bold text-xl">50% 할인</p>
+                <p class="text-orange-600 text-sm mt-2">2024.12.31까지</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 3 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 3: 구분선 있는 메뉴
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 각 메뉴 아래에 1px 회색(gray-200) 테두리</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 3 시작 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[200px]">
+              <div class="py-3">홈</div>
+              <div class="py-3">소개</div>
+              <div class="py-3">서비스</div>
+              <div class="py-3">연락처</div>
+            </div>
+            <!-- TO DO: 과제 3 끝 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[200px]">
+              <div class="py-3 border-b border-gray-200">홈</div>
+              <div class="py-3 border-b border-gray-200">소개</div>
+              <div class="py-3 border-b border-gray-200">서비스</div>
+              <div class="py-3">연락처</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== RADIUS 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-pink-700">
+          ⭕ Radius — 모서리 둥글기
+        </h2>
+      </section>
+
+      <!-- Radius 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Radius 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p><strong>Radius</strong>는 요소의 모서리를 둥글게 만듭니다.</p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">기본 둥글기:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">rounded</code> →
+                  약간 둥글게 (4px)
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">rounded-sm</code>
+                  → 조금 (2px)
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">rounded-md</code>
+                  → 보통 (6px)
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">rounded-lg</code>
+                  → 많이 (8px)
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">rounded-xl</code>
+                  → 아주 많이 (12px)
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">특수 둥글기:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >rounded-full</code
+                  >
+                  → 완전 둥글게
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >rounded-none</code
+                  >
+                  → 각지게
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >rounded-[20px]</code
+                  >
+                  → 임의 값
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">방향별 둥글기:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >rounded-t-lg</code
+                  >
+                  → 위쪽만
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >rounded-b-lg</code
+                  >
+                  → 아래쪽만
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >rounded-l-lg</code
+                  >
+                  → 왼쪽만
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >rounded-r-lg</code
+                  >
+                  → 오른쪽만
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">모서리별 둥글기:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >rounded-tl-lg</code
+                  >
+                  → 왼쪽 위
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >rounded-tr-lg</code
+                  >
+                  → 오른쪽 위
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >rounded-bl-lg</code
+                  >
+                  → 왼쪽 아래
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >rounded-br-lg</code
+                  >
+                  → 오른쪽 아래
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 11: 기본 둥글기 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 11: 기본 둥글기
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 보통 둥글기 적용</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 11 -->
+            <div class="bg-gray-200 p-4">
+              <p class="text-gray-700">둥근 박스</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="bg-gray-200 rounded-lg p-4">
+              <p class="text-gray-700">둥근 박스</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 12: 완전히 둥글게 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 12: 완전히 둥글게
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 완전히 둥근 버튼 만들기</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px] flex items-center"
+          >
+            <!-- TO DO: 실습 12 -->
+            <button class="bg-blue-500 text-white px-6 py-2">pill 버튼</button>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px] flex items-center"
+          >
+            <button class="bg-blue-500 text-white px-6 py-2 rounded-full">
+              pill 버튼
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 13: 위쪽만 둥글게 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 13: 위쪽만 둥글게
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 상단만 둥글게 (xl 크기)</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[180px]">
+            <!-- TO DO: 실습 13 -->
+            <div class="bg-blue-200 p-4 h-32">
+              <p class="text-gray-700">위쪽만 둥글게</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[180px]">
+            <div class="bg-blue-200 rounded-t-xl p-4 h-32">
+              <p class="text-gray-700">위쪽만 둥글게</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 14: 임의 값 둥글기 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 14: 임의 값 둥글기
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 20px 둥글기 적용</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 14 -->
+            <div class="bg-gray-300 p-4">
+              <p class="text-gray-700">Custom Radius</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="bg-gray-300 rounded-[20px] p-4">
+              <p class="text-gray-700">Custom Radius</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Radius 연습 과제 -->
+      <section class="mb-16 bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+        <h3 class="text-2xl font-bold mb-6 text-blue-700">
+          🎯 Radius 연습 과제
+        </h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 1: 프로필 이미지 만들기
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 완전히 둥근 원형 (64px × 64px)</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div
+              class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px] flex items-center"
+            >
+              <div
+                class="bg-purple-400 w-16 h-16 flex items-center justify-center"
+              >
+                <span class="text-white text-2xl">👤</span>
+              </div>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div
+              class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px] flex items-center"
+            >
+              <div
+                class="bg-purple-400 w-16 h-16 rounded-full flex items-center justify-center"
+              >
+                <span class="text-white text-2xl">👤</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 2: 카드 헤더 만들기
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 상단만 둥글게 (lg 크기)</li>
+                <li>• 파란 그라데이션 배경</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div class="bg-white border-2 border-gray-300 min-h-[200px]">
+              <div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-6">
+                <h3 class="text-white font-bold text-lg">카드 제목</h3>
+              </div>
+              <div class="p-6">
+                <p class="text-gray-600">카드 내용이 들어갑니다</p>
+              </div>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div class="bg-white border-2 border-gray-300 min-h-[200px]">
+              <div
+                class="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-t-lg p-6"
+              >
+                <h3 class="text-white font-bold text-lg">카드 제목</h3>
+              </div>
+              <div class="p-6">
+                <p class="text-gray-600">카드 내용이 들어갑니다</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 3 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 3: 배지(Badge) 만들기
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 완전히 둥근 배지</li>
+                <li>• 초록색 배경, 작은 텍스트</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 3 시작 -->
+            <div
+              class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px] flex items-center"
+            >
+              <span class="bg-green-500 text-white text-xs px-3 py-1">
+                NEW
+              </span>
+            </div>
+            <!-- TO DO: 과제 3 끝 -->
+            <div
+              class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px] flex items-center"
+            >
+              <span
+                class="bg-green-500 text-white text-xs px-3 py-1 rounded-full"
+              >
+                NEW
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== DIVIDE 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-yellow-700">
+          ➗ Divide — 내부 구분선
+        </h2>
+      </section>
+
+      <!-- Divide 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Divide 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Divide</strong>는 형제 요소들 사이에 자동으로 구분선을
+            만듭니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">세로 구분선 (divide-y):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">divide-y</code> →
+                  세로 구분선 1px
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">divide-y-2</code>
+                  → 2px
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >divide-y-gray-300</code
+                  >
+                  → 회색
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">가로 구분선 (divide-x):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">divide-x</code> →
+                  가로 구분선 1px
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">divide-x-2</code>
+                  → 2px
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >divide-x-gray-400</code
+                  >
+                  → 회색
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">주의사항:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 부모 요소에 적용</li>
+                <li>• 자식 요소들 사이에만 선 생성</li>
+                <li>• 첫 번째 자식 앞에는 선 없음</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">활용 예:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 메뉴 리스트 구분</li>
+                <li>• 버튼 그룹 구분</li>
+                <li>• 목록 항목 구분</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 15: 세로 구분선 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 15: 세로 구분선
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 문장 세 개에 세로 구분선 적용</li>
+              <li>• 회색(gray-300) 색상</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[200px]">
+            <!-- TO DO: 실습 15 -->
+            <div>
+              <p class="py-2">A</p>
+              <p class="py-2">B</p>
+              <p class="py-2">C</p>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[200px]">
+            <div class="divide-y divide-gray-300">
+              <p class="py-2">A</p>
+              <p class="py-2">B</p>
+              <p class="py-2">C</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 16: 가로 구분선 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 16: 가로 구분선
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 버튼 세 개에 가로 구분선 적용</li>
+              <li>• 회색(gray-400) 색상</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 16 -->
+            <div class="flex">
+              <button class="px-4 py-2">OK</button>
+              <button class="px-4 py-2">Cancel</button>
+              <button class="px-4 py-2">More</button>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="flex divide-x divide-gray-400">
+              <button class="px-4 py-2">OK</button>
+              <button class="px-4 py-2">Cancel</button>
+              <button class="px-4 py-2">More</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divide 연습 과제 -->
+      <section class="mb-16 bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+        <h3 class="text-2xl font-bold mb-6 text-blue-700">
+          🎯 Divide 연습 과제
+        </h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 1: 메뉴 리스트 구분선
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 메뉴 항목들 사이에 세로 구분선</li>
+                <li>• 2px 두께, 회색(gray-200)</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[250px]">
+              <div>
+                <div class="py-3 hover:bg-gray-50">홈</div>
+                <div class="py-3 hover:bg-gray-50">소개</div>
+                <div class="py-3 hover:bg-gray-50">서비스</div>
+                <div class="py-3 hover:bg-gray-50">연락처</div>
+              </div>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[250px]">
+              <div class="divide-y-2 divide-gray-200">
+                <div class="py-3 hover:bg-gray-50">홈</div>
+                <div class="py-3 hover:bg-gray-50">소개</div>
+                <div class="py-3 hover:bg-gray-50">서비스</div>
+                <div class="py-3 hover:bg-gray-50">연락처</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 2: 탭 버튼 그룹
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 탭 버튼들 사이에 가로 구분선</li>
+                <li>• 파란색(blue-300) 색상</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+              <div class="flex bg-white border border-gray-200 rounded-lg">
+                <button class="px-6 py-3 text-blue-600 font-medium">
+                  전체
+                </button>
+                <button class="px-6 py-3 text-gray-600">진행중</button>
+                <button class="px-6 py-3 text-gray-600">완료</button>
+              </div>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+              <div
+                class="flex divide-x divide-blue-300 bg-white border border-gray-200 rounded-lg"
+              >
+                <button class="px-6 py-3 text-blue-600 font-medium">
+                  전체
+                </button>
+                <button class="px-6 py-3 text-gray-600">진행중</button>
+                <button class="px-6 py-3 text-gray-600">완료</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 종합 실습 1 ========== -->
+      <section
+        class="mb-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-8 rounded-lg border-4 border-indigo-200"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-indigo-800 text-center">
+          🎯 종합 실습 1: 알림 카드
+        </h2>
+        <p class="text-center text-gray-700 mb-8">
+          Background, Border, Radius를 모두 활용해보세요!
+        </p>
+
+        <div class="mb-6 bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">📋 요구사항</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>
+              • <strong>전체 박스:</strong> padding 1.5rem, 파란색(blue-50)
+              배경, 둥글게(xl), 파란 테두리(blue-200)
+            </li>
+            <li>
+              • <strong>아이콘:</strong> 너비/높이 2.5rem, 원형(rounded-full),
+              파란색(blue-500) 배경
+            </li>
+            <li>• <strong>내용:</strong> 자식 요소 간격 0.75rem (space-y-3)</li>
+            <li>
+              • <strong>제목:</strong> 파란색(blue-700), 굵게, 큰 글씨(lg)
+            </li>
+            <li>
+              • <strong>본문:</strong> 회색(gray-700), 행간
+              여유롭게(leading-relaxed)
+            </li>
+            <li>
+              • <strong>링크:</strong> 파란색(blue-600), 밑줄, 작은 글씨(sm)
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TO DO: 종합 실습 1 시작 -->
+          <div class="min-h-[350px] bg-gray-50 border-2 border-gray-300 p-6">
+            <div class="bg-white p-6">
+              <div class="bg-gray-300 w-10 h-10"></div>
+
+              <h3 class="text-gray-800 font-bold text-lg mt-3">
+                새로운 업데이트가 있습니다
+              </h3>
+
+              <p class="text-gray-600 mt-3">
+                시스템 업데이트가 예정되어 있습니다. 안정적인 서비스를 위해 점검
+                시간 동안 일부 기능이 제한될 수 있습니다.
+              </p>
+
+              <p class="text-gray-600 text-sm mt-3">자세히 보기</p>
+            </div>
+          </div>
+          <!-- TO DO: 종합 실습 1 끝 -->
+
+          <div class="min-h-[350px] bg-gray-50 border-2 border-gray-300 p-6">
+            <div
+              class="p-6 bg-blue-50 rounded-xl border border-blue-200 space-y-3"
+            >
+              <div class="w-10 h-10 bg-blue-500 rounded-full"></div>
+
+              <h3 class="text-blue-700 font-bold text-lg">
+                새로운 업데이트가 있습니다
+              </h3>
+
+              <p class="text-gray-700 leading-relaxed">
+                시스템 업데이트가 예정되어 있습니다. 안정적인 서비스를 위해 점검
+                시간 동안 일부 기능이 제한될 수 있습니다.
+              </p>
+
+              <p class="text-blue-600 underline text-sm">자세히 보기</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 종합 실습 2 ========== -->
+      <section
+        class="mb-16 bg-gradient-to-br from-rose-50 via-orange-50 to-yellow-50 p-8 rounded-lg border-4 border-rose-200"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-rose-800 text-center">
+          🎯 종합 실습 2: 프리미엄 카드
+        </h2>
+        <p class="text-center text-gray-700 mb-8">
+          그라데이션과 둥근 모서리를 활용한 고급 카드!
+        </p>
+
+        <div class="mb-6 bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">📋 요구사항</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>
+              • <strong>카드:</strong> 최대 너비 20rem, padding 2rem, 그라데이션
+              배경(purple-600 → pink-600), 둥글게(2xl)
+            </li>
+            <li>
+              • <strong>배지:</strong> 흰색 배경, 주황색(orange-600) 텍스트,
+              작은 글씨, 굵게, 완전히 둥글게, padding (x:0.75rem, y:0.25rem)
+            </li>
+            <li>
+              • <strong>제목:</strong> 흰색, 아주 큰 글씨(3xl), 굵게, 위 margin
+              1rem, 아래 margin 0.5rem
+            </li>
+            <li>• <strong>설명:</strong> 분홍색(pink-100), 아래 margin 2rem</li>
+            <li>
+              • <strong>버튼:</strong> 흰색 배경, 보라색(purple-600) 텍스트,
+              padding (x:2rem, y:0.75rem), 굵게, 둥글게(lg)
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TO DO: 종합 실습 2 시작 -->
+          <div
+            class="min-h-[400px] bg-gray-50 border-2 border-gray-300 p-6 flex justify-center items-center"
+          >
+            <div class="bg-gray-200 p-8 w-80">
+              <div class="bg-white text-gray-700 text-xs font-bold px-3 py-1">
+                PREMIUM
+              </div>
+
+              <h2 class="text-gray-800 text-3xl font-bold mt-4 mb-2">
+                특별한 경험
+              </h2>
+
+              <p class="text-gray-600 mb-8">
+                프리미엄 멤버만의 혜택을 지금 바로 경험하세요
+              </p>
+
+              <button class="bg-white text-gray-700 px-8 py-3 font-bold">
+                시작하기 →
+              </button>
+            </div>
+          </div>
+          <!-- TO DO: 종합 실습 2 끝 -->
+
+          <div
+            class="min-h-[400px] bg-gray-50 border-2 border-gray-300 p-6 flex justify-center items-center"
+          >
+            <div
+              class="bg-gradient-to-br from-purple-600 to-pink-600 p-8 rounded-2xl max-w-sm"
+            >
+              <div
+                class="bg-white text-orange-600 text-xs font-bold rounded-full px-3 py-1 inline-block"
+              >
+                PREMIUM
+              </div>
+
+              <h2 class="text-white text-3xl font-bold mt-4 mb-2">
+                특별한 경험
+              </h2>
+
+              <p class="text-pink-100 mb-8">
+                프리미엄 멤버만의 혜택을 지금 바로 경험하세요
+              </p>
+
+              <button
+                class="bg-white text-purple-600 px-8 py-3 font-bold rounded-lg hover:shadow-lg transition"
+              >
+                시작하기 →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 종합 실습 3 ========== -->
+      <section
+        class="mb-16 bg-gradient-to-br from-cyan-50 via-teal-50 to-green-50 p-8 rounded-lg border-4 border-cyan-200"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-cyan-800 text-center">
+          🎯 종합 실습 3: 상품 카드
+        </h2>
+        <p class="text-center text-gray-700 mb-8">
+          실전에서 자주 사용하는 상품 카드를 만들어보세요!
+        </p>
+
+        <div class="mb-6 bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">📋 요구사항</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>
+              • <strong>카드:</strong> 흰색 배경, 1px 회색(gray-200) 테두리,
+              둥글게(lg), 최대 너비 16rem
+            </li>
+            <li>
+              • <strong>이미지 영역:</strong> 회색(gray-300) 배경, 높이 12rem,
+              상단만 둥글게(lg)
+            </li>
+            <li>
+              • <strong>할인 배지:</strong> 빨간색(red-500) 배경, 흰색 텍스트,
+              작은 글씨(xs), 굵게, 완전히 둥글게, padding (x:0.75rem,
+              y:0.25rem), 위로 1.5rem 당기기
+            </li>
+            <li>• <strong>내용 영역:</strong> padding 1rem</li>
+            <li>
+              • <strong>카테고리:</strong> 회색(gray-500), 아주 작은 글씨(xs),
+              대문자, 아래 margin 0.5rem
+            </li>
+            <li>
+              • <strong>상품명:</strong> 굵게, 큰 글씨(lg), 아래 margin 0.5rem
+            </li>
+            <li>
+              • <strong>가격:</strong> 파란색(blue-600), 아주 큰 글씨(2xl),
+              굵게, 아래 margin 1rem
+            </li>
+            <li>
+              • <strong>버튼:</strong> 파란색(blue-500) 배경, 흰색 텍스트,
+              padding (x:1rem, y:0.5rem), 둥글게(md), 전체 너비
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TO DO: 종합 실습 3 시작 -->
+          <div
+            class="min-h-[500px] bg-gray-50 border-2 border-gray-300 p-6 flex justify-center"
+          >
+            <div class="bg-white w-64">
+              <div class="bg-gray-200 h-48"></div>
+
+              <div>
+                <span class="bg-gray-300 text-white text-xs px-3 py-1">
+                  50% OFF
+                </span>
+              </div>
+
+              <div class="p-4">
+                <p class="text-gray-400 text-xs mb-2">ELECTRONICS</p>
+
+                <h3 class="font-bold text-lg mb-2">무선 이어폰 Pro</h3>
+
+                <p class="text-gray-700 text-2xl font-bold mb-4">₩149,000</p>
+
+                <button class="bg-gray-400 text-white px-4 py-2 w-full">
+                  장바구니 담기
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- TO DO: 종합 실습 3 끝 -->
+
+          <div
+            class="min-h-[500px] bg-gray-50 border-2 border-gray-300 p-6 flex justify-center"
+          >
+            <div class="bg-white border border-gray-200 rounded-lg max-w-xs">
+              <div class="bg-gray-300 h-48 rounded-t-lg"></div>
+
+              <div class="-mt-6 px-4">
+                <span
+                  class="bg-red-500 text-white text-xs font-bold rounded-full px-3 py-1 inline-block"
+                >
+                  50% OFF
+                </span>
+              </div>
+
+              <div class="p-4">
+                <p class="text-gray-500 text-xs uppercase mb-2">ELECTRONICS</p>
+
+                <h3 class="font-bold text-lg mb-2">무선 이어폰 Pro</h3>
+
+                <p class="text-blue-600 text-2xl font-bold mb-4">₩149,000</p>
+
+                <button
+                  class="bg-blue-500 text-white px-4 py-2 rounded-md w-full hover:bg-blue-600"
+                >
+                  장바구니 담기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== DIVIDE 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-yellow-700">
+          ➗ Divide — 내부 구분선
+        </h2>
+      </section>
+
+      <!-- Divide 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Divide 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Divide</strong>는 형제 요소들 사이에 자동으로 구분선을
+            만듭니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">세로 구분선 (divide-y):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">divide-y</code> →
+                  세로 구분선 1px
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">divide-y-2</code>
+                  → 2px
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >divide-y-gray-300</code
+                  >
+                  → 회색
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">가로 구분선 (divide-x):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">divide-x</code> →
+                  가로 구분선 1px
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">divide-x-2</code>
+                  → 2px
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >divide-x-gray-400</code
+                  >
+                  → 회색
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">주의사항:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 부모 요소에 적용</li>
+                <li>• 자식 요소들 사이에만 선 생성</li>
+                <li>• 첫 번째 자식 앞에는 선 없음</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">활용 예:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 메뉴 리스트 구분</li>
+                <li>• 버튼 그룹 구분</li>
+                <li>• 목록 항목 구분</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 15: 세로 구분선 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 15: 세로 구분선
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 문장 세 개에 세로 구분선 적용</li>
+              <li>• 회색(gray-300) 색상</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[200px]">
+            <!-- TO DO: 실습 15 -->
+            <div>
+              <p class="py-2">A</p>
+              <p class="py-2">B</p>
+              <p class="py-2">C</p>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[200px]">
+            <div class="divide-y divide-gray-300">
+              <p class="py-2">A</p>
+              <p class="py-2">B</p>
+              <p class="py-2">C</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 16: 가로 구분선 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 16: 가로 구분선
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 버튼 세 개에 가로 구분선 적용</li>
+              <li>• 회색(gray-400) 색상</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 16 -->
+            <div class="flex">
+              <button class="px-4 py-2">OK</button>
+              <button class="px-4 py-2">Cancel</button>
+              <button class="px-4 py-2">More</button>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="flex divide-x divide-gray-400">
+              <button class="px-4 py-2">OK</button>
+              <button class="px-4 py-2">Cancel</button>
+              <button class="px-4 py-2">More</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 종합 실습 4 ========== -->
+      <section
+        class="mb-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-8 rounded-lg border-4 border-indigo-200"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-indigo-800 text-center">
+          🎯 종합 실습 4: 성공 메시지 카드
+        </h2>
+        <p class="text-center text-gray-700 mb-8">
+          Background, Border, Radius를 모두 활용해보세요!
+        </p>
+
+        <div class="mb-6 bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">📋 요구사항</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>
+              • <strong>전체 박스:</strong> padding 1.5rem, 초록색(green-50)
+              배경, 둥글게(lg), 2px 초록 테두리(green-300)
+            </li>
+            <li>
+              • <strong>아이콘 영역:</strong> 너비/높이 3rem, 원형,
+              초록색(green-500) 배경, 중앙 정렬
+            </li>
+            <li>• <strong>체크 표시:</strong> 흰색, 아주 큰 글씨(2xl)</li>
+            <li>
+              • <strong>제목:</strong> 초록색(green-800), 굵게, 아주 큰
+              글씨(2xl), 위 margin 1rem
+            </li>
+            <li>• <strong>본문:</strong> 회색(gray-600), 위 margin 0.5rem</li>
+            <li>
+              • <strong>버튼:</strong> 초록색(green-500) 배경, 흰색 텍스트,
+              padding (x:1.5rem, y:0.5rem), 둥글게(md), 위 margin 1.5rem
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TO DO: 종합 실습 4 시작 -->
+          <div
+            class="min-h-[350px] bg-gray-50 border-2 border-gray-300 p-6 flex items-center justify-center"
+          >
+            <div class="bg-white p-6 text-center max-w-sm">
+              <div class="bg-gray-300 w-12 h-12">
+                <span class="text-white text-2xl">✓</span>
+              </div>
+
+              <h3 class="text-gray-800 font-bold text-2xl">결제 완료!</h3>
+
+              <p class="text-gray-600">주문이 성공적으로 완료되었습니다</p>
+
+              <button class="bg-gray-400 text-white px-6 py-2">
+                주문 확인
+              </button>
+            </div>
+          </div>
+          <!-- TO DO: 종합 실습 4 끝 -->
+
+          <div
+            class="min-h-[350px] bg-gray-50 border-2 border-gray-300 p-6 flex items-center justify-center"
+          >
+            <div
+              class="bg-green-50 border-2 border-green-300 rounded-lg p-6 text-center max-w-sm"
+            >
+              <div
+                class="bg-green-500 w-12 h-12 rounded-full mx-auto flex items-center justify-center"
+              >
+                <span class="text-white text-2xl">✓</span>
+              </div>
+
+              <h3 class="text-green-800 font-bold text-2xl mt-4">결제 완료!</h3>
+
+              <p class="text-gray-600 mt-2">주문이 성공적으로 완료되었습니다</p>
+
+              <button
+                class="bg-green-500 text-white px-6 py-2 rounded-md mt-6 hover:bg-green-600"
+              >
+                주문 확인
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 종합 실습 5 ========== -->
+      <section
+        class="mb-16 bg-gradient-to-br from-rose-50 via-orange-50 to-yellow-50 p-8 rounded-lg border-4 border-rose-200"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-rose-800 text-center">
+          🎯 종합 실습 5: 리뷰 카드
+        </h2>
+        <p class="text-center text-gray-700 mb-8">
+          테두리, 배경색, 둥근 모서리를 조합해보세요!
+        </p>
+
+        <div class="mb-6 bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">📋 요구사항</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>
+              • <strong>카드:</strong> 흰색 배경, 1px 회색(gray-200) 테두리,
+              둥글게(xl), padding 1.5rem, 최대 너비 24rem
+            </li>
+            <li>
+              • <strong>프로필 이미지:</strong> 보라색(purple-400) 배경,
+              너비/높이 3rem, 완전히 둥글게
+            </li>
+            <li>• <strong>이름:</strong> 굵게, 큰 글씨(lg)</li>
+            <li>• <strong>날짜:</strong> 회색(gray-500), 작은 글씨(sm)</li>
+            <li>
+              • <strong>별점 영역:</strong> 노란색(yellow-400) 배경,
+              둥글게(full), padding (x:0.75rem, y:0.25rem), 작은 글씨(sm), 굵게
+            </li>
+            <li>
+              • <strong>리뷰 내용:</strong> 회색(gray-700), 위 margin 1rem, 행간
+              여유롭게
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TO DO: 종합 실습 5 시작 -->
+          <div
+            class="min-h-[350px] bg-gray-50 border-2 border-gray-300 p-6 flex justify-center items-center"
+          >
+            <div class="bg-white p-6 w-96">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="bg-gray-300 w-12 h-12"></div>
+                  <div>
+                    <p class="font-bold text-lg">김민수</p>
+                    <p class="text-gray-400 text-sm">2024.11.15</p>
+                  </div>
+                </div>
+                <div class="bg-gray-200 px-3 py-1 text-sm">⭐ 5.0</div>
+              </div>
+
+              <p class="text-gray-600 mt-4">
+                정말 만족스러운 제품입니다. 품질도 좋고 배송도 빨랐어요.
+                다음에도 재구매 의향 있습니다!
+              </p>
+            </div>
+          </div>
+          <!-- TO DO: 종합 실습 5 끝 -->
+
+          <div
+            class="min-h-[350px] bg-gray-50 border-2 border-gray-300 p-6 flex justify-center items-center"
+          >
+            <div
+              class="bg-white border border-gray-200 rounded-xl p-6 max-w-sm"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="bg-purple-400 w-12 h-12 rounded-full"></div>
+                  <div>
+                    <p class="font-bold text-lg">김민수</p>
+                    <p class="text-gray-500 text-sm">2024.11.15</p>
+                  </div>
+                </div>
+                <div
+                  class="bg-yellow-400 rounded-full px-3 py-1 text-sm font-bold"
+                >
+                  ⭐ 5.0
+                </div>
+              </div>
+
+              <p class="text-gray-700 mt-4 leading-relaxed">
+                정말 만족스러운 제품입니다. 품질도 좋고 배송도 빨랐어요.
+                다음에도 재구매 의향 있습니다!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 종합 실습 6 ========== -->
+      <section
+        class="mb-16 bg-gradient-to-br from-cyan-50 via-teal-50 to-green-50 p-8 rounded-lg border-4 border-cyan-200"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-cyan-800 text-center">
+          🎯 종합 실습 6: 이벤트 배너 카드
+        </h2>
+        <p class="text-center text-gray-700 mb-8">
+          그라데이션, 테두리, 둥근 모서리를 활용해보세요!
+        </p>
+
+        <div class="mb-6 bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">📋 요구사항</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>
+              • <strong>카드:</strong> 그라데이션 배경(주황색 orange-400 →
+              빨간색 red-500, 좌우 방향), 둥글게(2xl), padding 2rem, 최대 너비
+              28rem
+            </li>
+            <li>
+              • <strong>NEW 배지:</strong> 흰색 배경, 주황색(orange-600) 텍스트,
+              아주 작은 글씨(xs), 굵게, 둥글게(full), padding (x:0.75rem,
+              y:0.25rem)
+            </li>
+            <li>
+              • <strong>제목:</strong> 흰색, 아주 큰 글씨(3xl), 굵게, 위 margin
+              0.5rem
+            </li>
+            <li>
+              • <strong>할인율:</strong> 노란색(yellow-300), 엄청 큰 글씨(5xl),
+              굵게, 위 margin 0.5rem
+            </li>
+            <li>• <strong>설명:</strong> 흰색, 투명도 90%, 위 margin 1rem</li>
+            <li>
+              • <strong>기간:</strong> 흰색, 투명도 80%, 작은 글씨(sm), 위
+              margin 0.5rem
+            </li>
+            <li>
+              • <strong>버튼:</strong> 흰색 배경, 주황색(orange-600) 텍스트,
+              padding (x:2rem, y:0.75rem), 굵게, 둥글게(lg), 위 margin 1.5rem
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TO DO: 종합 실습 6 시작 -->
+          <div
+            class="min-h-[450px] bg-gray-50 border-2 border-gray-300 p-6 flex justify-center items-center"
+          >
+            <div class="bg-gray-300 p-8 w-96">
+              <div class="bg-white text-gray-700 text-xs px-3 py-1">NEW</div>
+
+              <h2 class="text-gray-800 text-3xl font-bold">블랙프라이데이</h2>
+
+              <p class="text-gray-800 text-5xl font-bold">70% OFF</p>
+
+              <p class="text-gray-700">모든 상품 최대 할인</p>
+
+              <p class="text-gray-600 text-sm">2024.11.25 - 11.30</p>
+
+              <button class="bg-white text-gray-700 px-8 py-3 font-bold">
+                지금 쇼핑하기 →
+              </button>
+            </div>
+          </div>
+          <!-- TO DO: 종합 실습 6 끝 -->
+
+          <div
+            class="min-h-[450px] bg-gray-50 border-2 border-gray-300 p-6 flex justify-center items-center"
+          >
+            <div
+              class="bg-gradient-to-r from-orange-400 to-red-500 rounded-2xl p-8 max-w-md"
+            >
+              <div
+                class="bg-white text-orange-600 text-xs font-bold rounded-full px-3 py-1 inline-block"
+              >
+                NEW
+              </div>
+
+              <h2 class="text-white text-3xl font-bold mt-2">블랙프라이데이</h2>
+
+              <p class="text-yellow-300 text-5xl font-bold mt-2">70% OFF</p>
+
+              <p class="text-white/90 mt-4">모든 상품 최대 할인</p>
+
+              <p class="text-white/80 text-sm mt-2">2024.11.25 - 11.30</p>
+
+              <button
+                class="bg-white text-orange-600 px-8 py-3 font-bold rounded-lg mt-6 hover:shadow-xl transition"
+              >
+                지금 쇼핑하기 →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

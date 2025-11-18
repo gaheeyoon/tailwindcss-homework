@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>State & Pseudo-class 실습</title>
+  </head>
+  <body class="bg-gray-50">
+    <!-- 헤더 -->
+    <header
+      class="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6 mb-8 text-center"
+    >
+      <h1 class="text-3xl font-bold">Tailwind CSS State & Pseudo-class 실습</h1>
+      <p class="mt-2">상태에 따라 변하는 인터랙티브한 UI를 만들어보세요! 🎯</p>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <!-- ========== State 기본 개념 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-blue-700">
+          🎭 State & Pseudo-class 개념
+        </h2>
+      </section>
+
+      <!-- State 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 State 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>State(상태) 클래스</strong>는 요소가 특정 상황에 있을 때
+            적용되는 스타일입니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">기본 상태:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">hover:</code> →
+                  마우스 올림
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">focus:</code> →
+                  포커스 상태
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">active:</code> →
+                  클릭 순간
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">disabled:</code> →
+                  비활성화
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">요소 선택:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">first:</code> →
+                  첫 요소
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">last:</code> →
+                  마지막 요소
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">odd:</code> →
+                  홀수 요소
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">even:</code> →
+                  짝수 요소
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">관계 선택:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >group-hover:</code
+                  >
+                  → 부모 상태
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">peer-focus:</code>
+                  → 형제 상태
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">중요 팁:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• transition과 함께 사용</li>
+                <li>• 여러 상태 조합 가능</li>
+                <li>• 가장 많이 사용</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== HOVER 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-green-700">
+          🖱️ Hover — 마우스 올림
+        </h2>
+      </section>
+
+      <!-- 실습 1: Hover 배경색 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 1: Hover 배경색 변경
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover 시 배경색 변경</li>
+              <li>• transition-colors 추가</li>
+              <li>• 마우스를 올려보세요!</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 1 -->
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg"
+            >
+              Hover Me
+            </button>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <button
+              class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors"
+            >
+              Hover Me
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 2: Hover 텍스트 색상 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 2: Hover 텍스트 색상
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover 시 텍스트 빨간색으로</li>
+              <li>• transition-colors 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 2 -->
+            <p class="text-gray-700 hover:text-red-500 text-xl cursor-pointer">
+              마우스를 올려보세요
+            </p>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <p
+              class="text-gray-700 hover:text-red-500 text-xl cursor-pointer transition-colors"
+            >
+              마우스를 올려보세요
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 3: Hover Scale -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 3: Hover 크기 변화
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover 시 110% 확대</li>
+              <li>• transition-transform 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 3 -->
+            <div
+              class="w-32 h-32 bg-purple-400 rounded-lg hover:scale-110 cursor-pointer flex items-center justify-center text-white font-bold"
+            >
+              Hover
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+          >
+            <div
+              class="w-32 h-32 bg-purple-400 rounded-lg hover:scale-110 transition-transform cursor-pointer flex items-center justify-center text-white font-bold"
+            >
+              Hover
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 4: Hover Opacity -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 4: Hover 투명도
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover 시 opacity 50%</li>
+              <li>• transition-opacity 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 4 -->
+            <p class="text-gray-800 text-lg hover:opacity-50 cursor-pointer">
+              투명해지는 텍스트
+            </p>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <p
+              class="text-gray-800 text-lg hover:opacity-50 transition-opacity cursor-pointer"
+            >
+              투명해지는 텍스트
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== FOCUS 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-cyan-700">
+          🎯 Focus — 포커스 상태
+        </h2>
+      </section>
+
+      <!-- Focus 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Focus 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p><strong>Focus</strong>는 입력 요소가 선택되었을 때 적용됩니다.</p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">주요 사용:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >focus:outline-none</code
+                  >
+                  → 기본 외곽선 제거
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >focus:ring-2</code
+                  >
+                  → ring 추가
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >focus:border-blue-500</code
+                  >
+                  → 테두리 색상
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Tip:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• outline 제거 + ring 추가</li>
+                <li>• 접근성을 위해 반드시 표시</li>
+                <li>• 브랜드 색상 사용</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 5: Focus Ring -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 5: Focus Ring
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• focus:outline-none</li>
+              <li>• focus:ring-2 + focus:ring-blue-400</li>
+              <li>• 클릭해서 포커스하세요!</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 5 -->
+            <input
+              type="text"
+              placeholder="이름을 입력하세요"
+              class="border border-gray-300 rounded-lg px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <input
+              type="text"
+              placeholder="이름을 입력하세요"
+              class="border border-gray-300 rounded-lg px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-shadow"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 6: Focus Border -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 6: Focus 테두리 색상
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• focus 시 테두리 파란색</li>
+              <li>• transition-colors 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 6 -->
+            <input
+              type="email"
+              placeholder="이메일"
+              class="border border-gray-300 rounded-lg px-4 py-2 w-64 focus:border-blue-500"
+            />
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <input
+              type="email"
+              placeholder="이메일"
+              class="border border-gray-300 rounded-lg px-4 py-2 w-64 focus:border-blue-500 transition-colors"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 7: Focus 배경색 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 7: Focus 배경색 변경
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• focus 시 배경 연한 파란색</li>
+              <li>• transition-colors 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 7 -->
+            <input
+              type="text"
+              placeholder="검색..."
+              class="border border-gray-300 rounded-lg px-4 py-2 w-64 focus:bg-blue-50"
+            />
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <input
+              type="text"
+              placeholder="검색..."
+              class="border border-gray-300 rounded-lg px-4 py-2 w-64 focus:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-colors"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== ACTIVE 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-pink-700">
+          👆 Active — 클릭 순간
+        </h2>
+      </section>
+
+      <!-- 실습 8: Active 배경색 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 8: Active 배경색
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• active 시 더 어두운 색</li>
+              <li>• transition-colors 추가</li>
+              <li>• 클릭해보세요!</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 8 -->
+            <button
+              class="bg-green-500 active:bg-green-700 text-white px-6 py-3 rounded-lg"
+            >
+              클릭하세요
+            </button>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <button
+              class="bg-green-500 active:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors"
+            >
+              클릭하세요
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 9: Active Scale -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 9: Active 축소 (눌리는 효과)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• active 시 95% 축소</li>
+              <li>• transition-transform 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 9 -->
+            <button
+              class="bg-purple-500 text-white px-6 py-3 rounded-lg active:scale-95"
+            >
+              Press Me
+            </button>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <button
+              class="bg-purple-500 text-white px-6 py-3 rounded-lg active:scale-95 transition-transform"
+            >
+              Press Me
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 10: Hover + Active 조합 (완벽한 버튼) -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 10: Hover + Active 조합
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• hover: 진한 색 + 105% 확대</li>
+              <li>• active: 더 진한 색 + 95% 축소</li>
+              <li>• transition-all 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 10 -->
+            <button
+              class="bg-blue-500 hover:bg-blue-600 hover:scale-105 active:bg-blue-700 active:scale-95 text-white px-8 py-3 rounded-lg font-medium"
+            >
+              Interactive Button
+            </button>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <button
+              class="bg-blue-500 hover:bg-blue-600 hover:scale-105 active:bg-blue-700 active:scale-95 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200"
+            >
+              Interactive Button
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== DISABLED 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-gray-50 to-slate-100 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-gray-700">
+          🚫 Disabled — 비활성 상태
+        </h2>
+      </section>
+
+      <!-- Disabled 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Disabled 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Disabled</strong>는 비활성화된 요소의 스타일을 지정합니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">주요 사용:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >disabled:opacity-50</code
+                  >
+                  → 투명도
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >disabled:cursor-not-allowed</code
+                  >
+                  → 커서
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >disabled:bg-gray-300</code
+                  >
+                  → 배경색
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Tip:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 비활성화 이유 명확히 표시</li>
+                <li>• 접근성 고려 필수</li>
+                <li>• opacity + cursor 조합</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 11: Disabled 버튼 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 11: Disabled 버튼
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• disabled 속성 추가</li>
+              <li>• disabled:opacity-50</li>
+              <li>• disabled:cursor-not-allowed</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 11 -->
+            <button
+              disabled
+              class="bg-blue-500 text-white px-6 py-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              제출하기
+            </button>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <button
+              disabled
+              class="bg-blue-500 text-white px-6 py-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+            >
+              제출하기
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 기본 상태 연습 과제 -->
+      <section class="mb-16 bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+        <h3 class="text-2xl font-bold mb-6 text-blue-700">
+          🎯 기본 상태 연습 과제
+        </h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 1: 완벽한 입력 필드
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• focus: outline 제거 + ring-2 + border 색상</li>
+                <li>• hover: 배경색 살짝 변경</li>
+                <li>• transition-all 추가</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div
+              class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+            >
+              <input
+                type="text"
+                placeholder="이메일을 입력하세요"
+                class="border border-gray-300 rounded-lg px-4 py-2 w-full max-w-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div
+              class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+            >
+              <input
+                type="text"
+                placeholder="이메일을 입력하세요"
+                class="border border-gray-300 rounded-lg px-4 py-2 w-full max-w-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 2: 인터랙티브 링크
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• hover: 텍스트 색상 + 밑줄</li>
+                <li>• active: 색상 더 어둡게</li>
+                <li>• transition-all 추가</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div
+              class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+            >
+              <a
+                href="#"
+                class="text-blue-500 hover:text-blue-600 hover:underline active:text-blue-800 text-lg"
+              >
+                자세히 보기 →
+              </a>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div
+              class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+            >
+              <a
+                href="#"
+                class="text-blue-500 hover:text-blue-600 hover:underline active:text-blue-800 text-lg transition-all"
+              >
+                자세히 보기 →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== FIRST / LAST 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-violet-50 to-purple-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-violet-700">
+          🔢 First / Last — 첫/마지막 요소
+        </h2>
+      </section>
+
+      <!-- First/Last 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">
+          📖 First / Last 이론
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>First / Last</strong>는 리스트나 그리드의 첫 번째/마지막
+            요소를 선택합니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">사용 방법:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">first:</code> →
+                  첫 번째
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">last:</code> →
+                  마지막
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >first:font-bold</code
+                  >
+                  → 첫 요소 굵게
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Tip:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 리스트 구분선 제거</li>
+                <li>• 첫/마지막 요소 강조</li>
+                <li>• 테이블 스타일링</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 12: First 굵게 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 12: 첫 요소 굵게
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 첫 번째 li에 first:font-bold</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[200px]">
+            <!-- TO DO: 실습 12 -->
+            <ul class="space-y-2">
+              <li class="first:font-bold">첫 번째 항목</li>
+              <li>두 번째 항목</li>
+              <li>세 번째 항목</li>
+            </ul>
+          </div>
+
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[200px]">
+            <ul class="space-y-2">
+              <li class="first:font-bold first:text-blue-600">첫 번째 항목</li>
+              <li>두 번째 항목</li>
+              <li>세 번째 항목</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 13: Last 색상 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 13: 마지막 요소 색상
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 마지막 li에 last:text-red-500</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[200px]">
+            <!-- TO DO: 실습 13 -->
+            <ul class="space-y-2">
+              <li>항목 A</li>
+              <li>항목 B</li>
+              <li class="last:text-red-500">항목 C (마지막)</li>
+            </ul>
+          </div>
+
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[200px]">
+            <ul class="space-y-2">
+              <li>항목 A</li>
+              <li>항목 B</li>
+              <li class="last:text-red-500 last:font-bold">항목 C (마지막)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 14: First/Last 구분선 제거 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 14: 구분선 처리
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 모든 li에 border-b</li>
+              <li>• last:border-b-0으로 마지막 제거</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[250px]">
+            <!-- TO DO: 실습 14 -->
+            <ul class="bg-white rounded-lg">
+              <li class="p-4 border-b border-gray-200 last:border-b-0">홈</li>
+              <li class="p-4 border-b border-gray-200 last:border-b-0">소개</li>
+              <li class="p-4 border-b border-gray-200 last:border-b-0">
+                서비스
+              </li>
+              <li class="p-4 border-b border-gray-200 last:border-b-0">
+                연락처
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[250px]">
+            <ul class="bg-white rounded-lg shadow">
+              <li
+                class="p-4 border-b border-gray-200 last:border-b-0 hover:bg-gray-50 transition-colors cursor-pointer"
+              >
+                홈
+              </li>
+              <li
+                class="p-4 border-b border-gray-200 last:border-b-0 hover:bg-gray-50 transition-colors cursor-pointer"
+              >
+                소개
+              </li>
+              <li
+                class="p-4 border-b border-gray-200 last:border-b-0 hover:bg-gray-50 transition-colors cursor-pointer"
+              >
+                서비스
+              </li>
+              <li
+                class="p-4 border-b border-gray-200 last:border-b-0 hover:bg-gray-50 transition-colors cursor-pointer"
+              >
+                연락처
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== ODD / EVEN 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-amber-700">
+          🔄 Odd / Even — 홀수/짝수
+        </h2>
+      </section>
+
+      <!-- Odd/Even 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">
+          📖 Odd / Even 이론
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Odd / Even</strong>은 홀수/짝수 번째 요소를 선택합니다.
+            테이블 줄무늬에 최적입니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">사용 방법:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">odd:</code> →
+                  홀수 (1, 3, 5...)
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">even:</code> →
+                  짝수 (2, 4, 6...)
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >odd:bg-gray-100</code
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Tip:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 테이블 줄무늬 (Zebra Stripe)</li>
+                <li>• 리스트 가독성 향상</li>
+                <li>• 데이터 테이블</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 15: Odd/Even 배경색 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 15: 줄무늬 리스트 (Zebra Stripe)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• odd:bg-gray-50</li>
+              <li>• even:bg-white</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[300px]">
+            <!-- TO DO: 실습 15 -->
+            <ul class="border border-gray-200 rounded-lg overflow-hidden">
+              <li class="p-3 odd:bg-gray-50 even:bg-white">항목 1</li>
+              <li class="p-3 odd:bg-gray-50 even:bg-white">항목 2</li>
+              <li class="p-3 odd:bg-gray-50 even:bg-white">항목 3</li>
+              <li class="p-3 odd:bg-gray-50 even:bg-white">항목 4</li>
+              <li class="p-3 odd:bg-gray-50 even:bg-white">항목 5</li>
+            </ul>
+          </div>
+
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[300px]">
+            <ul class="border border-gray-200 rounded-lg overflow-hidden">
+              <li
+                class="p-3 odd:bg-gray-50 even:bg-white hover:bg-blue-50 transition-colors cursor-pointer"
+              >
+                항목 1
+              </li>
+              <li
+                class="p-3 odd:bg-gray-50 even:bg-white hover:bg-blue-50 transition-colors cursor-pointer"
+              >
+                항목 2
+              </li>
+              <li
+                class="p-3 odd:bg-gray-50 even:bg-white hover:bg-blue-50 transition-colors cursor-pointer"
+              >
+                항목 3
+              </li>
+              <li
+                class="p-3 odd:bg-gray-50 even:bg-white hover:bg-blue-50 transition-colors cursor-pointer"
+              >
+                항목 4
+              </li>
+              <li
+                class="p-3 odd:bg-gray-50 even:bg-white hover:bg-blue-50 transition-colors cursor-pointer"
+              >
+                항목 5
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 16: 테이블 줄무늬 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 16: 테이블 줄무늬
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• tbody tr에 odd/even 적용</li>
+              <li>• hover 효과 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[300px]">
+            <!-- TO DO: 실습 16 -->
+            <table class="w-full">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th class="p-3 text-left">이름</th>
+                  <th class="p-3 text-left">직책</th>
+                  <th class="p-3 text-left">부서</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd:bg-white even:bg-gray-50">
+                  <td class="p-3">김철수</td>
+                  <td class="p-3">팀장</td>
+                  <td class="p-3">개발팀</td>
+                </tr>
+                <tr class="odd:bg-white even:bg-gray-50">
+                  <td class="p-3">이영희</td>
+                  <td class="p-3">대리</td>
+                  <td class="p-3">디자인팀</td>
+                </tr>
+                <tr class="odd:bg-white even:bg-gray-50">
+                  <td class="p-3">박민수</td>
+                  <td class="p-3">사원</td>
+                  <td class="p-3">마케팅팀</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[300px]">
+            <table class="w-full">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th class="p-3 text-left font-bold">이름</th>
+                  <th class="p-3 text-left font-bold">직책</th>
+                  <th class="p-3 text-left font-bold">부서</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="odd:bg-white even:bg-gray-50 hover:bg-blue-50 transition-colors"
+                >
+                  <td class="p-3">김철수</td>
+                  <td class="p-3">팀장</td>
+                  <td class="p-3">개발팀</td>
+                </tr>
+                <tr
+                  class="odd:bg-white even:bg-gray-50 hover:bg-blue-50 transition-colors"
+                >
+                  <td class="p-3">이영희</td>
+                  <td class="p-3">대리</td>
+                  <td class="p-3">디자인팀</td>
+                </tr>
+                <tr
+                  class="odd:bg-white even:bg-gray-50 hover:bg-blue-50 transition-colors"
+                >
+                  <td class="p-3">박민수</td>
+                  <td class="p-3">사원</td>
+                  <td class="p-3">마케팅팀</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== GROUP 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-emerald-700">
+          👥 Group — 부모 상태로 자식 제어
+        </h2>
+      </section>
+
+      <!-- Group 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Group 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Group</strong>은 부모 요소의 상태에 따라 자식 요소를
+            제어합니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">사용 방법:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • 부모에
+                  <code class="bg-gray-200 px-2 py-1 rounded">group</code>
+                  클래스
+                </li>
+                <li>
+                  • 자식에
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >group-hover:</code
+                  >
+                  접두사
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >group-hover:text-blue-500</code
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Tip:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 카드 hover 시 내부 텍스트 변경</li>
+                <li>• 이미지 hover 시 확대</li>
+                <li>• 버튼 hover 시 아이콘 이동</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 17: Group 기본 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 17: Group 기본 사용
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 부모에 group 클래스</li>
+              <li>• h3에 group-hover:text-blue-600</li>
+              <li>• p에 group-hover:text-gray-900</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px]">
+            <!-- TO DO: 실습 17 -->
+            <div
+              class="group bg-white p-6 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            >
+              <h3 class="text-lg font-bold group-hover:text-blue-600">
+                카드 제목
+              </h3>
+              <p class="text-sm text-gray-600 group-hover:text-gray-900 mt-2">
+                부모에 마우스를 올리면 이 텍스트 색상이 변합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[200px]">
+            <div
+              class="group bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <h3
+                class="text-lg font-bold group-hover:text-blue-600 transition-colors"
+              >
+                카드 제목
+              </h3>
+              <p
+                class="text-sm text-gray-600 group-hover:text-gray-900 mt-2 transition-colors"
+              >
+                부모에 마우스를 올리면 이 텍스트 색상이 변합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 18: Group 이미지 확대 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 18: Group 이미지 확대
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 카드에 group 클래스</li>
+              <li>• 이미지 영역: overflow hidden</li>
+              <li>• 이미지: group-hover:scale-110</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 18 -->
+            <div class="bg-white p-4 rounded-xl shadow max-w-xs cursor-pointer">
+              <div class="overflow-hidden rounded-lg mb-3">
+                <div
+                  class="bg-gradient-to-br from-blue-300 to-purple-400 aspect-video"
+                ></div>
+              </div>
+              <h3 class="font-bold text-lg mb-1">상품명</h3>
+              <p class="text-sm text-gray-600">₩49,000</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px] flex items-center justify-center"
+          >
+            <div
+              class="group bg-white p-4 rounded-xl shadow hover:shadow-xl transition-shadow max-w-xs cursor-pointer"
+            >
+              <div class="overflow-hidden rounded-lg mb-3">
+                <div
+                  class="bg-gradient-to-br from-blue-300 to-purple-400 aspect-video group-hover:scale-110 transition-transform duration-300"
+                ></div>
+              </div>
+              <h3
+                class="font-bold text-lg mb-1 group-hover:text-blue-600 transition-colors"
+              >
+                상품명
+              </h3>
+              <p class="text-sm text-gray-600">₩49,000</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== PEER 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-rose-700">
+          🔗 Peer — 형제 상태 감지
+        </h2>
+      </section>
+
+      <!-- Peer 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Peer 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Peer</strong>는 형제 요소의 상태에 따라 다른 요소를
+            제어합니다. 주로 폼에서 사용합니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">사용 방법:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • 기준 요소에
+                  <code class="bg-gray-200 px-2 py-1 rounded">peer</code> 클래스
+                </li>
+                <li>
+                  • 대상 요소에
+                  <code class="bg-gray-200 px-2 py-1 rounded">peer-focus:</code>
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >peer-checked:</code
+                  >,
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >peer-invalid:</code
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Tip:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 체크박스 선택 시 레이블 변경</li>
+                <li>• input focus 시 라벨 색상</li>
+                <li>• validation 에러 표시</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 19: Peer Focus -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 19: Peer Focus
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• input에 peer 클래스</li>
+              <li>• label에 peer-focus:text-blue-500</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 19 -->
+            <div class="space-y-1">
+              <label class="text-sm font-medium text-gray-700">이름</label>
+              <input
+                type="text"
+                class="peer border border-gray-300 rounded-lg px-4 py-2 w-full"
+              />
+              <p class="text-xs text-gray-500 peer-focus:text-blue-500">
+                입력창에 포커스하세요
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-gray-300 p-6 min-h-[150px]">
+            <div class="space-y-1">
+              <label
+                class="text-sm font-medium text-gray-700 peer-focus:text-blue-600 transition-colors"
+                >이름</label
+              >
+              <input
+                type="text"
+                class="peer border border-gray-300 rounded-lg px-4 py-2 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
+              />
+              <p
+                class="text-xs text-gray-500 peer-focus:text-blue-500 transition-colors"
+              >
+                입력창에 포커스하세요
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 20: Peer Checked -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 20: Peer Checked (커스텀 체크박스)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• input에 peer 클래스 (숨김)</li>
+              <li>• span에 peer-checked:bg-blue-500</li>
+              <li>• label에 peer-checked:text-blue-600</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 20 -->
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" class="peer hidden" />
+              <span
+                class="w-6 h-6 border-2 border-gray-300 rounded flex items-center justify-center peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-colors"
+              >
+                <svg
+                  class="w-4 h-4 text-white hidden peer-checked:block"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </span>
+              <span
+                class="text-gray-700 peer-checked:text-blue-600 peer-checked:font-bold"
+                >이용약관에 동의합니다</span
+              >
+            </label>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[150px] flex items-center justify-center"
+          >
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" class="peer hidden" />
+              <span
+                class="w-6 h-6 border-2 border-gray-300 rounded flex items-center justify-center peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-all duration-200"
+              >
+                <svg
+                  class="w-4 h-4 text-white opacity-0 peer-checked:opacity-100 transition-opacity"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </span>
+              <span
+                class="text-gray-700 peer-checked:text-blue-600 peer-checked:font-bold transition-all"
+                >이용약관에 동의합니다</span
+              >
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- 종합 연습 과제 -->
+      <section class="mb-16 bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+        <h3 class="text-2xl font-bold mb-6 text-blue-700">🎯 종합 연습 과제</h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 1: 완벽한 상품 카드
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• group, hover 시 shadow-xl + -translate-y-1</li>
+                <li>• 이미지: group-hover:scale-110</li>
+                <li>• 제목: group-hover:text-blue-600</li>
+                <li>• 버튼: hover + active 효과</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div
+              class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[400px] flex items-center justify-center"
+            >
+              <div
+                class="bg-white p-5 rounded-xl shadow max-w-sm cursor-pointer"
+              >
+                <div class="overflow-hidden rounded-lg mb-4">
+                  <div
+                    class="bg-gradient-to-br from-pink-300 to-purple-400 aspect-video"
+                  ></div>
+                </div>
+                <h3 class="font-bold text-xl mb-2">프리미엄 상품</h3>
+                <p class="text-sm text-gray-600 mb-4">최고급 품질의 제품</p>
+                <p class="text-blue-600 font-bold text-2xl mb-4">₩89,000</p>
+                <button
+                  class="w-full bg-blue-500 text-white py-3 rounded-lg font-medium"
+                >
+                  장바구니 담기
+                </button>
+              </div>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div
+              class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[400px] flex items-center justify-center"
+            >
+              <div
+                class="group bg-white p-5 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition-all duration-300 max-w-sm cursor-pointer"
+              >
+                <div class="overflow-hidden rounded-lg mb-4">
+                  <div
+                    class="bg-gradient-to-br from-pink-300 to-purple-400 aspect-video group-hover:scale-110 transition-transform duration-300"
+                  ></div>
+                </div>
+                <h3
+                  class="font-bold text-xl mb-2 group-hover:text-blue-600 transition-colors"
+                >
+                  프리미엄 상품
+                </h3>
+                <p class="text-sm text-gray-600 mb-4">최고급 품질의 제품</p>
+                <p class="text-blue-600 font-bold text-2xl mb-4">₩89,000</p>
+                <button
+                  class="w-full bg-blue-500 hover:bg-blue-600 hover:scale-105 active:scale-95 text-white py-3 rounded-lg font-medium transition-all duration-200"
+                >
+                  장바구니 담기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 2: 데이터 테이블
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• odd/even 줄무늬</li>
+                <li>• hover: bg-blue-50</li>
+                <li>• first: 굵게, last: 구분선 제거</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[300px]">
+              <table class="w-full border-collapse">
+                <thead class="bg-gray-100">
+                  <tr>
+                    <th class="p-3 text-left">제품</th>
+                    <th class="p-3 text-left">수량</th>
+                    <th class="p-3 text-left">가격</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    class="odd:bg-white even:bg-gray-50 border-b border-gray-200 last:border-b-0"
+                  >
+                    <td class="p-3 first:font-bold">노트북</td>
+                    <td class="p-3">2</td>
+                    <td class="p-3">₩2,000,000</td>
+                  </tr>
+                  <tr
+                    class="odd:bg-white even:bg-gray-50 border-b border-gray-200 last:border-b-0"
+                  >
+                    <td class="p-3 first:font-bold">마우스</td>
+                    <td class="p-3">5</td>
+                    <td class="p-3">₩50,000</td>
+                  </tr>
+                  <tr
+                    class="odd:bg-white even:bg-gray-50 border-b border-gray-200 last:border-b-0"
+                  >
+                    <td class="p-3 first:font-bold">키보드</td>
+                    <td class="p-3">3</td>
+                    <td class="p-3">₩150,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div class="bg-white border-2 border-gray-300 p-6 min-h-[300px]">
+              <table class="w-full border-collapse">
+                <thead class="bg-gray-100">
+                  <tr>
+                    <th class="p-3 text-left font-bold">제품</th>
+                    <th class="p-3 text-left font-bold">수량</th>
+                    <th class="p-3 text-left font-bold">가격</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    class="odd:bg-white even:bg-gray-50 hover:bg-blue-50 border-b border-gray-200 last:border-b-0 transition-colors"
+                  >
+                    <td class="p-3 first:font-bold">노트북</td>
+                    <td class="p-3">2</td>
+                    <td class="p-3">₩2,000,000</td>
+                  </tr>
+                  <tr
+                    class="odd:bg-white even:bg-gray-50 hover:bg-blue-50 border-b border-gray-200 last:border-b-0 transition-colors"
+                  >
+                    <td class="p-3 first:font-bold">마우스</td>
+                    <td class="p-3">5</td>
+                    <td class="p-3">₩50,000</td>
+                  </tr>
+                  <tr
+                    class="odd:bg-white even:bg-gray-50 hover:bg-blue-50 border-b border-gray-200 last:border-b-0 transition-colors"
+                  >
+                    <td class="p-3 first:font-bold">키보드</td>
+                    <td class="p-3">3</td>
+                    <td class="p-3">₩150,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 종합 실습 ========== -->
+      <section
+        class="mb-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-8 rounded-lg border-4 border-indigo-200"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-indigo-800 text-center">
+          🎯 종합 실습: 완벽한 회원가입 폼
+        </h2>
+        <p class="text-center text-gray-700 mb-8">
+          모든 상태 클래스를 활용한 폼!
+        </p>
+
+        <div class="mb-6 bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">📋 요구사항</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>
+              • <strong>Input:</strong> focus:ring + focus:border +
+              hover:bg-gray-50
+            </li>
+            <li>
+              • <strong>체크박스:</strong> peer 사용, peer-checked로 커스텀
+              디자인
+            </li>
+            <li>
+              • <strong>약관 리스트:</strong> odd/even 줄무늬, last:border-b-0
+            </li>
+            <li>
+              • <strong>제출 버튼:</strong> hover:scale + active:scale +
+              disabled 처리
+            </li>
+            <li>• <strong>모든 전환:</strong> transition 적용</li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TO DO: 종합 실습 시작 -->
+          <div
+            class="min-h-[600px] bg-gray-100 border-2 border-gray-300 p-6 flex justify-center items-center"
+          >
+            <div class="bg-white rounded-xl shadow-lg p-8 max-w-md w-full">
+              <h2 class="text-2xl font-bold text-center mb-6">회원가입</h2>
+
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >이메일</label
+                  >
+                  <input
+                    type="email"
+                    placeholder="your@email.com"
+                    class="border border-gray-300 rounded-lg px-4 py-2 w-full"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >비밀번호</label
+                  >
+                  <input
+                    type="password"
+                    placeholder="••••••••"
+                    class="border border-gray-300 rounded-lg px-4 py-2 w-full"
+                  />
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <p class="text-sm font-bold mb-2">약관 동의</p>
+                  <ul class="space-y-2">
+                    <li
+                      class="flex items-center gap-2 p-2 border-b border-gray-200"
+                    >
+                      <input type="checkbox" class="peer" />
+                      <label class="text-sm">이용약관 동의 (필수)</label>
+                    </li>
+                    <li
+                      class="flex items-center gap-2 p-2 border-b border-gray-200"
+                    >
+                      <input type="checkbox" class="peer" />
+                      <label class="text-sm">개인정보 처리방침 (필수)</label>
+                    </li>
+                    <li class="flex items-center gap-2 p-2">
+                      <input type="checkbox" class="peer" />
+                      <label class="text-sm">마케팅 수신 동의 (선택)</label>
+                    </li>
+                  </ul>
+                </div>
+
+                <button
+                  class="w-full bg-blue-500 text-white py-3 rounded-lg font-medium"
+                >
+                  가입하기
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- TO DO: 종합 실습 끝 -->
+
+          <div
+            class="min-h-[600px] bg-gray-100 border-2 border-gray-300 p-6 flex justify-center items-center"
+          >
+            <div class="bg-white rounded-xl shadow-lg p-8 max-w-md w-full">
+              <h2 class="text-2xl font-bold text-center mb-6">회원가입</h2>
+
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >이메일</label
+                  >
+                  <input
+                    type="email"
+                    placeholder="your@email.com"
+                    class="border border-gray-300 rounded-lg px-4 py-2 w-full hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >비밀번호</label
+                  >
+                  <input
+                    type="password"
+                    placeholder="••••••••"
+                    class="border border-gray-300 rounded-lg px-4 py-2 w-full hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                  />
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <p class="text-sm font-bold mb-2">약관 동의</p>
+                  <ul>
+                    <li
+                      class="odd:bg-white even:bg-gray-50 flex items-center gap-2 p-2 border-b border-gray-200 last:border-b-0 transition-colors"
+                    >
+                      <label
+                        class="flex items-center gap-2 cursor-pointer flex-1"
+                      >
+                        <input type="checkbox" class="peer hidden" />
+                        <span
+                          class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-all"
+                        >
+                          <svg
+                            class="w-3 h-3 text-white hidden peer-checked:block"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            ></path>
+                          </svg>
+                        </span>
+                        <span
+                          class="text-sm peer-checked:text-blue-600 peer-checked:font-bold transition-all"
+                          >이용약관 동의 (필수)</span
+                        >
+                      </label>
+                    </li>
+                    <li
+                      class="odd:bg-white even:bg-gray-50 flex items-center gap-2 p-2 border-b border-gray-200 last:border-b-0 transition-colors"
+                    >
+                      <label
+                        class="flex items-center gap-2 cursor-pointer flex-1"
+                      >
+                        <input type="checkbox" class="peer hidden" />
+                        <span
+                          class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-all"
+                        >
+                          <svg
+                            class="w-3 h-3 text-white hidden peer-checked:block"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            ></path>
+                          </svg>
+                        </span>
+                        <span
+                          class="text-sm peer-checked:text-blue-600 peer-checked:font-bold transition-all"
+                          >개인정보 처리방침 (필수)</span
+                        >
+                      </label>
+                    </li>
+                    <li
+                      class="odd:bg-white even:bg-gray-50 flex items-center gap-2 p-2 border-b border-gray-200 last:border-b-0 transition-colors"
+                    >
+                      <label
+                        class="flex items-center gap-2 cursor-pointer flex-1"
+                      >
+                        <input type="checkbox" class="peer hidden" />
+                        <span
+                          class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center peer-checked:bg-blue-500 peer-checked:border-blue-500 transition-all"
+                        >
+                          <svg
+                            class="w-3 h-3 text-white hidden peer-checked:block"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            ></path>
+                          </svg>
+                        </span>
+                        <span
+                          class="text-sm peer-checked:text-blue-600 peer-checked:font-bold transition-all"
+                          >마케팅 수신 동의 (선택)</span
+                        >
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+
+                <button
+                  class="w-full bg-blue-500 hover:bg-blue-600 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed text-white py-3 rounded-lg font-medium transition-all duration-200"
+                >
+                  가입하기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Position & Z-index 실습</title>
+  </head>
+  <body class="bg-gray-50">
+    <!-- 헤더 -->
+    <header
+      class="bg-gradient-to-r from-cyan-600 to-blue-600 text-white p-6 mb-8 text-center"
+    >
+      <h1 class="text-3xl font-bold">Tailwind CSS Position & Z-index 실습</h1>
+      <p class="mt-2">요소를 자유롭게 배치하세요! 📍</p>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <!-- ========== Position 기본 개념 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-indigo-700">
+          📌 Position 기본 개념
+        </h2>
+      </section>
+
+      <!-- Position 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Position 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p><strong>Position</strong>은 요소의 배치 방식을 결정합니다.</p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">Position 종류:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">static</code> →
+                  기본값 (위치 지정 X)
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">relative</code> →
+                  기준점 (자식의 부모)
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">absolute</code> →
+                  부모 기준 고정
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">fixed</code> →
+                  화면에 고정
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">sticky</code> →
+                  스크롤 시 고정
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">위치 지정:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">top-0</code>,
+                  <code class="bg-gray-200 px-2 py-1 rounded">top-4</code> →
+                  위에서 거리
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">right-0</code>,
+                  <code class="bg-gray-200 px-2 py-1 rounded">right-4</code> →
+                  오른쪽
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">bottom-0</code> →
+                  아래쪽
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">left-0</code> →
+                  왼쪽
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">inset-0</code> →
+                  상하좌우 모두 0
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Tip:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• relative + absolute (배지, 오버레이)</li>
+                <li>• fixed (헤더, 버튼, 알림)</li>
+                <li>• sticky (네비게이션, 제목)</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">중요 팁:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• relative는 absolute의 기준점</li>
+                <li>• fixed는 스크롤과 무관</li>
+                <li>• z-index로 쌓임 순서 제어</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== RELATIVE 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-green-700">
+          🎯 Relative — 기준점 만들기
+        </h2>
+      </section>
+
+      <!-- 실습 1: Relative 기본 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 1: Relative 기준점
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 부모에 relative 클래스</li>
+              <li>• 자식 absolute 요소의 기준점이 됨</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 1 -->
+            <div
+              class="relative w-48 h-48 bg-blue-200 rounded-lg flex items-center justify-center"
+            >
+              <p class="text-sm font-bold">Relative 부모</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+          >
+            <div
+              class="relative w-48 h-48 bg-blue-200 rounded-lg flex items-center justify-center"
+            >
+              <p class="text-sm font-bold">Relative 부모</p>
+              <div
+                class="absolute top-2 right-2 w-6 h-6 bg-red-500 rounded-full"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== ABSOLUTE 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-amber-700">
+          📍 Absolute — 부모 기준 고정
+        </h2>
+      </section>
+
+      <!-- 실습 2: Absolute 우상단 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 2: 우상단 배치
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• absolute + top-2 + right-2</li>
+              <li>• 빨간 원 배치</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 2 -->
+            <div class="relative w-48 h-48 bg-white rounded-lg shadow-lg">
+              <div
+                class="absolute top-2 right-2 w-8 h-8 bg-red-500 rounded-full"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+          >
+            <div class="relative w-48 h-48 bg-white rounded-lg shadow-lg">
+              <div
+                class="absolute top-2 right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold"
+              >
+                3
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 3: Absolute 좌하단 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 3: 좌하단 배치
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• absolute + bottom-4 + left-4</li>
+              <li>• 배지 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 3 -->
+            <div
+              class="relative w-48 h-48 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg"
+            >
+              <span
+                class="absolute bottom-4 left-4 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full"
+              >
+                HOT
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+          >
+            <div
+              class="relative w-48 h-48 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg"
+            >
+              <span
+                class="absolute bottom-4 left-4 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg"
+              >
+                HOT
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 4: Absolute 정중앙 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 4: 정중앙 배치
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• absolute + top-1/2 + left-1/2</li>
+              <li>• -translate-x-1/2 + -translate-y-1/2</li>
+              <li>• 정중앙 배치 패턴!</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 4 -->
+            <div class="relative w-48 h-48 bg-blue-100 rounded-lg">
+              <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-blue-500 rounded-full"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+          >
+            <div class="relative w-48 h-48 bg-blue-100 rounded-lg">
+              <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold"
+              >
+                ▶
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 5: Inset -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 5: Inset - 전체 덮기
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• absolute + inset-0</li>
+              <li>• top/right/bottom/left 모두 0</li>
+              <li>• 오버레이에 자주 사용!</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 5 -->
+            <div
+              class="relative w-48 h-48 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg overflow-hidden"
+            >
+              <div class="absolute inset-0 bg-black/40"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <p class="text-white font-bold text-lg relative z-10">
+                  Overlay
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] flex items-center justify-center"
+          >
+            <div
+              class="relative w-48 h-48 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg overflow-hidden cursor-pointer group"
+            >
+              <div
+                class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors"
+              ></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <p class="text-white font-bold text-lg relative z-10">
+                  Overlay
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 6: 배지 카드 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 6: 배지가 있는 상품 카드
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 카드에 relative</li>
+              <li>• 우상단에 NEW 배지 (absolute)</li>
+              <li>• 좌상단에 할인율 배지</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[350px] flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 6 -->
+            <div class="relative bg-white rounded-xl shadow-lg p-4 w-64">
+              <span
+                class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full"
+              >
+                NEW
+              </span>
+              <span
+                class="absolute top-2 left-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded"
+              >
+                30%
+              </span>
+              <div
+                class="bg-gradient-to-br from-blue-300 to-purple-400 aspect-video rounded-lg mb-3"
+              ></div>
+              <h3 class="font-bold text-lg mb-1">프리미엄 상품</h3>
+              <p class="text-sm text-gray-600 mb-2">최고의 품질</p>
+              <p class="text-blue-600 font-bold text-xl">₩79,000</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[350px] flex items-center justify-center"
+          >
+            <div
+              class="relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-4 w-64 cursor-pointer"
+            >
+              <span
+                class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg"
+              >
+                NEW
+              </span>
+              <span
+                class="absolute top-2 left-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded shadow-md"
+              >
+                30%
+              </span>
+              <div
+                class="bg-gradient-to-br from-blue-300 to-purple-400 aspect-video rounded-lg mb-3"
+              ></div>
+              <h3 class="font-bold text-lg mb-1">프리미엄 상품</h3>
+              <p class="text-sm text-gray-600 mb-2">최고의 품질</p>
+              <p class="text-blue-600 font-bold text-xl">₩79,000</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== FIXED 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-pink-700">
+          📌 Fixed — 화면에 고정
+        </h2>
+      </section>
+
+      <!-- Fixed 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Fixed 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p><strong>Fixed</strong>는 스크롤과 무관하게 화면에 고정됩니다.</p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">주요 사용:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded">fixed top-0</code>
+                  → 상단 헤더
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >fixed bottom-4 right-4</code
+                  >
+                  → 플로팅 버튼
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >fixed inset-0</code
+                  >
+                  → 모달 배경
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Tip:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 고정 헤더/푸터</li>
+                <li>• 플로팅 액션 버튼 (FAB)</li>
+                <li>• 알림 토스트</li>
+                <li>• 모달 오버레이</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 7: Fixed 헤더 시뮬레이션 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 7: Fixed 헤더 (시뮬레이션)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• fixed + top-0 + left-0 + w-full</li>
+              <li>• 실제로는 스크롤해도 고정됨</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            <p class="text-sm text-gray-600 mt-2">
+              💡 실제 페이지에서 스크롤 시 고정되는 것을 확인하세요!
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <!-- TO DO: 실습 7 (시뮬레이션) -->
+            <div class="bg-white shadow p-4 rounded-lg">
+              <p class="font-bold text-lg">헤더 영역</p>
+              <p class="text-sm text-gray-600">스크롤 시 고정</p>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[150px]">
+            <div
+              class="bg-white shadow-lg p-4 rounded-lg border-b-4 border-blue-500"
+            >
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 bg-blue-500 rounded-full"></div>
+                  <span class="font-bold text-lg">로고</span>
+                </div>
+                <nav class="flex gap-4">
+                  <a href="#" class="text-sm hover:text-blue-600">홈</a>
+                  <a href="#" class="text-sm hover:text-blue-600">소개</a>
+                  <a href="#" class="text-sm hover:text-blue-600">연락처</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 8: Floating Action Button -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 8: 플로팅 액션 버튼 (FAB)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• fixed + bottom-6 + right-6</li>
+              <li>• 원형 버튼 + 그림자</li>
+              <li>• hover 효과 추가</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            <p class="text-sm text-gray-600 mt-2">
+              💡 페이지 하단에서 확인하세요!
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] relative"
+          >
+            <!-- TO DO: 실습 8 (시뮬레이션) -->
+            <div class="absolute bottom-6 right-6">
+              <button
+                class="w-14 h-14 bg-blue-500 rounded-full shadow-lg flex items-center justify-center text-white text-2xl"
+              >
+                +
+              </button>
+            </div>
+            <p class="text-sm text-gray-600">우측 하단 확인 →</p>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[250px] relative"
+          >
+            <div class="absolute bottom-6 right-6">
+              <button
+                class="w-14 h-14 bg-blue-500 hover:bg-blue-600 hover:scale-110 active:scale-95 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center text-white text-2xl"
+              >
+                +
+              </button>
+            </div>
+            <p class="text-sm text-gray-600">우측 하단 확인 →</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Absolute & Fixed 연습 과제 -->
+      <section class="mb-16 bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+        <h3 class="text-2xl font-bold mb-6 text-blue-700">
+          🎯 Position 연습 과제
+        </h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 1: 이미지 오버레이 카드
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 이미지 위에 absolute inset-0 오버레이</li>
+                <li>• 정중앙에 재생 버튼</li>
+                <li>• hover 시 오버레이 진하게</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div
+              class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px] flex items-center justify-center"
+            >
+              <div
+                class="relative w-64 h-40 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl overflow-hidden cursor-pointer"
+              >
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                >
+                  <div
+                    class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl"
+                  >
+                    <span class="text-3xl ml-1">▶</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div
+              class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px] flex items-center justify-center"
+            >
+              <div
+                class="relative w-64 h-40 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl overflow-hidden cursor-pointer group"
+              >
+                <div
+                  class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors"
+                ></div>
+                <div
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                >
+                  <div
+                    class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform"
+                  >
+                    <span class="text-3xl ml-1 text-gray-700">▶</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 2: 알림 카운터 아이콘
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 아이콘에 relative</li>
+                <li>• 우상단에 작은 빨간 원 (숫자)</li>
+                <li>• absolute + -top-1 + -right-1</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div
+              class="bg-white border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+            >
+              <div class="relative">
+                <div
+                  class="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center text-2xl"
+                >
+                  🔔
+                </div>
+                <span
+                  class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center"
+                >
+                  5
+                </span>
+              </div>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div
+              class="bg-white border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+            >
+              <div class="relative cursor-pointer">
+                <div
+                  class="w-12 h-12 bg-gray-200 hover:bg-gray-300 transition-colors rounded-lg flex items-center justify-center text-2xl"
+                >
+                  🔔
+                </div>
+                <span
+                  class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center shadow-lg animate-pulse"
+                >
+                  5
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== STICKY 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-teal-700">
+          📌 Sticky — 스크롤 시 고정
+        </h2>
+      </section>
+
+      <!-- Sticky 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Sticky 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Sticky</strong>는 relative와 fixed의 중간 성격을 가집니다.
+            스크롤 시 특정 위치에 도달하면 고정됩니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">사용 방법:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >sticky top-0</code
+                  >
+                  → 상단 도달 시 고정
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 px-2 py-1 rounded"
+                    >sticky top-20</code
+                  >
+                  → 20px 떨어진 곳에 고정
+                </li>
+                <li>• 부모 요소 벗어나면 다시 스크롤됨</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Tip:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• 섹션 제목</li>
+                <li>• 테이블 헤더</li>
+                <li>• 사이드바 네비게이션</li>
+                <li>• 필터/검색 바</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 9: Sticky 헤더 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 9: Sticky 섹션 헤더
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• sticky + top-0</li>
+              <li>• 스크롤 시 상단에 고정</li>
+              <li>• 배경색 + 그림자 필수</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            <p class="text-sm text-gray-600 mt-2">💡 스크롤해서 확인하세요!</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 h-[400px] overflow-y-auto"
+          >
+            <!-- TO DO: 실습 9 -->
+            <div class="sticky top-0 bg-blue-500 text-white p-4 shadow-lg z-10">
+              <h3 class="font-bold text-lg">섹션 1</h3>
+            </div>
+            <div class="p-4 space-y-4">
+              <p class="h-32 bg-gray-100 rounded p-4">콘텐츠 1</p>
+              <p class="h-32 bg-gray-100 rounded p-4">콘텐츠 2</p>
+              <p class="h-32 bg-gray-100 rounded p-4">콘텐츠 3</p>
+            </div>
+
+            <div
+              class="sticky top-0 bg-green-500 text-white p-4 shadow-lg z-10"
+            >
+              <h3 class="font-bold text-lg">섹션 2</h3>
+            </div>
+            <div class="p-4 space-y-4">
+              <p class="h-32 bg-gray-100 rounded p-4">콘텐츠 4</p>
+              <p class="h-32 bg-gray-100 rounded p-4">콘텐츠 5</p>
+              <p class="h-32 bg-gray-100 rounded p-4">콘텐츠 6</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 h-[400px] overflow-y-auto"
+          >
+            <div
+              class="sticky top-0 bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 shadow-lg z-10"
+            >
+              <h3 class="font-bold text-lg">섹션 1</h3>
+              <p class="text-sm text-blue-100">스크롤 시 고정됩니다</p>
+            </div>
+            <div class="p-4 space-y-4">
+              <p class="h-32 bg-gray-50 rounded-lg p-4 border">콘텐츠 1</p>
+              <p class="h-32 bg-gray-50 rounded-lg p-4 border">콘텐츠 2</p>
+              <p class="h-32 bg-gray-50 rounded-lg p-4 border">콘텐츠 3</p>
+            </div>
+
+            <div
+              class="sticky top-0 bg-gradient-to-r from-green-500 to-emerald-600 text-white p-4 shadow-lg z-10"
+            >
+              <h3 class="font-bold text-lg">섹션 2</h3>
+              <p class="text-sm text-green-100">다음 섹션이 밀어냅니다</p>
+            </div>
+            <div class="p-4 space-y-4">
+              <p class="h-32 bg-gray-50 rounded-lg p-4 border">콘텐츠 4</p>
+              <p class="h-32 bg-gray-50 rounded-lg p-4 border">콘텐츠 5</p>
+              <p class="h-32 bg-gray-50 rounded-lg p-4 border">콘텐츠 6</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 10: Sticky 테이블 헤더 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 10: Sticky 테이블 헤더
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• thead에 sticky + top-0</li>
+              <li>• 배경색 필수 (투명하면 안보임)</li>
+              <li>• 스크롤 시 헤더만 고정</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 h-[350px] overflow-y-auto"
+          >
+            <!-- TO DO: 실습 10 -->
+            <table class="w-full">
+              <thead class="sticky top-0 bg-gray-100 z-10">
+                <tr>
+                  <th class="p-3 text-left border-b-2 border-gray-300">이름</th>
+                  <th class="p-3 text-left border-b-2 border-gray-300">나이</th>
+                  <th class="p-3 text-left border-b-2 border-gray-300">직업</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="p-3">김철수</td>
+                  <td class="p-3">30</td>
+                  <td class="p-3">개발자</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-3">이영희</td>
+                  <td class="p-3">28</td>
+                  <td class="p-3">디자이너</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-3">박민수</td>
+                  <td class="p-3">35</td>
+                  <td class="p-3">기획자</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-3">정수진</td>
+                  <td class="p-3">32</td>
+                  <td class="p-3">마케터</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-3">최동욱</td>
+                  <td class="p-3">29</td>
+                  <td class="p-3">개발자</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-3">한지민</td>
+                  <td class="p-3">31</td>
+                  <td class="p-3">PM</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-3">오세훈</td>
+                  <td class="p-3">27</td>
+                  <td class="p-3">디자이너</td>
+                </tr>
+                <tr class="border-b">
+                  <td class="p-3">서유진</td>
+                  <td class="p-3">33</td>
+                  <td class="p-3">개발자</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 h-[350px] overflow-y-auto"
+          >
+            <table class="w-full">
+              <thead
+                class="sticky top-0 bg-gradient-to-r from-indigo-500 to-purple-500 text-white z-10 shadow"
+              >
+                <tr>
+                  <th class="p-3 text-left">이름</th>
+                  <th class="p-3 text-left">나이</th>
+                  <th class="p-3 text-left">직업</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b hover:bg-gray-50 transition-colors">
+                  <td class="p-3">김철수</td>
+                  <td class="p-3">30</td>
+                  <td class="p-3">개발자</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50 transition-colors">
+                  <td class="p-3">이영희</td>
+                  <td class="p-3">28</td>
+                  <td class="p-3">디자이너</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50 transition-colors">
+                  <td class="p-3">박민수</td>
+                  <td class="p-3">35</td>
+                  <td class="p-3">기획자</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50 transition-colors">
+                  <td class="p-3">정수진</td>
+                  <td class="p-3">32</td>
+                  <td class="p-3">마케터</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50 transition-colors">
+                  <td class="p-3">최동욱</td>
+                  <td class="p-3">29</td>
+                  <td class="p-3">개발자</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50 transition-colors">
+                  <td class="p-3">한지민</td>
+                  <td class="p-3">31</td>
+                  <td class="p-3">PM</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50 transition-colors">
+                  <td class="p-3">오세훈</td>
+                  <td class="p-3">27</td>
+                  <td class="p-3">디자이너</td>
+                </tr>
+                <tr class="border-b hover:bg-gray-50 transition-colors">
+                  <td class="p-3">서유진</td>
+                  <td class="p-3">33</td>
+                  <td class="p-3">개발자</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Z-INDEX 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-purple-700">
+          🎚️ Z-index — 쌓임 순서
+        </h2>
+      </section>
+
+      <!-- Z-index 이론 -->
+      <section class="mb-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600">📖 Z-index 이론</h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>Z-index</strong>는 요소의 쌓임 순서를 제어합니다. 숫자가
+            클수록 앞에 표시됩니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">Tailwind 기본값:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">z-0</code> → 0
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">z-10</code> → 10
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">z-20</code> → 20
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">z-30</code> → 30
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">z-40</code> → 40
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">z-50</code> → 50
+                </li>
+                <li>
+                  • <code class="bg-gray-200 px-2 py-1 rounded">z-[999]</code> →
+                  임의값
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">일반적으로:</p>
+              <ul class="space-y-1 text-sm">
+                <li>• <strong>z-0 ~ z-10:</strong> 일반 콘텐츠</li>
+                <li>• <strong>z-20 ~ z-30:</strong> 배지, 툴팁</li>
+                <li>• <strong>z-40:</strong> 드롭다운, 팝오버</li>
+                <li>• <strong>z-50:</strong> 모달, 오버레이</li>
+                <li>• <strong>z-[999]:</strong> 최상위 (토스트)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 11: Z-index 기본 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 11: Z-index 기본
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 세 개의 박스를 겹치게 배치</li>
+              <li>• z-10, z-20, z-30 적용</li>
+              <li>• 숫자 클수록 앞에 표시</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px]">
+            <!-- TO DO: 실습 11 -->
+            <div class="relative h-64">
+              <div
+                class="absolute top-0 left-0 w-32 h-32 bg-red-400 rounded-lg z-10 flex items-center justify-center text-white font-bold"
+              >
+                z-10
+              </div>
+              <div
+                class="absolute top-12 left-12 w-32 h-32 bg-green-400 rounded-lg z-20 flex items-center justify-center text-white font-bold"
+              >
+                z-20
+              </div>
+              <div
+                class="absolute top-24 left-24 w-32 h-32 bg-blue-400 rounded-lg z-30 flex items-center justify-center text-white font-bold"
+              >
+                z-30
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[300px]">
+            <div class="relative h-64">
+              <div
+                class="absolute top-0 left-0 w-32 h-32 bg-red-400 rounded-lg shadow-lg z-10 flex items-center justify-center text-white font-bold"
+              >
+                z-10
+              </div>
+              <div
+                class="absolute top-12 left-12 w-32 h-32 bg-green-400 rounded-lg shadow-lg z-20 flex items-center justify-center text-white font-bold"
+              >
+                z-20
+              </div>
+              <div
+                class="absolute top-24 left-24 w-32 h-32 bg-blue-400 rounded-lg shadow-lg z-30 flex items-center justify-center text-white font-bold"
+              >
+                z-30
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 12: 모달 오버레이 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 12: 모달 오버레이
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 오버레이: fixed inset-0 + z-40</li>
+              <li>• 모달: fixed + z-50</li>
+              <li>• 정중앙 배치</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[400px] relative"
+          >
+            <!-- TO DO: 실습 12 -->
+            <div class="bg-white p-4 rounded">
+              <p class="text-sm text-gray-600">뒤에 있는 콘텐츠</p>
+            </div>
+
+            <!-- 오버레이 -->
+            <div class="absolute inset-0 bg-black/50 z-40"></div>
+
+            <!-- 모달 -->
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl p-6 shadow-2xl z-50 w-64"
+            >
+              <h3 class="font-bold text-lg mb-2">모달 제목</h3>
+              <p class="text-sm text-gray-600 mb-4">모달 내용입니다.</p>
+              <button class="w-full bg-blue-500 text-white py-2 rounded">
+                확인
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 border-2 border-gray-300 p-6 min-h-[400px] relative"
+          >
+            <div class="bg-white p-4 rounded">
+              <p class="text-sm text-gray-600">뒤에 있는 콘텐츠</p>
+            </div>
+
+            <!-- 오버레이 with animation -->
+            <div
+              class="absolute inset-0 bg-black/50 z-40 backdrop-blur-sm"
+            ></div>
+
+            <!-- 모달 with animation -->
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl p-6 shadow-2xl z-50 w-64"
+            >
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-bold text-lg">모달 제목</h3>
+                <button class="text-gray-400 hover:text-gray-600">✕</button>
+              </div>
+              <p class="text-sm text-gray-600 mb-4">모달 내용입니다.</p>
+              <div class="flex gap-2">
+                <button
+                  class="flex-1 bg-gray-200 hover:bg-gray-300 transition-colors py-2 rounded"
+                >
+                  취소
+                </button>
+                <button
+                  class="flex-1 bg-blue-500 hover:bg-blue-600 transition-colors text-white py-2 rounded"
+                >
+                  확인
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 13: 드롭다운 메뉴 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          실습 13: 드롭다운 메뉴
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• 버튼에 relative</li>
+              <li>• 메뉴: absolute + top-full + z-40</li>
+              <li>• 그림자로 떠있는 느낌</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[300px] flex items-start justify-center pt-12"
+          >
+            <!-- TO DO: 실습 13 -->
+            <div class="relative">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded">
+                메뉴 ▼
+              </button>
+              <div
+                class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg z-40"
+              >
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">프로필</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">설정</a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 text-red-500"
+                  >로그아웃</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white border-2 border-gray-300 p-6 min-h-[300px] flex items-start justify-center pt-12"
+          >
+            <div class="relative group">
+              <button
+                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors"
+              >
+                메뉴 ▼
+              </button>
+              <div
+                class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border z-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-3 hover:bg-blue-50 transition-colors border-b first:rounded-t-lg"
+                  >👤 프로필</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-3 hover:bg-blue-50 transition-colors border-b"
+                  >⚙️ 설정</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-3 hover:bg-red-50 transition-colors text-red-500 last:rounded-b-lg"
+                  >🚪 로그아웃</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Position & Z-index 연습 과제 -->
+      <section class="mb-16 bg-blue-50 p-6 rounded-lg border-2 border-blue-200">
+        <h3 class="text-2xl font-bold mb-6 text-blue-700">
+          🎯 Sticky & Z-index 연습 과제
+        </h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 1: Sticky 사이드바
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 좌측 사이드바: sticky top-4</li>
+                <li>• 우측 콘텐츠: 스크롤 가능</li>
+                <li>• 높이 설정 필수</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div
+              class="bg-white border-2 border-gray-300 h-[400px] overflow-y-auto"
+            >
+              <div class="flex gap-4 p-4">
+                <aside
+                  class="sticky top-4 w-48 h-fit bg-gray-100 rounded-lg p-4"
+                >
+                  <h3 class="font-bold mb-3">목차</h3>
+                  <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-blue-600">섹션 1</a></li>
+                    <li><a href="#" class="hover:text-blue-600">섹션 2</a></li>
+                    <li><a href="#" class="hover:text-blue-600">섹션 3</a></li>
+                  </ul>
+                </aside>
+                <main class="flex-1 space-y-4">
+                  <div class="h-64 bg-gray-50 rounded p-4">콘텐츠 1</div>
+                  <div class="h-64 bg-gray-50 rounded p-4">콘텐츠 2</div>
+                  <div class="h-64 bg-gray-50 rounded p-4">콘텐츠 3</div>
+                </main>
+              </div>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div
+              class="bg-white border-2 border-gray-300 h-[400px] overflow-y-auto"
+            >
+              <div class="flex gap-4 p-4">
+                <aside
+                  class="sticky top-4 w-48 h-fit bg-gradient-to-b from-blue-50 to-indigo-50 rounded-lg p-4 shadow-lg border"
+                >
+                  <h3 class="font-bold mb-3 text-blue-700">목차</h3>
+                  <ul class="space-y-2 text-sm">
+                    <li>
+                      <a
+                        href="#"
+                        class="hover:text-blue-600 transition-colors block py-1"
+                        >📄 섹션 1</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="hover:text-blue-600 transition-colors block py-1"
+                        >📄 섹션 2</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="hover:text-blue-600 transition-colors block py-1"
+                        >📄 섹션 3</a
+                      >
+                    </li>
+                  </ul>
+                </aside>
+                <main class="flex-1 space-y-4">
+                  <div class="h-64 bg-gray-50 rounded-lg p-4 border">
+                    콘텐츠 1
+                  </div>
+                  <div class="h-64 bg-gray-50 rounded-lg p-4 border">
+                    콘텐츠 2
+                  </div>
+                  <div class="h-64 bg-gray-50 rounded-lg p-4 border">
+                    콘텐츠 3
+                  </div>
+                </main>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800">
+            과제 2: 툴팁 (교안 외 추가!)
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+              <p class="font-bold text-gray-700">📝 요구사항</p>
+              <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                <li>• 버튼에 relative + group</li>
+                <li>• 툴팁: absolute + bottom-full + z-30</li>
+                <li>• group-hover로 표시</li>
+              </ul>
+            </div>
+            <div class="bg-green-100 border-l-4 border-green-500 p-4">
+              <p class="font-bold text-gray-700">✅ 완성 예시</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div
+              class="bg-white border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+            >
+              <div class="relative group">
+                <button class="bg-gray-200 px-4 py-2 rounded">정보</button>
+                <div
+                  class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-30"
+                >
+                  <div
+                    class="bg-gray-800 text-white text-xs px-3 py-2 rounded whitespace-nowrap"
+                  >
+                    자세한 정보를 확인하세요
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div
+              class="bg-white border-2 border-gray-300 p-6 min-h-[200px] flex items-center justify-center"
+            >
+              <div class="relative group">
+                <button
+                  class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors"
+                >
+                  정보 ℹ️
+                </button>
+                <div
+                  class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-30"
+                >
+                  <div
+                    class="bg-gray-900 text-white text-xs px-3 py-2 rounded shadow-xl whitespace-nowrap"
+                  >
+                    자세한 정보를 확인하세요
+                    <div
+                      class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 종합 실습 ========== -->
+      <section
+        class="mb-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-8 rounded-lg border-4 border-indigo-200"
+      >
+        <h2 class="text-3xl font-bold mb-6 text-indigo-800 text-center">
+          🎯 종합 실습: E-commerce 상품 상세 페이지
+        </h2>
+        <p class="text-center text-gray-700 mb-8">
+          모든 Position과 Z-index를 활용한 페이지!
+        </p>
+
+        <div class="mb-6 bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4 text-gray-800">📋 요구사항</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• <strong>Sticky 헤더:</strong> 스크롤 시 상단 고정 (z-40)</li>
+            <li>
+              • <strong>상품 이미지:</strong> relative, 배지 absolute, 오버레이
+              inset-0
+            </li>
+            <li>
+              • <strong>Floating 장바구니:</strong> fixed bottom-right (z-50)
+            </li>
+            <li>• <strong>툴팁:</strong> group-hover + z-30</li>
+            <li>• <strong>드롭다운:</strong> 옵션 선택 (z-40)</li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+            <p class="font-bold text-gray-700">📝 실습 과제</p>
+          </div>
+
+          <div class="bg-green-100 border-l-4 border-green-500 p-4">
+            <p class="font-bold text-gray-700">✅ 완성 예시</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TO DO: 종합 실습 시작 -->
+          <div
+            class="min-h-[700px] bg-white border-2 border-gray-300 overflow-hidden"
+          >
+            <div class="h-full overflow-y-auto">
+              <!-- Sticky 헤더 -->
+              <header class="sticky top-0 bg-white shadow z-40 p-4">
+                <div class="flex items-center justify-between">
+                  <h1 class="font-bold text-lg">쇼핑몰</h1>
+                  <button class="relative">
+                    🛒
+                    <span
+                      class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center"
+                      >3</span
+                    >
+                  </button>
+                </div>
+              </header>
+
+              <!-- 상품 이미지 -->
+              <div class="relative p-4">
+                <div
+                  class="relative bg-gradient-to-br from-blue-300 to-purple-400 aspect-square rounded-xl overflow-hidden"
+                >
+                  <span
+                    class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10"
+                  >
+                    20% OFF
+                  </span>
+                  <div class="absolute inset-0 bg-black/20"></div>
+                </div>
+              </div>
+
+              <!-- 상품 정보 -->
+              <div class="p-4 space-y-4">
+                <h2 class="text-2xl font-bold">프리미엄 제품</h2>
+                <p class="text-gray-600">최고급 품질의 상품입니다.</p>
+                <p class="text-3xl font-bold text-blue-600">₩129,000</p>
+
+                <!-- 옵션 선택 -->
+                <div class="relative">
+                  <button class="w-full border rounded-lg px-4 py-2 text-left">
+                    옵션 선택 ▼
+                  </button>
+                </div>
+
+                <button
+                  class="w-full bg-blue-500 text-white py-3 rounded-lg font-medium"
+                >
+                  장바구니 담기
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- TO DO: 종합 실습 끝 -->
+
+          <div
+            class="min-h-[700px] bg-white border-2 border-gray-300 overflow-hidden relative"
+          >
+            <div class="h-full overflow-y-auto">
+              <!-- Sticky 헤더 -->
+              <header class="sticky top-0 bg-white shadow-lg z-40 p-4 border-b">
+                <div class="flex items-center justify-between">
+                  <h1 class="font-bold text-lg">쇼핑몰</h1>
+                  <button class="relative hover:scale-110 transition-transform">
+                    🛒
+                    <span
+                      class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center shadow animate-pulse"
+                      >3</span
+                    >
+                  </button>
+                </div>
+              </header>
+
+              <!-- 상품 이미지 -->
+              <div class="relative p-4">
+                <div
+                  class="relative bg-gradient-to-br from-blue-300 to-purple-400 aspect-square rounded-xl overflow-hidden group cursor-pointer"
+                >
+                  <span
+                    class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10 shadow-lg"
+                  >
+                    20% OFF
+                  </span>
+                  <span
+                    class="absolute top-2 left-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded z-10"
+                  >
+                    NEW
+                  </span>
+                  <div
+                    class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors"
+                  ></div>
+                  <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <div
+                      class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl"
+                    >
+                      <span class="text-2xl">👁️</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 상품 정보 -->
+              <div class="p-4 space-y-4">
+                <h2 class="text-2xl font-bold">프리미엄 제품</h2>
+                <p class="text-gray-600">최고급 품질의 상품입니다.</p>
+                <div class="flex items-baseline gap-2">
+                  <p class="text-3xl font-bold text-blue-600">₩129,000</p>
+                  <p class="text-lg text-gray-400 line-through">₩159,000</p>
+                </div>
+
+                <!-- 옵션 선택 (드롭다운) -->
+                <div class="relative group">
+                  <button
+                    class="w-full border border-gray-300 hover:border-blue-500 transition-colors rounded-lg px-4 py-3 text-left flex items-center justify-between"
+                  >
+                    <span>옵션 선택</span>
+                    <span>▼</span>
+                  </button>
+                  <div
+                    class="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-xl z-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all"
+                  >
+                    <button
+                      class="w-full px-4 py-3 text-left hover:bg-blue-50 transition-colors first:rounded-t-lg"
+                    >
+                      블랙
+                    </button>
+                    <button
+                      class="w-full px-4 py-3 text-left hover:bg-blue-50 transition-colors"
+                    >
+                      화이트
+                    </button>
+                    <button
+                      class="w-full px-4 py-3 text-left hover:bg-blue-50 transition-colors last:rounded-b-lg"
+                    >
+                      그레이
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 툴팁 버튼 -->
+                <div class="relative group inline-block">
+                  <button class="text-sm text-blue-600 hover:text-blue-700">
+                    배송 정보 ℹ️
+                  </button>
+                  <div
+                    class="absolute bottom-full left-0 mb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-30"
+                  >
+                    <div
+                      class="bg-gray-900 text-white text-xs px-3 py-2 rounded shadow-xl whitespace-nowrap"
+                    >
+                      무료배송 (주문 후 2-3일 소요)
+                      <div
+                        class="absolute top-full left-4 border-4 border-transparent border-t-gray-900"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  class="w-full bg-blue-500 hover:bg-blue-600 hover:scale-105 active:scale-95 text-white py-3 rounded-lg font-medium transition-all shadow-lg"
+                >
+                  장바구니 담기
+                </button>
+              </div>
+            </div>
+
+            <!-- Floating 장바구니 -->
+            <button
+              class="fixed bottom-6 right-6 w-14 h-14 bg-blue-500 hover:bg-blue-600 hover:scale-110 active:scale-95 text-white rounded-full shadow-xl hover:shadow-2xl transition-all z-50 flex items-center justify-center text-2xl"
+            >
+              🛒
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 실제 Fixed 데모 (페이지 하단) -->
+    <button
+      class="fixed bottom-6 right-6 w-14 h-14 bg-blue-500 hover:bg-blue-600 hover:scale-110 active:scale-95 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center text-white text-2xl z-50"
+    >
+      ↑
+    </button>
+  </body>
+</html>

@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind 설정 주입 (CDN에서 class 기반 다크모드 활성화) -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <title>Dark Mode 실습</title>
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- 다크모드 토글 버튼 (Fixed) -->
+    <button
+      id="darkModeToggle"
+      class="fixed top-6 right-6 z-50 p-3 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95"
+      aria-label="다크모드 토글"
+    >
+      <!-- 라이트 모드 아이콘 (해) -->
+      <svg
+        class="w-6 h-6 text-yellow-500 dark:hidden"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+      <!-- 다크 모드 아이콘 (달) -->
+      <svg
+        class="w-6 h-6 text-gray-300 hidden dark:block"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- 헤더 -->
+    <header
+      class="bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-900 dark:to-pink-900 text-white p-6 mb-8 text-center transition-colors duration-300"
+    >
+      <h1 class="text-3xl font-bold">Tailwind CSS Dark Mode 실습</h1>
+      <p class="mt-2">우측 상단 버튼으로 다크모드를 전환해보세요! 🌙</p>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- ========== 다크모드 기본 개념 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-lg transition-colors duration-300"
+      >
+        <h2 class="text-3xl font-bold mb-4 text-blue-700 dark:text-blue-300">
+          🌓 Dark Mode 기본 개념
+        </h2>
+      </section>
+
+      <!-- 다크모드 이론 -->
+      <section
+        class="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow dark:shadow-none transition-all duration-300"
+      >
+        <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-400">
+          📖 Dark Mode 이론
+        </h2>
+        <div class="space-y-3 text-gray-700 dark:text-gray-300">
+          <p>
+            <strong>Dark Mode</strong>는
+            <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+              >dark:</code
+            >
+            접두사를 사용하여 다크 테마를 적용합니다.
+          </p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 dark:bg-gray-700/50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">기본 사용법:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >dark:bg-gray-900</code
+                  >
+                  → 다크 배경
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >dark:text-gray-100</code
+                  >
+                  → 다크 텍스트
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >dark:border-gray-600</code
+                  >
+                  → 다크 테두리
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">모드 전환 방법:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >&lt;html class="dark"&gt;</code
+                  >
+                  → 다크 활성화
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >&lt;html&gt;</code
+                  >
+                  → 라이트 활성화
+                </li>
+                <li>• JavaScript로 토글 가능</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">CDN 설정 (필수!):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code
+                    class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-xs"
+                    >tailwind.config = {'{'}darkMode: "class"{'}'}</code
+                  >
+                </li>
+                <li>• CDN 위에 설정 스크립트 추가</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Transition 추가:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >transition-colors</code
+                  >
+                  → 부드러운 전환
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >duration-300</code
+                  >
+                  → 0.3초
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 1: 배경색 전환 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+          실습 1: 배경색 전환
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div
+            class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              📝 실습 과제
+            </p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+              <li>• 라이트: 흰색 배경</li>
+              <li>• 다크: 회색(gray-800) 배경</li>
+              <li>• transition 추가</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              ✅ 완성 예시
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+          >
+            <!-- TO DO: 실습 1 -->
+            <div class="bg-white p-6 rounded-lg">
+              <h3 class="font-bold text-lg mb-2">박스 제목</h3>
+              <p class="text-sm text-gray-600">다크모드 배경 적용</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+          >
+            <div
+              class="bg-white dark:bg-gray-800 p-6 rounded-lg transition-colors duration-300"
+            >
+              <h3
+                class="font-bold text-lg mb-2 text-gray-800 dark:text-gray-200"
+              >
+                박스 제목
+              </h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                다크모드 배경 적용
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 2: 텍스트 색상 전환 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+          실습 2: 텍스트 색상 전환
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div
+            class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              📝 실습 과제
+            </p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+              <li>• 라이트: 검정 텍스트</li>
+              <li>• 다크: 밝은 회색 텍스트</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              ✅ 완성 예시
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+          >
+            <!-- TO DO: 실습 2 -->
+            <p class="text-black text-lg">
+              이 텍스트는 다크모드에서 색상이 변합니다.
+            </p>
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+          >
+            <p
+              class="text-black dark:text-gray-100 text-lg transition-colors duration-300"
+            >
+              이 텍스트는 다크모드에서 색상이 변합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 3: 그림자 전환 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+          실습 3: 그림자 전환
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div
+            class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              📝 실습 과제
+            </p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+              <li>• 라이트: shadow-lg</li>
+              <li>• 다크: shadow-none</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              ✅ 완성 예시
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[200px] transition-colors duration-300 flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-xs">
+              <h3 class="font-bold text-lg mb-2">카드</h3>
+              <p class="text-sm text-gray-600">다크모드에서 그림자 제거</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[200px] transition-colors duration-300 flex items-center justify-center"
+          >
+            <div
+              class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:shadow-none transition-all duration-300 max-w-xs"
+            >
+              <h3
+                class="font-bold text-lg mb-2 text-gray-800 dark:text-gray-200"
+              >
+                카드
+              </h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                다크모드에서 그림자 제거
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 4: 테두리 전환 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+          실습 4: 테두리 전환
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div
+            class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              📝 실습 과제
+            </p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+              <li>• 라이트: gray-300 테두리</li>
+              <li>• 다크: gray-600 테두리</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              ✅ 완성 예시
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+          >
+            <!-- TO DO: 실습 4 -->
+            <div class="border-2 border-gray-300 p-4 rounded-lg">
+              <p class="text-gray-800">테두리가 있는 박스</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+          >
+            <div
+              class="border-2 border-gray-300 dark:border-gray-600 p-4 rounded-lg transition-colors duration-300"
+            >
+              <p class="text-gray-800 dark:text-gray-200">테두리가 있는 박스</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 5: 버튼 다크모드 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+          실습 5: 버튼 다크모드
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div
+            class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              📝 실습 과제
+            </p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+              <li>• 라이트: blue-500 배경</li>
+              <li>• 다크: blue-600 배경</li>
+              <li>• hover: 더 진한 색</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              ✅ 완성 예시
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300 flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 5 -->
+            <button
+              class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600"
+            >
+              클릭하세요
+            </button>
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300 flex items-center justify-center"
+          >
+            <button
+              class="bg-blue-500 dark:bg-blue-600 hover:bg-blue-600 dark:hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors duration-300"
+            >
+              클릭하세요
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 기본 다크모드 연습 과제 -->
+      <section
+        class="mb-16 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-2 border-blue-200 dark:border-blue-800 transition-colors duration-300"
+      >
+        <h3 class="text-2xl font-bold mb-6 text-blue-700 dark:text-blue-300">
+          🎯 기본 다크모드 연습 과제
+        </h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800 dark:text-gray-200">
+            과제 1: 다크모드 카드
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div
+              class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+            >
+              <p class="font-bold text-gray-700 dark:text-gray-300">
+                📝 요구사항
+              </p>
+              <ul
+                class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400"
+              >
+                <li>• 라이트: 흰색 배경 + shadow</li>
+                <li>• 다크: gray-800 배경 + shadow 제거</li>
+                <li>• 텍스트 색상도 전환</li>
+              </ul>
+            </div>
+            <div
+              class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+            >
+              <p class="font-bold text-gray-700 dark:text-gray-300">
+                ✅ 완성 예시
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div
+              class="bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[200px] transition-colors duration-300"
+            >
+              <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-bold text-xl mb-2 text-gray-800">카드 제목</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  다크모드가 적용되는 카드 컴포넌트입니다.
+                </p>
+              </div>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div
+              class="bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[200px] transition-colors duration-300"
+            >
+              <div
+                class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow dark:shadow-none transition-all duration-300"
+              >
+                <h3
+                  class="font-bold text-xl mb-2 text-gray-800 dark:text-gray-200"
+                >
+                  카드 제목
+                </h3>
+                <p
+                  class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"
+                >
+                  다크모드가 적용되는 카드 컴포넌트입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800 dark:text-gray-200">
+            과제 2: 다크모드 입력 필드
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div
+              class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+            >
+              <p class="font-bold text-gray-700 dark:text-gray-300">
+                📝 요구사항
+              </p>
+              <ul
+                class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400"
+              >
+                <li>• 라이트: 흰 배경, 회색 테두리</li>
+                <li>• 다크: gray-700 배경, gray-600 테두리</li>
+                <li>• focus: ring 색상도 전환</li>
+              </ul>
+            </div>
+            <div
+              class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+            >
+              <p class="font-bold text-gray-700 dark:text-gray-300">
+                ✅ 완성 예시
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div
+              class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+            >
+              <input
+                type="text"
+                placeholder="이메일 주소"
+                class="border border-gray-300 rounded-lg px-4 py-2 w-full"
+              />
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div
+              class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+            >
+              <input
+                type="text"
+                placeholder="이메일 주소"
+                class="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-300"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 3 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800 dark:text-gray-200">
+            과제 3: 다크모드 리스트
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div
+              class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+            >
+              <p class="font-bold text-gray-700 dark:text-gray-300">
+                📝 요구사항
+              </p>
+              <ul
+                class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400"
+              >
+                <li>• 배경, 텍스트, 구분선 모두 전환</li>
+                <li>• divide 유틸리티 사용</li>
+              </ul>
+            </div>
+            <div
+              class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+            >
+              <p class="font-bold text-gray-700 dark:text-gray-300">
+                ✅ 완성 예시
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 3 시작 -->
+            <div
+              class="bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[200px] transition-colors duration-300"
+            >
+              <div class="bg-white rounded-lg">
+                <div class="divide-y divide-gray-200">
+                  <div class="p-4 text-gray-800">항목 1</div>
+                  <div class="p-4 text-gray-800">항목 2</div>
+                  <div class="p-4 text-gray-800">항목 3</div>
+                </div>
+              </div>
+            </div>
+            <!-- TO DO: 과제 3 끝 -->
+            <div
+              class="bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[200px] transition-colors duration-300"
+            >
+              <div
+                class="bg-white dark:bg-gray-800 rounded-lg transition-colors duration-300"
+              >
+                <div
+                  class="divide-y divide-gray-200 dark:divide-gray-700 transition-colors duration-300"
+                >
+                  <div class="p-4 text-gray-800 dark:text-gray-200">항목 1</div>
+                  <div class="p-4 text-gray-800 dark:text-gray-200">항목 2</div>
+                  <div class="p-4 text-gray-800 dark:text-gray-200">항목 3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 고급 다크모드 섹션 ========== -->
+      <section
+        class="mb-12 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-lg transition-colors duration-300"
+      >
+        <h2
+          class="text-3xl font-bold mb-4 text-purple-700 dark:text-purple-300"
+        >
+          🎨 고급 다크모드 패턴
+        </h2>
+      </section>
+
+      <!-- 고급 이론 -->
+      <section
+        class="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow dark:shadow-none transition-all duration-300"
+      >
+        <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-400">
+          📖 고급 다크모드 이론
+        </h2>
+        <div class="space-y-3 text-gray-700 dark:text-gray-300">
+          <p><strong>자주 사용하는</strong> 고급 다크모드 패턴입니다.</p>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 dark:bg-gray-700/50 p-4 rounded"
+          >
+            <div>
+              <p class="font-bold mb-2">Ring (Focus 외곽선):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >dark:ring-blue-400</code
+                  >
+                  → 다크 ring 색상
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >dark:ring-offset-gray-900</code
+                  >
+                  → ring offset
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Divide (구분선):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >dark:divide-gray-700</code
+                  >
+                  → 다크 구분선
+                </li>
+                <li>• 리스트 항목 구분에 유용</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Placeholder:</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >dark:placeholder-gray-500</code
+                  >
+                  → 입력 힌트
+                </li>
+                <li>• input, textarea에 적용</li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-bold mb-2">Selection (드래그 선택):</p>
+              <ul class="space-y-1 text-sm">
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >selection:bg-blue-500</code
+                  >
+                  → 선택 배경
+                </li>
+                <li>
+                  •
+                  <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded"
+                    >dark:selection:bg-blue-700</code
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 6: Ring 색상 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+          실습 6: Focus Ring 다크모드
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div
+            class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              📝 실습 과제
+            </p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+              <li>• 라이트: ring-blue-500</li>
+              <li>• 다크: ring-blue-400</li>
+              <li>• 클릭해서 포커스해보세요!</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              ✅ 완성 예시
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300 flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 6 -->
+            <input
+              type="text"
+              placeholder="이름을 입력하세요"
+              class="border border-gray-300 rounded-lg px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300 flex items-center justify-center"
+          >
+            <input
+              type="text"
+              placeholder="이름을 입력하세요"
+              class="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-300"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 7: Placeholder 색상 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+          실습 7: Placeholder 다크모드
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div
+            class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              📝 실습 과제
+            </p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+              <li>• 라이트: placeholder-gray-400</li>
+              <li>• 다크: placeholder-gray-500</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              ✅ 완성 예시
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300 flex items-center justify-center"
+          >
+            <!-- TO DO: 실습 7 -->
+            <input
+              type="email"
+              placeholder="이메일 주소"
+              class="border border-gray-300 rounded-lg px-4 py-2 w-64 placeholder-gray-400"
+            />
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300 flex items-center justify-center"
+          >
+            <input
+              type="email"
+              placeholder="이메일 주소"
+              class="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg px-4 py-2 w-64 placeholder-gray-400 dark:placeholder-gray-500 transition-colors duration-300"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 8: Selection 색상 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+          실습 8: 텍스트 선택 색상 (Selection)
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div
+            class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              📝 실습 과제
+            </p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+              <li>• 라이트: selection:bg-blue-200</li>
+              <li>• 다크: dark:selection:bg-blue-700</li>
+              <li>• 텍스트를 드래그해보세요!</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              ✅ 완성 예시
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+          >
+            <!-- TO DO: 실습 8 -->
+            <p class="text-gray-800 leading-relaxed">
+              이 텍스트를 마우스로 드래그해서 선택해보세요. 선택 영역의 배경색이
+              다크모드에 따라 변합니다.
+            </p>
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+          >
+            <p
+              class="text-gray-800 dark:text-gray-200 leading-relaxed selection:bg-blue-200 selection:text-blue-900 dark:selection:bg-blue-700 dark:selection:text-blue-100"
+            >
+              이 텍스트를 마우스로 드래그해서 선택해보세요. 선택 영역의 배경색이
+              다크모드에 따라 변합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 실습 9: Hover + Dark 조합 -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+          실습 9: Hover + Dark 조합
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div
+            class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              📝 실습 과제
+            </p>
+            <ul class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+              <li>• 라이트 hover: bg-gray-100</li>
+              <li>• 다크 hover: dark:hover:bg-gray-700</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              ✅ 완성 예시
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[200px] transition-colors duration-300"
+          >
+            <!-- TO DO: 실습 9 -->
+            <div class="space-y-2">
+              <div class="p-4 bg-white rounded cursor-pointer">
+                <p class="text-gray-800">항목 1</p>
+              </div>
+              <div class="p-4 bg-white rounded cursor-pointer">
+                <p class="text-gray-800">항목 2</p>
+              </div>
+              <div class="p-4 bg-white rounded cursor-pointer">
+                <p class="text-gray-800">항목 3</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[200px] transition-colors duration-300"
+          >
+            <div class="space-y-2">
+              <div
+                class="p-4 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer transition-colors duration-200"
+              >
+                <p class="text-gray-800 dark:text-gray-200">항목 1</p>
+              </div>
+              <div
+                class="p-4 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer transition-colors duration-200"
+              >
+                <p class="text-gray-800 dark:text-gray-200">항목 2</p>
+              </div>
+              <div
+                class="p-4 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded cursor-pointer transition-colors duration-200"
+              >
+                <p class="text-gray-800 dark:text-gray-200">항목 3</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 고급 다크모드 연습 과제 -->
+      <section
+        class="mb-16 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-2 border-blue-200 dark:border-blue-800 transition-colors duration-300"
+      >
+        <h3 class="text-2xl font-bold mb-6 text-blue-700 dark:text-blue-300">
+          🎯 고급 다크모드 연습 과제
+        </h3>
+
+        <!-- 과제 1 -->
+        <div class="mb-8">
+          <h4 class="text-lg font-bold mb-4 text-gray-800 dark:text-gray-200">
+            과제 1: 완성도 높은 검색 입력
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div
+              class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+            >
+              <p class="font-bold text-gray-700 dark:text-gray-300">
+                📝 요구사항
+              </p>
+              <ul
+                class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400"
+              >
+                <li>• 배경, 테두리, 텍스트 전환</li>
+                <li>• placeholder 색상 전환</li>
+                <li>• focus: ring 색상 전환</li>
+              </ul>
+            </div>
+            <div
+              class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+            >
+              <p class="font-bold text-gray-700 dark:text-gray-300">
+                ✅ 완성 예시
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 1 시작 -->
+            <div
+              class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+            >
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="검색..."
+                  class="border border-gray-300 rounded-lg px-4 py-2 flex-1"
+                />
+                <button class="bg-blue-500 text-white px-6 py-2 rounded-lg">
+                  검색
+                </button>
+              </div>
+            </div>
+            <!-- TO DO: 과제 1 끝 -->
+            <div
+              class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+            >
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="검색..."
+                  class="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 rounded-lg px-4 py-2 flex-1 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-300"
+                />
+                <button
+                  class="bg-blue-500 dark:bg-blue-600 hover:bg-blue-600 dark:hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors duration-300"
+                >
+                  검색
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 과제 2 -->
+        <div>
+          <h4 class="text-lg font-bold mb-4 text-gray-800 dark:text-gray-200">
+            과제 2: 네비게이션 링크
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+            <div
+              class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+            >
+              <p class="font-bold text-gray-700 dark:text-gray-300">
+                📝 요구사항
+              </p>
+              <ul
+                class="mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400"
+              >
+                <li>• hover: 배경색 변경 (라이트/다크 다름)</li>
+                <li>• 텍스트 색상 전환</li>
+                <li>• 부드러운 transition</li>
+              </ul>
+            </div>
+            <div
+              class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+            >
+              <p class="font-bold text-gray-700 dark:text-gray-300">
+                ✅ 완성 예시
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- TO DO: 과제 2 시작 -->
+            <div
+              class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+            >
+              <nav class="flex gap-2">
+                <a href="#" class="px-4 py-2 rounded text-gray-700">Home</a>
+                <a href="#" class="px-4 py-2 rounded text-gray-700">About</a>
+                <a href="#" class="px-4 py-2 rounded text-gray-700">Services</a>
+                <a href="#" class="px-4 py-2 rounded text-gray-700">Contact</a>
+              </nav>
+            </div>
+            <!-- TO DO: 과제 2 끝 -->
+            <div
+              class="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 p-6 min-h-[150px] transition-colors duration-300"
+            >
+              <nav class="flex gap-2">
+                <a
+                  href="#"
+                  class="px-4 py-2 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                  >Home</a
+                >
+                <a
+                  href="#"
+                  class="px-4 py-2 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                  >About</a
+                >
+                <a
+                  href="#"
+                  class="px-4 py-2 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                  >Services</a
+                >
+                <a
+                  href="#"
+                  class="px-4 py-2 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                  >Contact</a
+                >
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 종합 실습 1 ========== -->
+      <section
+        class="mb-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-900/20 dark:via-purple-900/20 dark:to-pink-900/20 p-8 rounded-lg border-4 border-indigo-200 dark:border-indigo-800 transition-colors duration-300"
+      >
+        <h2
+          class="text-3xl font-bold mb-6 text-indigo-800 dark:text-indigo-300 text-center"
+        >
+          🎯 종합 실습 1: 다크모드 로그인 폼
+        </h2>
+        <p class="text-center text-gray-700 dark:text-gray-300 mb-8">
+          완벽한 다크모드 적용 폼!
+        </p>
+
+        <div
+          class="mb-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow dark:shadow-none transition-all duration-300"
+        >
+          <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">
+            📋 요구사항
+          </h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li>
+              • <strong>컨테이너:</strong> 최대 너비 md, 흰/어두운 배경, shadow
+              (다크에서 제거), 둥글게, padding 2rem
+            </li>
+            <li>
+              • <strong>제목:</strong> 굵게, 아주 큰 글씨, 가운데 정렬, 텍스트
+              색상 전환
+            </li>
+            <li>
+              • <strong>Input:</strong> 배경, 테두리, 텍스트, placeholder 모두
+              다크모드 전환
+            </li>
+            <li>• <strong>Focus:</strong> ring 색상 다크모드 전환</li>
+            <li>• <strong>버튼:</strong> 배경, hover 색상 다크모드 전환</li>
+            <li>• <strong>링크:</strong> 텍스트 색상, hover 다크모드 전환</li>
+            <li>
+              • <strong>Transition:</strong> 모든 색상 전환에 부드러운
+              애니메이션
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div
+            class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              📝 실습 과제
+            </p>
+          </div>
+
+          <div
+            class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              ✅ 완성 예시
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TO DO: 종합 실습 1 시작 -->
+          <div
+            class="min-h-[500px] bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 p-6 flex justify-center items-center transition-colors duration-300"
+          >
+            <div class="bg-white shadow p-8 max-w-md w-full">
+              <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">
+                로그인
+              </h2>
+
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium mb-1 text-gray-700"
+                    >이메일</label
+                  >
+                  <input
+                    type="email"
+                    placeholder="your@email.com"
+                    class="border border-gray-300 rounded-lg px-4 py-2 w-full"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium mb-1 text-gray-700"
+                    >비밀번호</label
+                  >
+                  <input
+                    type="password"
+                    placeholder="••••••••"
+                    class="border border-gray-300 rounded-lg px-4 py-2 w-full"
+                  />
+                </div>
+
+                <button
+                  class="bg-blue-500 text-white w-full py-3 rounded-lg font-medium"
+                >
+                  로그인
+                </button>
+
+                <p class="text-center text-sm text-gray-600">
+                  계정이 없으신가요?
+                  <a href="#" class="text-blue-500">회원가입</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- TO DO: 종합 실습 1 끝 -->
+
+          <div
+            class="min-h-[500px] bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 p-6 flex justify-center items-center transition-colors duration-300"
+          >
+            <div
+              class="bg-white dark:bg-gray-800 shadow dark:shadow-none rounded-xl p-8 max-w-md w-full transition-all duration-300"
+            >
+              <h2
+                class="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-gray-200"
+              >
+                로그인
+              </h2>
+
+              <div class="space-y-4">
+                <div>
+                  <label
+                    class="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300"
+                    >이메일</label
+                  >
+                  <input
+                    type="email"
+                    placeholder="your@email.com"
+                    class="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 rounded-lg px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-300"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    class="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300"
+                    >비밀번호</label
+                  >
+                  <input
+                    type="password"
+                    placeholder="••••••••"
+                    class="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500 rounded-lg px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors duration-300"
+                  />
+                </div>
+
+                <button
+                  class="bg-blue-500 dark:bg-blue-600 hover:bg-blue-600 dark:hover:bg-blue-700 text-white w-full py-3 rounded-lg font-medium transition-colors duration-300"
+                >
+                  로그인
+                </button>
+
+                <p class="text-center text-sm text-gray-600 dark:text-gray-400">
+                  계정이 없으신가요?
+                  <a
+                    href="#"
+                    class="text-blue-500 dark:text-blue-400 hover:underline"
+                    >회원가입</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 종합 실습 2 ========== -->
+      <section
+        class="mb-16 bg-gradient-to-br from-cyan-50 via-teal-50 to-green-50 dark:from-cyan-900/20 dark:via-teal-900/20 dark:to-green-900/20 p-8 rounded-lg border-4 border-cyan-200 dark:border-cyan-800 transition-colors duration-300"
+      >
+        <h2
+          class="text-3xl font-bold mb-6 text-cyan-800 dark:text-cyan-300 text-center"
+        >
+          🎯 종합 실습 2: 다크모드 대시보드 카드
+        </h2>
+        <p class="text-center text-gray-700 dark:text-gray-300 mb-8">
+          다크모드 대시보드
+        </p>
+
+        <div
+          class="mb-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow dark:shadow-none transition-all duration-300"
+        >
+          <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">
+            📋 요구사항
+          </h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li>• <strong>그리드:</strong> 1열(모바일) → 2열(md) → 3열(lg)</li>
+            <li>
+              • <strong>카드:</strong> 흰/어두운 배경, shadow (다크 제거),
+              둥글게, padding, hover 효과
+            </li>
+            <li>• <strong>아이콘 영역:</strong> 배경색 다크모드 전환</li>
+            <li>
+              • <strong>제목:</strong> 작은 글씨, 대문자, 텍스트 색상 전환
+            </li>
+            <li>• <strong>값:</strong> 큰 글씨, 굵게, 텍스트 색상 전환</li>
+            <li>
+              • <strong>Hover:</strong> 라이트/다크 각각 다른 배경색으로 hover
+            </li>
+            <li>
+              • <strong>Transition:</strong> 모든 전환에 부드러운 애니메이션
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
+          <div
+            class="bg-yellow-100 dark:bg-yellow-900/30 border-l-4 border-yellow-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              📝 실습 과제
+            </p>
+          </div>
+
+          <div
+            class="bg-green-100 dark:bg-green-900/30 border-l-4 border-green-500 p-4 transition-colors duration-300"
+          >
+            <p class="font-bold text-gray-700 dark:text-gray-300">
+              ✅ 완성 예시
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- TO DO: 종합 실습 2 시작 -->
+          <div
+            class="min-h-[400px] bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 p-6 transition-colors duration-300"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="bg-white shadow rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-xs uppercase text-gray-600">총 방문자</p>
+                    <p class="text-2xl font-bold text-gray-800 mt-1">12,345</p>
+                  </div>
+                  <div class="bg-blue-100 p-3 rounded-full">
+                    <svg
+                      class="w-6 h-6 text-blue-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white shadow rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-xs uppercase text-gray-600">매출</p>
+                    <p class="text-2xl font-bold text-gray-800 mt-1">₩5.2M</p>
+                  </div>
+                  <div class="bg-green-100 p-3 rounded-full">
+                    <svg
+                      class="w-6 h-6 text-green-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white shadow rounded-lg p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-xs uppercase text-gray-600">전환율</p>
+                    <p class="text-2xl font-bold text-gray-800 mt-1">3.2%</p>
+                  </div>
+                  <div class="bg-purple-100 p-3 rounded-full">
+                    <svg
+                      class="w-6 h-6 text-purple-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- TO DO: 종합 실습 2 끝 -->
+
+          <div
+            class="min-h-[400px] bg-gray-100 dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 p-6 transition-colors duration-300"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div
+                class="bg-white dark:bg-gray-800 shadow dark:shadow-none hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg p-6 transition-all duration-300 cursor-pointer"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p
+                      class="text-xs uppercase text-gray-600 dark:text-gray-400"
+                    >
+                      총 방문자
+                    </p>
+                    <p
+                      class="text-2xl font-bold text-gray-800 dark:text-gray-200 mt-1"
+                    >
+                      12,345
+                    </p>
+                  </div>
+                  <div
+                    class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full transition-colors duration-300"
+                  >
+                    <svg
+                      class="w-6 h-6 text-blue-600 dark:text-blue-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-white dark:bg-gray-800 shadow dark:shadow-none hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg p-6 transition-all duration-300 cursor-pointer"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p
+                      class="text-xs uppercase text-gray-600 dark:text-gray-400"
+                    >
+                      매출
+                    </p>
+                    <p
+                      class="text-2xl font-bold text-gray-800 dark:text-gray-200 mt-1"
+                    >
+                      ₩5.2M
+                    </p>
+                  </div>
+                  <div
+                    class="bg-green-100 dark:bg-green-900/30 p-3 rounded-full transition-colors duration-300"
+                  >
+                    <svg
+                      class="w-6 h-6 text-green-600 dark:text-green-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"
+                      ></path>
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="bg-white dark:bg-gray-800 shadow dark:shadow-none hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg p-6 transition-all duration-300 cursor-pointer"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p
+                      class="text-xs uppercase text-gray-600 dark:text-gray-400"
+                    >
+                      전환율
+                    </p>
+                    <p
+                      class="text-2xl font-bold text-gray-800 dark:text-gray-200 mt-1"
+                    >
+                      3.2%
+                    </p>
+                  </div>
+                  <div
+                    class="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-full transition-colors duration-300"
+                  >
+                    <svg
+                      class="w-6 h-6 text-purple-600 dark:text-purple-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 다크모드 토글 스크립트 -->
+    <script>
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      const html = document.documentElement;
+
+      // 로컬 스토리지에서 다크모드 상태 불러오기
+      const currentMode = localStorage.getItem("darkMode");
+      if (currentMode === "dark") {
+        html.classList.add("dark");
+      }
+
+      // 토글 버튼 클릭 이벤트
+      darkModeToggle.addEventListener("click", () => {
+        html.classList.toggle("dark");
+
+        // 로컬 스토리지에 상태 저장
+        if (html.classList.contains("dark")) {
+          localStorage.setItem("darkMode", "dark");
+        } else {
+          localStorage.setItem("darkMode", "light");
+        }
+      });
+    </script>
+  </body>
+</html>
